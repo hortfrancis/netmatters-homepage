@@ -1,0 +1,39 @@
+.newsletter-form__heading {
+    font-weight: 400;
+
+    color: $dark-grey;
+}
+
+.newsletter-form__label {
+    font-weight: 600;
+    line-height: 2;
+
+    color: $dark-grey;
+
+    &:after {
+        content: '*';
+        color: $required-red;
+        padding-left: 0.2em;
+    }
+}
+
+.newsletter-form__input--text {
+    height: 3rem;
+
+    padding: 5px 15px;
+    border: 1px solid $mid-grey-02;
+
+    font-size: .875rem;
+
+    &:focus {
+        border-color: #5bc0de;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(91, 192, 222, .6);
+    }
+}
+
+.newsletter-form__input--checkbox {
+
+    // Some custom styling required here 
+
+}

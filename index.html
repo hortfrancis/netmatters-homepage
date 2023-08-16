@@ -500,26 +500,24 @@
 
         </section>
 
-        <form>
-            <h2>Email Newsletter Sign-Up</h2>
+        <form class="newsletter-form"> <!-- Email newsletter sign up form -->
+            <h2 class="newsletter-form__heading">Email Newsletter Sign-Up</h2>
 
-            <label for="newsletter-name">Your name</label>
-            <input type="text" id="newsletter-name" name="name">
+            <label for="newsletter-name" class="newsletter-form__label">Your Name</label>
+            <input type="text" id="newsletter-name" name="name" class="newsletter-form__input--text">
 
-            <label for="newsletter-email">Your email</label>
-            <input type="email" id="newsletter-email" name="email">
+            <label for="newsletter-email" class="newsletter-form__label">Your Email</label>
+            <input type="email" id="newsletter-email" name="email" class="newsletter-form__input--text">
 
-            <input type="checkbox" id="newsletter-preferences" name="preferences">
-            <label for="newsletter-preferences">Please tick this box if you wish to receive marketing information
-                from
-                us. Please see our <a href="#" target="_blank">Privacy Policy</a> for more information on how we
-                keep
-                your data safe.</label>
+            <input type="checkbox" id="newsletter-preferences" name="preferences" class="newsletter-form__input--checkbox">
+            <label for="newsletter-preferences" class="newsletter-form__label">Please tick this box if you wish to receive marketing information
+                from us. Please see our <a href="#" target="_blank">Privacy Policy</a> for more information on how we
+                keep your data safe.</label>
 
             <button type="submit">Subscribe</button>
         </form>
 
-        <footer class="footer">
+        <footer class="footer"> <!-- Footer -->
             <img src="images/netmatters-logo-white.png" alt="Netmatters logo">
             <h2 class="footer__heading">Follow us on:</h2>
             <div>
