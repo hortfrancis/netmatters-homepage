@@ -1,0 +1,41 @@
+.footer__heading {
+    color: $white;
+
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.footer__social-media-link {
+    padding: 12px 22px 16px;
+
+    background-color: $darker-grey;
+
+}
+
+.footer__nav-list {
+    list-style-type: none;
+}
+
+.footer__nav-link {
+    color: $white;
+
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.footer__legal-text {
+
+    display: block;
+
+    color: $white;
+}
+
+// Modifiers
+
+.footer__nav-link--sitemap {
+    @extend .footer__nav-link;
+
+    display: block;
+}
