@@ -1,0 +1,93 @@
+
+
+
+.news__header {
+    color: $dark-grey;
+
+    font-size: 2.25rem;
+}
+
+.news__view-all-link {
+
+color: $dark-grey;
+
+    font-size: 1.625rem;
+    font-weight: 600;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.news__card {
+
+    box-shadow: 0 3px 35px rgba(0,0,0,.1);
+}
+
+.news__card-image {
+    display: block;
+    width: 100%;
+}
+
+.news__card-text-container {
+    padding: 1.875rem;
+    border: 1px solid $mid-grey-02;
+    border-top: none;
+}
+
+.news__card-title {
+    display: inline;
+}
+
+.news__card-read-length {
+    color: $mid-grey-04;
+
+    text-transform: uppercase;
+
+    &:before {
+        content: '-';
+        padding-right: 0.5em;
+    }
+}
+
+.news__card-summary {
+    color: $mid-grey-03;
+}
+
+.news__card-read-more-button {
+    @extend %button;
+}
+
+// Modifiers
+
+.news__card-title--careers {
+    color: $careers-blue;
+}
+
+.news__card-title--bespoke-software {
+    color: map-get($services-colours, 'bespoke software');
+}
+
+.news__card-title--it-support {
+    color: map-get($services-colours, 'it support');
+}
+
+.news__card-title--web-design {
+    color: map-get($services-colours, 'web design');
+}
+
+.news__card-read-more-button--careers {
+    @include background-with-darken-on-hover($careers-blue);
+}
+
+.news__card-read-more-button--bespoke-software {
+    @include background-with-darken-on-hover(map-get($services-colours, 'bespoke software'));
+}
+
+.news__card-read-more-button--it-support {
+    @include background-with-darken-on-hover(map-get($services-colours, 'it support'));
+}
+
+.news__card-read-more-button--web-design {
+    @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
+}
