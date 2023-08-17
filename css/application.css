@@ -401,23 +401,35 @@ body {
 }
 
 .clients__link--bespoke-software {
-  text-decoration: none;
   background-color: #67809F;
+  text-decoration: none;
+}
+.clients__link--bespoke-software:hover {
+  background-color: #485b72;
 }
 
 .clients__link--it-support {
-  text-decoration: none;
   background-color: #4183D7;
+  text-decoration: none;
+}
+.clients__link--it-support:hover {
+  background-color: #235ea8;
 }
 
 .clients__link--digital-marketing {
-  text-decoration: none;
   background-color: #2ECC71;
+  text-decoration: none;
+}
+.clients__link--digital-marketing:hover {
+  background-color: #208e4e;
 }
 
 .clients__link--web-design {
-  text-decoration: none;
   background-color: #926FB1;
+  text-decoration: none;
+}
+.clients__link--web-design:hover {
+  background-color: #6c4a89;
 }
 
 .newsletter-form__heading {
@@ -449,12 +461,13 @@ body {
 }
 
 .newsletter-form__button {
+  background-color: #323544;
   margin-top: 0.6875em;
   background-color: #323544;
   font-size: 1.063rem;
 }
 .newsletter-form__button:hover {
-  background-color: #0f1015;
+  background-color: #121318;
 }
 
 .footer__heading {

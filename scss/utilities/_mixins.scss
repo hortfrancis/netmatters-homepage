@@ -1,0 +1,9 @@
+
+// Set the background colour and darken it on hover in a consistent way for any colour
+@mixin background-with-darken-on-hover($background-colour) {
+    background-color: $background-colour;
+
+    &:hover {
+        background-color: darken($background-colour, 15%);
+    }
+}

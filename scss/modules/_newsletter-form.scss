@@ -40,16 +40,12 @@
 
 .newsletter-form__button {
     @extend %button;
+    @include background-with-darken-on-hover($dark-grey);
 
     margin-top: 0.6875em;
 
     background-color: $dark-grey;
 
     font-size: 1.063rem; // Do we need this? 
-
-    &:hover {
-        // Darken the button background slightly on hover 
-        background-color: darken($dark-grey, 16%);
-    }
 }
 

@@ -23,30 +23,30 @@
 
 .clients__link--bespoke-software {
     @extend %button;
+    @include background-with-darken-on-hover(map-get($services-colours, 'bespoke software'));
 
     text-decoration: none;
-    background-color: map-get($services-colours, 'bespoke software');
 }
 
 .clients__link--it-support {
     @extend %button;
+    @include background-with-darken-on-hover(map-get($services-colours, 'it support'));
 
     text-decoration: none;
-    background-color: map-get($services-colours, 'it support');
 }
 
 .clients__link--digital-marketing {
     @extend %button;
+    @include background-with-darken-on-hover(map-get($services-colours, 'digital marketing')); 
 
     text-decoration: none;
-    background-color: map-get($map: $services-colours, $key: 'digital marketing');
 }
 
 .clients__link--web-design {
     @extend %button;
+    @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
 
     text-decoration: none;
-    background-color: map-get($services-colours, 'web design');
 }
 
 
