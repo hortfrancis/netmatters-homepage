@@ -1,0 +1,52 @@
+.clients__info-box {
+    background-color: $dark-grey;
+    color: $white;
+}
+
+.clients__heading {
+    font-size: 1.125rem;
+}
+
+.clients__description {
+    font-size: 0.8125rem;
+}
+
+.clients__link {
+    padding: 5px 15px;
+
+    color: $white;
+
+    text-transform: uppercase;
+}
+
+// Modifier classes for each category of service Netmatters offers
+
+.clients__link--bespoke-software {
+    @extend %button;
+
+    text-decoration: none;
+    background-color: map-get($services-colours, 'bespoke software');
+}
+
+.clients__link--it-support {
+    @extend %button;
+
+    text-decoration: none;
+    background-color: map-get($services-colours, 'it support');
+}
+
+.clients__link--digital-marketing {
+    @extend %button;
+
+    text-decoration: none;
+    background-color: map-get($map: $services-colours, $key: 'digital marketing');
+}
+
+.clients__link--web-design {
+    @extend %button;
+
+    text-decoration: none;
+    background-color: map-get($services-colours, 'web design');
+}
+
+

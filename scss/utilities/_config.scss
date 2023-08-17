@@ -8,3 +8,15 @@ $darker-grey: #212330;
 
 // Used to colour the 'required' asterisks in the newsletter form
 $required-red: #d24d57; 
+
+// Colours associated with each of the categories of services Netmatters offers 
+$services-colours: (
+	'bespoke software': #67809F,
+	'it support': #4183D7,
+	'digital marketing': #2ECC71,
+	'telecoms services': #D64541,
+	'web design': #926FB1,
+	'cyber security': #F62459, 
+	'developer training': #CE4125
+);
+
