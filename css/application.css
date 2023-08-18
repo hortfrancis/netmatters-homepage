@@ -404,7 +404,15 @@ body {
 }
 
 .news__card {
+  position: relative;
+  margin-top: 30px;
+  top: 0;
+  transition: 0.5s ease;
   box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+}
+.news__card:hover {
+  top: -10px;
+  transition: 0.5s ease;
 }
 
 .news__card-image {
@@ -412,18 +420,36 @@ body {
   width: 100%;
 }
 
+.news__card-category-label {
+  position: absolute;
+  top: 0.5rem;
+  right: 0;
+  padding: 0.25em 1em;
+  color: #fff;
+  background-color: #323544;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.news__card-category-label:hover {
+  text-decoration: underline;
+}
+
 .news__card-text-container {
   padding: 1.875rem;
   border: 1px solid #ccc;
   border-top: none;
+  border-radius: 3px;
 }
 
 .news__card-title {
   display: inline;
+  font-size: 1rem;
 }
 
 .news__card-read-length {
   color: #999AA1;
+  font-size: 0.85rem;
   text-transform: uppercase;
 }
 .news__card-read-length:before {
@@ -432,7 +458,25 @@ body {
 }
 
 .news__card-summary {
+  margin-bottom: 2rem;
   color: #666;
+  font-size: 0.8125rem;
+}
+
+.news__card-author-container {
+  padding: 30px;
+  border-top: 1px solid #ccc;
+  margin-top: 50px;
+}
+
+.news__card-posted-by {
+  color: #323544;
+  font-weight: 600;
+}
+
+.news__card-posted-date {
+  display: block;
+  color: #323544;
 }
 
 .news__card-title--careers {
