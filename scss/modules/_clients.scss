@@ -24,29 +24,21 @@
 .clients__link--bespoke-software {
     @extend %button;
     @include background-with-darken-on-hover(map-get($services-colours, 'bespoke software'));
-
-    text-decoration: none;
 }
 
 .clients__link--it-support {
     @extend %button;
     @include background-with-darken-on-hover(map-get($services-colours, 'it support'));
-
-    text-decoration: none;
 }
 
 .clients__link--digital-marketing {
     @extend %button;
     @include background-with-darken-on-hover(map-get($services-colours, 'digital marketing')); 
-
-    text-decoration: none;
 }
 
 .clients__link--web-design {
     @extend %button;
     @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
-
-    text-decoration: none;
 }
 
 

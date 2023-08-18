@@ -338,12 +338,19 @@ template {
   display: none;
 }
 
-.newsletter-form__button, .clients__link--web-design, .clients__link--digital-marketing, .clients__link--it-support, .clients__link--bespoke-software, .news__card-read-more-button {
-  padding: 0.75em;
+blockquote {
+  padding: 0;
+  margin: 0;
+}
+
+.newsletter-form__button, .clients__link--web-design, .clients__link--digital-marketing, .clients__link--it-support, .clients__link--bespoke-software, .news__card-read-more-button, .welcome__button-link {
+  padding: 0.75em 1em;
   border: none;
-  border-radius: 3px;
+  border-radius: 0.25em;
   color: #fff;
+  display: inline-block;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 *,
@@ -373,6 +380,12 @@ body {
   border: 0;
 }
 
+.welcome {
+  padding: 1rem 1rem 1.5rem;
+  background-color: #323544;
+  color: #fff;
+}
+
 .news {
   padding-right: 15px;
   padding-left: 15px;
@@ -387,6 +400,84 @@ body {
 
 .footer {
   background-color: #323544;
+}
+
+.welcome__heading {
+  font-size: 2.25rem;
+}
+
+.welcome__paragraph {
+  margin-bottom: 2rem;
+  line-height: 1.875rem;
+}
+.welcome__paragraph a {
+  color: #fff;
+  text-decoration: none;
+}
+.welcome__paragraph a:hover {
+  text-decoration: underline;
+}
+
+.welcome__button-link {
+  background-color: #212330;
+  margin: 0 1em 1em 0;
+  font-size: 1.25rem;
+}
+.welcome__button-link:hover {
+  background-color: #020203;
+}
+
+.welcome__star {
+  fill: #ffa500;
+}
+
+.welcome__testimonial {
+  margin: 2rem 0;
+}
+
+.welcome__testimonial-quote {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.welcome__testimonial-author {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.welcome__testimonial-author a {
+  color: #fff;
+  text-decoration: none;
+}
+.welcome__testimonial-author a:hover {
+  text-decoration: underline;
+}
+
+.welcome__testimonial-author-name {
+  color: #ccc;
+}
+
+.welcome__testimonial-author-organisation:before {
+  content: "-";
+  padding: 0 0.5em;
+}
+
+.welcome__paragraph--first {
+  font-weight: 600;
+}
+
+.welcome__button-link--google {
+  background-color: #4387f6;
+}
+.welcome__button-link--google:hover {
+  background-color: #0b5ce2;
+}
+
+.welcome__button-link--trustpilot {
+  background-color: #00b67b;
+}
+.welcome__button-link--trustpilot:hover {
+  background-color: #006a47;
 }
 
 .news__header {
@@ -544,7 +635,6 @@ body {
 
 .clients__link--bespoke-software {
   background-color: #67809F;
-  text-decoration: none;
 }
 .clients__link--bespoke-software:hover {
   background-color: #485b72;
@@ -552,7 +642,6 @@ body {
 
 .clients__link--it-support {
   background-color: #4183D7;
-  text-decoration: none;
 }
 .clients__link--it-support:hover {
   background-color: #235ea8;
@@ -560,7 +649,6 @@ body {
 
 .clients__link--digital-marketing {
   background-color: #2ECC71;
-  text-decoration: none;
 }
 .clients__link--digital-marketing:hover {
   background-color: #208e4e;
@@ -568,7 +656,6 @@ body {
 
 .clients__link--web-design {
   background-color: #926FB1;
-  text-decoration: none;
 }
 .clients__link--web-design:hover {
   background-color: #6c4a89;

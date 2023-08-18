@@ -1,0 +1,85 @@
+.welcome__heading {
+    font-size: 2.25rem;
+}
+
+.welcome__paragraph {
+
+    margin-bottom: 2rem;
+
+    line-height: 1.875rem;
+
+    a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.welcome__button-link {
+    @extend %button;
+    @include background-with-darken-on-hover($darker-grey);
+
+    margin: 0 1em 1em 0;
+
+    font-size: 1.25rem;
+}
+
+.welcome__star {
+    fill: $star-yellow;
+}
+
+.welcome__testimonial {
+    margin: 2rem 0;
+}
+
+.welcome__testimonial-quote {
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+
+
+.welcome__testimonial-author {
+    margin-top: 2rem;
+
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.welcome__testimonial-author-name {
+    color: $mid-grey-02;
+}
+
+.welcome__testimonial-author-organisation {
+    
+    &:before {
+        content: '-';
+        padding: 0 0.5em;
+    }
+}
+
+// Modifiers
+
+.welcome__paragraph--first {
+    font-weight: 600;
+}
+
+.welcome__button-link--google {
+    @include background-with-darken-on-hover($google-blue);
+}
+
+.welcome__button-link--trustpilot {
+    @include background-with-darken-on-hover($trustpilot-green);
+}
