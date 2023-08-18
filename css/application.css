@@ -343,7 +343,7 @@ blockquote {
   margin: 0;
 }
 
-.newsletter-form__button, .clients__link--web-design, .clients__link--digital-marketing, .clients__link--it-support, .clients__link--bespoke-software, .news__card-read-more-button, .welcome__button-link {
+.newsletter-form__button, .clients__link--web-design, .clients__link--digital-marketing, .clients__link--it-support, .clients__link--bespoke-software, .news__card-read-more-button, .welcome__button-link, .services__card-read-more-button {
   padding: 0.75em 1em;
   border: none;
   border-radius: 0.25em;
@@ -380,6 +380,13 @@ body {
   border: 0;
 }
 
+.services {
+  margin: 1rem;
+}
+.services a {
+  text-decoration: none;
+}
+
 .welcome {
   padding: 1rem 1rem 1.5rem;
   background-color: #323544;
@@ -400,6 +407,184 @@ body {
 
 .footer {
   background-color: #323544;
+}
+
+.services__heading {
+  color: #323544;
+  font-size: 2.75rem;
+}
+
+.services__view-case-studies-link {
+  color: #323544;
+  font-size: 1.625rem;
+  font-weight: 600;
+}
+
+.services__card {
+  display: block;
+  position: relative;
+  top: 0;
+  transition: 0.5s ease;
+  padding: 1.875rem;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  margin: 2rem;
+  box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.services__card:hover {
+  top: -0.625rem;
+}
+.services__card.services__card--bespoke-software:hover {
+  background-color: #67809F;
+}
+.services__card.services__card--bespoke-software:hover .services__card-heading {
+  color: #fff;
+}
+.services__card.services__card--bespoke-software:hover .services__card-description {
+  color: #fff;
+}
+.services__card.services__card--bespoke-software:hover .services__card-read-more-button {
+  background-color: #fff;
+  color: #67809F;
+}
+.services__card.services__card--it-support:hover {
+  background-color: #4183D7;
+}
+.services__card.services__card--it-support:hover .services__card-heading {
+  color: #fff;
+}
+.services__card.services__card--it-support:hover .services__card-description {
+  color: #fff;
+}
+.services__card.services__card--it-support:hover .services__card-read-more-button {
+  background-color: #fff;
+  color: #4183D7;
+}
+.services__card.services__card--digital-marketing:hover {
+  background-color: #2ECC71;
+}
+.services__card.services__card--digital-marketing:hover .services__card-heading {
+  color: #fff;
+}
+.services__card.services__card--digital-marketing:hover .services__card-description {
+  color: #fff;
+}
+.services__card.services__card--digital-marketing:hover .services__card-read-more-button {
+  background-color: #fff;
+  color: #2ECC71;
+}
+.services__card.services__card--telecoms-services:hover {
+  background-color: #D64541;
+}
+.services__card.services__card--telecoms-services:hover .services__card-heading {
+  color: #fff;
+}
+.services__card.services__card--telecoms-services:hover .services__card-description {
+  color: #fff;
+}
+.services__card.services__card--telecoms-services:hover .services__card-read-more-button {
+  background-color: #fff;
+  color: #D64541;
+}
+.services__card.services__card--web-design:hover {
+  background-color: #926FB1;
+}
+.services__card.services__card--web-design:hover .services__card-heading {
+  color: #fff;
+}
+.services__card.services__card--web-design:hover .services__card-description {
+  color: #fff;
+}
+.services__card.services__card--web-design:hover .services__card-read-more-button {
+  background-color: #fff;
+  color: #926FB1;
+}
+.services__card.services__card--cyber-security:hover {
+  background-color: #F62459;
+}
+.services__card.services__card--cyber-security:hover .services__card-heading {
+  color: #fff;
+}
+.services__card.services__card--cyber-security:hover .services__card-description {
+  color: #fff;
+}
+.services__card.services__card--cyber-security:hover .services__card-read-more-button {
+  background-color: #fff;
+  color: #F62459;
+}
+.services__card.services__card--developer-training:hover {
+  background-color: #CE4125;
+}
+.services__card.services__card--developer-training:hover .services__card-heading {
+  color: #fff;
+}
+.services__card.services__card--developer-training:hover .services__card-description {
+  color: #fff;
+}
+.services__card.services__card--developer-training:hover .services__card-read-more-button {
+  background-color: #fff;
+  color: #CE4125;
+}
+
+.services__card-heading {
+  color: #323544;
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.services__card-description {
+  color: #323544;
+  font-size: 0.8125rem;
+}
+
+.services__card-read-more-button--bespoke-software {
+  background-color: #67809F;
+}
+.services__card-read-more-button--bespoke-software:hover {
+  background-color: #485b72;
+}
+
+.services__card-read-more-button--it-support {
+  background-color: #4183D7;
+}
+.services__card-read-more-button--it-support:hover {
+  background-color: #235ea8;
+}
+
+.services__card-read-more-button--digital-marketing {
+  background-color: #2ECC71;
+}
+.services__card-read-more-button--digital-marketing:hover {
+  background-color: #208e4e;
+}
+
+.services__card-read-more-button--telecoms-services {
+  background-color: #D64541;
+}
+.services__card-read-more-button--telecoms-services:hover {
+  background-color: #a72724;
+}
+
+.services__card-read-more-button--web-design {
+  background-color: #926FB1;
+}
+.services__card-read-more-button--web-design:hover {
+  background-color: #6c4a89;
+}
+
+.services__card-read-more-button--cyber-security {
+  background-color: #F62459;
+}
+.services__card-read-more-button--cyber-security:hover {
+  background-color: #c50838;
+}
+
+.services__card-read-more-button--developer-training {
+  background-color: #CE4125;
+}
+.services__card-read-more-button--developer-training:hover {
+  background-color: #8d2d19;
 }
 
 .welcome__heading {

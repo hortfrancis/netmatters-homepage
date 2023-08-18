@@ -1,9 +1,37 @@
-
 // Set the background colour and darken it on hover in a consistent way for any colour
 @mixin background-with-darken-on-hover($background-colour) {
+
     background-color: $background-colour;
 
     &:hover {
         background-color: darken($background-colour, 15%);
+    }
+}
+
+// Used in the 'Services' section to reverse the background and text colours on hover
+@mixin reverse-card-colours-on-hover($service-name) {
+
+    $service-colour: map-get($services-colours, $service-name);
+
+    $service-modifier-name: str-replace($service-name, ' ', '-'); 
+
+    &.services__card--#{ $service-modifier-name } {
+
+        &:hover {
+            background-color: $service-colour;
+
+            .services__card-heading {
+                color: $white;
+            }
+
+            .services__card-description {
+                color: $white;
+            }
+
+            .services__card-read-more-button {
+                background-color: $white;
+                color: $service-colour;
+            }
+        }
     }
 }

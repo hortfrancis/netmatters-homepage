@@ -1,0 +1,21 @@
+
+/// Replace a substring within a string with another string.
+///
+/// @author GPT-4
+///
+/// @param {String} $string - The original string.
+/// @param {String} $search - The substring to search for in the original string.
+/// @param {String} $replace [optional] - The string to replace the found substring with. Defaults to an empty string.
+///
+/// @example
+///   str-replace("Hello world", "world", "Sass") => "Hello Sass"
+///   str-replace("Remove spaces", " ") => "Removespaces"
+///
+/// @return {String} - The modified string with the replaced values.
+@function str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+    @return $string;
+}
