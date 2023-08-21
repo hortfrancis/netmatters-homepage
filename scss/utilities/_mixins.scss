@@ -13,7 +13,7 @@
 
     $service-colour: map-get($services-colours, $service-name);
 
-    $service-modifier-name: str-replace($service-name, ' ', '-'); 
+    $service-modifier-name: str-replace($service-name, ' ', '-');
 
     &.services__card--#{ $service-modifier-name } {
 
@@ -33,5 +33,18 @@
                 color: $service-colour;
             }
         }
+    }
+}
+
+// For handling media query syntax 
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media (min-width: map-get($breakpoints, $name)) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn "Unknown breakpoint: #{$name}.";
     }
 }

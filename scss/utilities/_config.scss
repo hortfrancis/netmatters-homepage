@@ -32,3 +32,16 @@ $services-colours: (
 	'developer training': #CE4125
 );
 
+// Consistent container widths for each of the 3 breakpoints
+$container-width: (
+	small: 750px, 
+	medium: 970px, 
+	large: 1200px
+);
+
+// Breakpoint values defined here, for consistency
+$breakpoints: (
+	narrow-to-medium: 768px,
+	medium-to-wide: 992px, 
+	wide-to-extra-wide: 1260px
+);
