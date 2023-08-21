@@ -1,0 +1,109 @@
+.header__top-row-container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // padding: 0.5rem 1rem;
+    margin: 0.5rem 1rem;
+}
+
+.header__logo {
+    margin-right: auto;
+    text-decoration: none;
+}
+
+.header__logo-image {
+    width: 100%;
+}
+
+.header__phone-us-button {
+    margin: 1.5rem;
+}
+
+.header__phone-icon {
+
+    margin-top: 0.5em;
+    width: 2rem;
+    fill: $dark-grey;
+
+    &:hover {
+        fill: darken($dark-grey, 15%);
+    }
+}
+
+.header__hamburger-button {
+
+    @include background-with-darken-on-hover($dark-grey);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    height: 3.5rem;
+    width: 4rem;
+
+    background-color: $dark-grey;
+    padding: 1rem 1rem;
+    border: none;
+    border-radius: 0.25em;
+
+    cursor: pointer;
+
+    span {
+        display: block;
+        width: 2rem;
+        height: 0.25rem;
+        background-color: $white;
+    }
+}
+
+.header__nav {
+    display: none; // Hide primary nav as default (for mobile devices)
+}
+
+.header__support-button {
+    @extend .screen-reader-only;
+}
+
+.header__contact-button {
+    @extend .screen-reader-only;
+}
+
+.header__search-form {
+    position: relative;
+    margin: 0.5rem 1rem;
+}
+
+.header__search-input {
+
+    display: inline-block;
+    width: 100%;
+    padding: 0.75rem 2.4rem 0.75rem 1rem;
+
+    background-color: rgba(0, 0, 0, .1);
+    color: $mid-grey-03;
+    border: 2px solid rgba(0, 0, 0, .1);
+}
+
+.header__search-button {
+
+    position: absolute;
+    top: 0.5rem;
+    right: 0rem;
+
+    background-color: transparent;
+    border: none;
+
+    cursor: pointer;
+}
+
+.header__search-icon {
+
+    width: 1.75rem;
+    fill: $dark-grey;
+
+    &:hover {
+        fill: darken($dark-grey, 15%);
+    }
+}
