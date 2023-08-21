@@ -5,9 +5,9 @@
 }
 
 body {
-    margin: 0;
+    position: relative;  // Make body a 'container' for absolute positioning of sidebar
 
-    background-color: $white;
+    margin: 0;
 
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
