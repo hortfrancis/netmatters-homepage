@@ -1,0 +1,22 @@
+.banner__heading {
+
+    color: $white;
+
+    font-size: 2.5rem;
+}
+
+.banner__tagline {
+
+    color: $white;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.banner__button {
+
+    @extend %button;
+    @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
+
+    font-size: 1.25rem;
+}

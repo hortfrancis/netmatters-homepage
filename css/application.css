@@ -343,7 +343,7 @@ blockquote {
   margin: 0;
 }
 
-.newsletter-form__button, .clients__link--web-design, .clients__link--digital-marketing, .clients__link--it-support, .clients__link--bespoke-software, .news__card-read-more-button, .welcome__button-link, .services__card-read-more-button {
+.newsletter-form__button, .clients__link--web-design, .clients__link--digital-marketing, .clients__link--it-support, .clients__link--bespoke-software, .news__card-read-more-button, .welcome__button-link, .services__card-read-more-button, .banner__button {
   padding: 0.75em 1em;
   border: none;
   border-radius: 0.25em;
@@ -380,6 +380,15 @@ body {
   border: 0;
 }
 
+.banner {
+  background-image: url("../images/banner-carousel/netmatters-office.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  min-height: 35rem;
+  text-align: center;
+}
+
 .services {
   margin: 1rem;
 }
@@ -407,6 +416,25 @@ body {
 
 .footer {
   background-color: #323544;
+}
+
+.banner__heading {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.banner__tagline {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.banner__button {
+  background-color: #926FB1;
+  font-size: 1.25rem;
+}
+.banner__button:hover {
+  background-color: #6c4a89;
 }
 
 .services__heading {
