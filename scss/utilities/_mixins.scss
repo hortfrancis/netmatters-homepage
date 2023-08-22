@@ -48,3 +48,29 @@
         @warn "Unknown breakpoint: #{$name}.";
     }
 }
+
+// Set appropriate container width for each breakpoint with one mixin
+@mixin set-container-width-for-breakpoints() {
+
+    // Default margin from vieport edge for narrow screens
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    @media (min-width: map-get($breakpoints, narrow-to-medium)) {
+        width: map-get($container-width, small);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: map-get($breakpoints, medium-to-wide)) {
+        width: map-get($container-width, medium);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media (min-width: map-get($breakpoints, wide-to-extra-wide)) {
+        width: map-get($container-width, large);
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

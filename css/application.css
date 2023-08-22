@@ -380,6 +380,32 @@ body {
   border: 0;
 }
 
+.responsive-container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+@media (min-width: 768px) {
+  .responsive-container {
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 992px) {
+  .responsive-container {
+    width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media (min-width: 1260px) {
+  .responsive-container {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .sidebar {
   position: absolute;
   top: 0;
@@ -392,6 +418,10 @@ main {
   background-color: #fff;
 }
 
+.header {
+  margin-top: 1.25rem;
+}
+
 .banner {
   background-image: url("../images/banner-carousel/netmatters-office.png");
   background-size: cover;
@@ -401,23 +431,17 @@ main {
   text-align: center;
 }
 
-.services {
-  margin: 1rem;
-}
 .services a {
   text-decoration: none;
 }
 
 .welcome {
-  padding: 1rem 1rem 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
   background-color: #323544;
   color: #fff;
 }
 
-.news {
-  padding-right: 15px;
-  padding-left: 15px;
-}
 .news a {
   text-decoration: none;
 }
@@ -434,7 +458,6 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0.5rem 1rem;
 }
 
 .header__logo {
@@ -447,7 +470,13 @@ main {
 }
 
 .header__phone-us-button {
-  margin: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+@media (min-width: 768px) {
+  .header__phone-us-button {
+    display: none;
+  }
 }
 
 .header__phone-icon {
@@ -489,7 +518,7 @@ main {
 
 .header__search-form {
   position: relative;
-  margin: 0.5rem 1rem;
+  margin: 0.5rem 0;
 }
 
 .header__search-input {
@@ -556,7 +585,7 @@ main {
   padding: 1.875rem;
   border: 1px solid #ccc;
   border-radius: 1rem;
-  margin: 2rem;
+  margin-top: 2rem;
   box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -1033,6 +1062,10 @@ main {
 }
 .footer__nav-link:hover, .footer__nav-link--sitemap:hover {
   text-decoration: underline;
+}
+
+.footer__legal-section {
+  background-color: #212330;
 }
 
 .footer__legal-text {

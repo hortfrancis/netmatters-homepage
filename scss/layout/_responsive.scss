@@ -1,0 +1,4 @@
+.responsive-container {
+    
+    @include set-container-width-for-breakpoints();
+}

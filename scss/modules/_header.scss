@@ -5,7 +5,7 @@
     align-items: center;
 
     // padding: 0.5rem 1rem;
-    margin: 0.5rem 1rem;
+    // margin: 0.5rem 1rem;
 }
 
 .header__logo {
@@ -18,7 +18,14 @@
 }
 
 .header__phone-us-button {
-    margin: 1.5rem;
+    
+    // margin: 1.5rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+
+    @include breakpoint(narrow-to-medium) {
+        display: none;
+    }
 }
 
 .header__phone-icon {
@@ -72,7 +79,7 @@
 
 .header__search-form {
     position: relative;
-    margin: 0.5rem 1rem;
+    margin: 0.5rem 0;
 }
 
 .header__search-input {
