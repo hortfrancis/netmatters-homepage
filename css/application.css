@@ -343,6 +343,19 @@ blockquote {
   margin: 0;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
 .newsletter-form__button, .clients__link--web-design, .clients__link--digital-marketing, .clients__link--it-support, .clients__link--bespoke-software, .news__card-read-more-button, .welcome__button-link, .services__card-read-more-button, .banner__button, .header__contact-button, .header__support-button {
   padding: 0.75em 1em;
   border: none;
@@ -350,6 +363,9 @@ blockquote {
   color: #fff;
   display: inline-block;
   text-transform: uppercase;
+  text-decoration: none;
+}
+.newsletter-form__button:hover, .clients__link--web-design:hover, .clients__link--digital-marketing:hover, .clients__link--it-support:hover, .clients__link--bespoke-software:hover, .news__card-read-more-button:hover, .welcome__button-link:hover, .services__card-read-more-button:hover, .banner__button:hover, .header__contact-button:hover, .header__support-button:hover {
   text-decoration: none;
 }
 
@@ -422,6 +438,20 @@ main {
 
 .header {
   margin-top: 1.25rem;
+}
+
+.primary-nav {
+  display: none;
+  background-color: #323544;
+  color: #fff;
+}
+@media (min-width: 992px) {
+  .primary-nav {
+    display: block;
+  }
+}
+.primary-nav a:visited {
+  color: #fff;
 }
 
 .banner {
@@ -522,10 +552,6 @@ main {
   width: 2rem;
   height: 0.25rem;
   background-color: #fff;
-}
-
-.header__nav {
-  display: none;
 }
 
 .header__support-button {
@@ -664,6 +690,121 @@ main {
 .header__search-icon--wide-viewport {
   padding-top: 0.75rem;
   fill: #fff;
+}
+
+.primary-nav__list {
+  display: flex;
+}
+
+.primary-nav__item {
+  flex-grow: 1;
+}
+.primary-nav__item:hover .primary-nav__submenu {
+  display: block;
+}
+
+.primary-nav__item-link {
+  display: block;
+  padding: 1.25rem 0;
+}
+.primary-nav__item-link:hover {
+  text-decoration: none;
+}
+
+.primary-nav__submenu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  left: 0;
+}
+
+.primary-nav__submenu-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.primary-nav__submenu-list li {
+  width: 33%;
+  padding: 0.625rem 1rem 0.625rem 0;
+}
+
+.primary-nav__item-text {
+  display: block;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.primary-nav__submenu-heading {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.primary-nav__submenu-list {
+  font-size: 1.2rem;
+}
+
+.primary-nav__item-text--small {
+  font-size: 0.625rem;
+  line-height: 0.5rem;
+}
+
+.primary-nav__item-text--large {
+  font-size: 1.125rem;
+}
+
+.primary-nav__item--bespoke-software .primary-nav__item-link:hover {
+  background-color: #67809F;
+}
+
+.primary-nav__item--it-support .primary-nav__item-link:hover {
+  background-color: #4183D7;
+}
+
+.primary-nav__item--digital-marketing .primary-nav__item-link:hover {
+  background-color: #2ECC71;
+}
+
+.primary-nav__item--telecoms-services .primary-nav__item-link:hover {
+  background-color: #D64541;
+}
+
+.primary-nav__item--web-design .primary-nav__item-link:hover {
+  background-color: #926FB1;
+}
+
+.primary-nav__item--cyber-security .primary-nav__item-link:hover {
+  background-color: #F62459;
+}
+
+.primary-nav__item--developer-training .primary-nav__item-link:hover {
+  background-color: #CE4125;
+}
+
+.primary-nav__item--bespoke-software .primary-nav__submenu {
+  background-color: #526781;
+}
+
+.primary-nav__item--it-support .primary-nav__submenu {
+  background-color: #286abd;
+}
+
+.primary-nav__item--digital-marketing .primary-nav__submenu {
+  background-color: #25a25a;
+}
+
+.primary-nav__item--telecoms-services .primary-nav__submenu {
+  background-color: #bc2c28;
+}
+
+.primary-nav__item--web-design .primary-nav__submenu {
+  background-color: #79539a;
+}
+
+.primary-nav__item--cyber-security .primary-nav__submenu {
+  background-color: #de093f;
+}
+
+.primary-nav__item--developer-training .primary-nav__submenu {
+  background-color: #a3331d;
 }
 
 .banner__heading {

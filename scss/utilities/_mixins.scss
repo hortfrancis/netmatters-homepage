@@ -8,6 +8,34 @@
     }
 }
 
+// Used to set the background colour of the primary navigation items in the header
+@mixin service-background-colour-on-hover($service-name) {
+
+    $service-colour: map-get($services-colours, $service-name);
+
+    $service-modifier-name: str-replace($service-name, ' ', '-');
+
+    .primary-nav__item--#{ $service-modifier-name } .primary-nav__item-link {
+        &:hover {
+            background-color: $service-colour;
+        }
+    }
+}
+
+// Used to set the background colour of the submenu in the primary navigation
+@mixin service-background-colour-for-submenu($service-name) {
+
+    $service-colour: map-get($services-colours, $service-name);
+    @debug $service-colour; 
+
+    $service-modifier-name: str-replace($service-name, ' ', '-');
+    // @debug $service-modifier-name; 
+
+    .primary-nav__item--#{ $service-modifier-name } .primary-nav__submenu {
+        background-color: darken($service-colour, 10%);
+    }
+}
+
 // Used in the 'Services' section to reverse the background and text colours on hover
 @mixin reverse-card-colours-on-hover($service-name) {
 
@@ -16,7 +44,6 @@
     $service-modifier-name: str-replace($service-name, ' ', '-');
 
     &.services__card--#{ $service-modifier-name } {
-
         &:hover {
             background-color: $service-colour;
 

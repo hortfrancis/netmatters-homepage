@@ -1,0 +1,15 @@
+.primary-nav {
+    display: none; // Hide primary nav as default (for mobile devices)
+
+    background-color: $dark-grey;
+    color: $white;
+
+    @include breakpoint(medium-to-wide) {
+        display: block; // Show primary nav for medium and larger devices
+    }
+
+    a:visited {
+        color: $white;
+    }
+}
+

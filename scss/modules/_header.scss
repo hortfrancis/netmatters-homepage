@@ -71,10 +71,6 @@
     }
 }
 
-.header__nav {
-    display: none; // Hide primary nav as default (for mobile devices)
-}
-
 .header__support-button {
 
     @extend %button;

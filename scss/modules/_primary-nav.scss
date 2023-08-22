@@ -1,0 +1,108 @@
+.primary-nav__list {
+
+
+    display: flex;
+
+
+}
+
+
+.primary-nav__item {
+
+    // position: relative;
+    flex-grow: 1;
+
+    &:hover .primary-nav__submenu {
+
+        // Display submenu when hovering over a nav item
+        display: block;
+        // visibility: visible;
+
+    }
+}
+
+.primary-nav__item-link {
+    display: block;
+    padding: 1.25rem 0;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+
+}
+
+.primary-nav__submenu {
+    display: none;
+    // visibility: hidden;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    // background-color: $white;
+
+    // top: 100%;
+    // left: 0;
+    // width: 100%;
+    // padding: 1.25rem 0;
+
+    // z-index: 1;
+}
+
+.primary-nav__submenu-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        width: 33%;
+        padding: 0.625rem 1rem 0.625rem 0;
+    }
+}
+
+.primary-nav__item-text {
+    display: block;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.primary-nav__submenu-heading {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.primary-nav__submenu-list {
+    font-size: 1.2rem;
+}
+
+// Modifiers
+
+.primary-nav__list-item--bespoke-software {
+
+}
+
+
+.primary-nav__item-text--small {
+    font-size: 0.625rem;
+    line-height: 0.5rem;
+}
+
+.primary-nav__item-text--large {
+    font-size: 1.125rem;
+}
+
+// Setting the background colour of each of the nav items on hover, per category of service Netmatters offers
+@include service-background-colour-on-hover('bespoke software');
+@include service-background-colour-on-hover('it support');
+@include service-background-colour-on-hover('digital marketing');
+@include service-background-colour-on-hover('telecoms services');
+@include service-background-colour-on-hover('web design');
+@include service-background-colour-on-hover('cyber security');
+@include service-background-colour-on-hover('developer training');
+
+// Setting the background colour of the submenu in the primary navigation, per category of service Netmatters offers
+@include service-background-colour-for-submenu('bespoke software');
+@include service-background-colour-for-submenu('it support');
+@include service-background-colour-for-submenu('digital marketing');
+@include service-background-colour-for-submenu('telecoms services');
+@include service-background-colour-for-submenu('web design');
+@include service-background-colour-for-submenu('cyber security');
+@include service-background-colour-for-submenu('developer training');
