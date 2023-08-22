@@ -56,6 +56,10 @@
     margin-left: 1rem;
     margin-right: 1rem;
 
+    // Keep container edges away from the viewport edges near breakpoints
+    padding-left: 1rem;
+    padding-right: 1rem;
+
     @media (min-width: map-get($breakpoints, narrow-to-medium)) {
         width: map-get($container-width, small);
         margin-left: auto;

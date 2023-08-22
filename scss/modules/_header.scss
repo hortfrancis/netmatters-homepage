@@ -8,6 +8,16 @@
 .header__logo {
     margin-right: auto;
     text-decoration: none;
+
+    @include breakpoint(narrow-to-medium) {
+        // Logo needs to be slightly smaller to fit the searchbar comfortably in the header
+        max-width: 22rem;
+    }
+
+    @include breakpoint(medium-to-wide) {
+        // Logo returns to normal size when more space is available
+        max-width: 100%;
+    }
 }
 
 .header__logo-image {
@@ -66,11 +76,43 @@
 }
 
 .header__support-button {
-    @extend .screen-reader-only;
+
+    @extend %button;
+
+    height: 3.5rem;
+    font-size: 1.125rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-right: 1rem;
+
+    // Default styling to hide button on narrow screens
+    display: none;
+
+    @include breakpoint(medium-to-wide) {
+
+        display: inline-block;
+        @include background-with-darken-on-hover(map-get($services-colours, 'it support'));
+    }
 }
 
 .header__contact-button {
-    @extend .screen-reader-only;
+
+    @extend %button;
+
+    height: 3.5rem;
+    font-size: 1.125rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-right: 1rem;
+
+    // Default styling to hide button on narrow screens
+    display: none;
+
+    @include breakpoint(medium-to-wide) {
+
+        display: inline-block;
+        @include background-with-darken-on-hover($mid-grey-04);
+    }
 }
 
 .header__search-form {
@@ -140,6 +182,14 @@
     height: 3.5rem;
     padding-right: 4.5rem;
     background-color: $white;
+
+    @include breakpoint(medium-to-wide) {
+        display: none;
+    }
+
+    @include breakpoint(wide-to-extra-wide) {
+        display: inline-block
+    }
 }
 
 .header__search-button--wide-viewport {
@@ -150,10 +200,19 @@
     right: 0;
 
     background-color: $mid-grey-04;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 0.25rem 0.25rem 0;
 
     &:hover {
         background-color: darken($mid-grey-04, 15%);
+    }
+
+    @include breakpoint(medium-to-wide) {
+        position: relative;
+        border-radius: 0.25rem;
+    }
+
+    @include breakpoint(wide-to-extra-wide) {
+        position: absolute;
     }
 }
 
