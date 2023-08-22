@@ -3,9 +3,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    // padding: 0.5rem 1rem;
-    // margin: 0.5rem 1rem;
 }
 
 .header__logo {
@@ -18,8 +15,7 @@
 }
 
 .header__phone-us-button {
-    
-    // margin: 1.5rem;
+
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 
@@ -91,6 +87,18 @@
     background-color: rgba(0, 0, 0, .1);
     color: $mid-grey-03;
     border: 2px solid rgba(0, 0, 0, .1);
+
+    font-size: 0.875rem;
+
+    &::placeholder {
+        color: $mid-grey-04;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: $focus-blue;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(91, 192, 222, .6);
+    }
 }
 
 .header__search-button {
@@ -106,11 +114,54 @@
 }
 
 .header__search-icon {
-
     width: 1.75rem;
-    fill: $dark-grey;
+}
+
+// Modifiers
+
+.header__search-form--narrow-viewport {
+    display: block;
+
+    @include breakpoint(narrow-to-medium) {
+        display: none;
+    }
+}
+
+.header__search-form--wide-viewport {
+    display: none;
+    margin-right: 1rem;
+
+    @include breakpoint(narrow-to-medium) {
+        display: block;
+    }
+}
+
+.header__search-input--wide-viewport {
+    height: 3.5rem;
+    padding-right: 4.5rem;
+    background-color: $white;
+}
+
+.header__search-button--wide-viewport {
+
+    width: 4rem;
+    height: 3.5rem;
+    top: 0;
+    right: 0;
+
+    background-color: $mid-grey-04;
+    border-radius: 0 3px 3px 0;
 
     &:hover {
-        fill: darken($dark-grey, 15%);
+        background-color: darken($mid-grey-04, 15%);
     }
+}
+
+.header__search-icon--narrow-viewport {
+    fill: $dark-grey;
+}
+
+.header__search-icon--wide-viewport {
+    padding-top: 0.75rem;
+    fill: $white;
 }
