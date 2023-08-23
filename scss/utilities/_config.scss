@@ -35,6 +35,14 @@ $services-colours: (
 	'developer training': #CE4125
 );
 
+// Used on hover with the social media icons in the footer 
+$social-media-colours: (
+	'facebook': #3b5998,
+	'linkedin': #0077b5,
+	'twitter': #1da1f2,
+	'instagram': #e4405f,
+);
+
 // Consistent container widths for each of the 3 breakpoints
 $container-width: (
 	small: 750px, 

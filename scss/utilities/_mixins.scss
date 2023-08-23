@@ -26,7 +26,7 @@
 @mixin service-background-colour-for-submenu($service-name) {
 
     $service-colour: map-get($services-colours, $service-name);
-    @debug $service-colour; 
+    @debug $service-colour;
 
     $service-modifier-name: str-replace($service-name, ' ', '-');
     // @debug $service-modifier-name; 
@@ -59,6 +59,18 @@
                 background-color: $white;
                 color: $service-colour;
             }
+        }
+    }
+}
+
+// Used to set the colour of the social media icons in the footer
+@mixin social-media-link-background-colour-on-hover($social-media-name) {
+
+    $social-media-colour: map-get($social-media-colours, $social-media-name);
+
+    .footer__social-media-link--#{ $social-media-name } {
+        &:hover {
+            background-color: $social-media-colour;
         }
     }
 }
