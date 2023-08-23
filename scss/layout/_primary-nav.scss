@@ -8,8 +8,10 @@
         display: block; // Show primary nav for medium and larger devices
     }
 
+    a {
+        color: $white;
+    }
     a:visited {
         color: $white;
     }
 }
-

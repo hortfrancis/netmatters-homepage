@@ -1,23 +1,14 @@
 .primary-nav__list {
-
-
     display: flex;
-
-
 }
-
 
 .primary-nav__item {
 
-    // position: relative;
     flex-grow: 1;
 
     &:hover .primary-nav__submenu {
-
         // Display submenu when hovering over a nav item
         display: block;
-        // visibility: visible;
-
     }
 }
 
@@ -28,24 +19,17 @@
     &:hover {
         text-decoration: none;
     }
-
-
 }
 
 .primary-nav__submenu {
+
     display: none;
-    // visibility: hidden;
     position: absolute;
     width: 100%;
     left: 0;
-    // background-color: $white;
 
-    // top: 100%;
-    // left: 0;
-    // width: 100%;
-    // padding: 1.25rem 0;
-
-    // z-index: 1;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
 }
 
 .primary-nav__submenu-list {
@@ -55,6 +39,7 @@
     li {
         width: 33%;
         padding: 0.625rem 1rem 0.625rem 0;
+        margin-top: 1rem;
     }
 }
 
@@ -74,11 +59,6 @@
 }
 
 // Modifiers
-
-.primary-nav__list-item--bespoke-software {
-
-}
-
 
 .primary-nav__item-text--small {
     font-size: 0.625rem;

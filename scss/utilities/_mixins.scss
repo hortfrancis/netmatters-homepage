@@ -15,8 +15,8 @@
 
     $service-modifier-name: str-replace($service-name, ' ', '-');
 
-    .primary-nav__item--#{ $service-modifier-name } .primary-nav__item-link {
-        &:hover {
+    .primary-nav__item--#{ $service-modifier-name }  {
+        &:hover .primary-nav__item-link {
             background-color: $service-colour;
         }
     }
