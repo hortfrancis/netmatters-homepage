@@ -3,3 +3,49 @@
     padding-top: 2rem;
 }
 
+.footer__flex-parent-container {
+
+    display: flex; 
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer__flex-item-container {
+
+    flex-grow: 1;  
+    width: 100%;
+
+    &:first-child {  // This targets the logo & social media icons 
+        flex-basis: auto;  
+    }
+
+    &:nth-child(2) {  // This targets the tertiary nav 
+        flex-grow: 2;  
+    }
+
+    @include breakpoint(wide-to-extra-wide) {
+        width: auto;
+    }
+}
+
+// Modifiers
+
+.footer__flex-parent-container--tertiary-nav {
+    
+    flex-direction: column;
+
+    @include breakpoint(narrow-to-medium) {
+        flex-direction: row;
+    }     
+}
+
+.footer__flex-item-container--nav-list {
+
+    @include breakpoint(narrow-to-medium) {
+        width: 45%;
+    }
+
+    @include breakpoint(medium-to-wide) {
+        width: 20%;
+    }
+}

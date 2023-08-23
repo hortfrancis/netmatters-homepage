@@ -44,9 +44,9 @@
 }
 
 .footer__nav-item {
-    
-        margin-top: 0.2rem;
-        margin-bottom: 0.2rem;
+
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
 }
 
 .footer__nav-link {
@@ -60,6 +60,7 @@
 }
 
 .footer__legal-section {
+
     padding-top: 1rem;
     padding-bottom: 1rem;
     margin-top: 2rem;
@@ -67,10 +68,14 @@
 }
 
 .footer__legal-text {
-    display: block;
 
+    display: block;
     font-size: 0.8rem;
     color: $white;
+
+    @include breakpoint(narrow-to-medium) {
+        display: inline;
+    }
 }
 
 // Modifiers
@@ -78,6 +83,18 @@
 .footer__nav-link--sitemap {
     display: block;
     font-size: 0.8rem;
+
+    @include breakpoint(narrow-to-medium) {
+        
+        display: inline;
+        margin-left: 0.2rem;
+        
+        &:before {
+            content: ' - ';
+            margin-right: 0.2rem;
+
+        }
+    }
 }
 
 // Modifiers
