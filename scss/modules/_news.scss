@@ -1,6 +1,7 @@
 .news__header {
-    color: $dark-grey;
 
+    margin: 0;
+    color: $dark-grey;
     font-size: 2.25rem;
 }
 
@@ -18,12 +19,8 @@
 
 .news__card {
     position: relative;
-
-    margin-top: 30px;
-
     top: 0;
     transition: .5s ease;
-
 
     box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
 
@@ -149,4 +146,18 @@
 
 .news__card-read-more-button--web-design {
     @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
+}
+
+.news__view-all-link--wide-viewport {
+
+    @include show-on-medium-viewport-and-above;
+}
+
+.news__view-all-link--narrow-viewport {
+
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+
+    @include hide-on-medium-viewport-and-above;
 }
