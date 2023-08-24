@@ -5,6 +5,23 @@
     background-repeat: no-repeat;
 
     min-height: 35rem;
-
     text-align: center;
+
+    @include breakpoint(medium-to-wide) {
+        text-align: left;
+    }
+}
+
+.banner__flex-parent-container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 35rem;
+
+    @include breakpoint(medium-to-wide) {
+        // Left align
+        align-items: flex-start;
+    }
 }

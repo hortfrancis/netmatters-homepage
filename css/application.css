@@ -476,6 +476,24 @@ main {
   min-height: 35rem;
   text-align: center;
 }
+@media (min-width: 992px) {
+  .banner {
+    text-align: left;
+  }
+}
+
+.banner__flex-parent-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 35rem;
+}
+@media (min-width: 992px) {
+  .banner__flex-parent-container {
+    align-items: flex-start;
+  }
+}
 
 .services {
   margin-top: 3rem;
@@ -944,18 +962,31 @@ main {
 }
 
 .banner__heading {
+  margin: 0;
   color: #fff;
   font-size: 2.5rem;
 }
+@media (min-width: 992px) {
+  .banner__heading {
+    font-size: 4rem;
+  }
+}
 
 .banner__tagline {
+  max-width: 750px;
   color: #fff;
   font-size: 1.25rem;
   font-weight: 600;
 }
+@media (min-width: 992px) {
+  .banner__tagline {
+    font-size: 1.625rem;
+  }
+}
 
 .banner__button {
   background-color: #926FB1;
+  margin-top: 2rem;
   font-size: 1.25rem;
 }
 .banner__button:hover {
