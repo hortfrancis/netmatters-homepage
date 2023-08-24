@@ -1,0 +1,12 @@
+.partners {
+
+    img {
+        // Greyscale images by default
+        filter: grayscale(1);
+
+        &:hover {
+            // Remove greyscale filter on hover
+            filter: grayscale(0);
+        }
+    }
+}

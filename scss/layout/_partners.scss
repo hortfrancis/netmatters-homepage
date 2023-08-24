@@ -1,0 +1,19 @@
+.partners {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+
+.partners__horizontal-centering-container {
+
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden; 
+}
+
+.partners__flex-parent-container {
+
+    display: flex; 
+    gap: $gap * 3;
+    align-items: center;
+}
+

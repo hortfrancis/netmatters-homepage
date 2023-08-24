@@ -528,6 +528,23 @@ main {
   }
 }
 
+.partners {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.partners__horizontal-centering-container {
+  display: flex;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.partners__flex-parent-container {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
+}
+
 .welcome {
   padding-top: 3rem;
   padding-bottom: 2rem;
@@ -1192,6 +1209,13 @@ main {
   .services__view-case-studies-link--narrow-viewport {
     display: none;
   }
+}
+
+.partners img {
+  filter: grayscale(1);
+}
+.partners img:hover {
+  filter: grayscale(0);
 }
 
 .welcome__heading {
