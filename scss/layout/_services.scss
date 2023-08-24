@@ -1,9 +1,46 @@
 .services {
 
-    // margin: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 
     // Descendant selector is required to override the User Agent Stylesheet
     a {
         text-decoration: none;
+    }
+}
+
+// Contains all the Flexbox layout rules for cards in the 'Services' section
+.services__flex-parent-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+    justify-content: space-between;
+
+    >* {
+        flex-basis: 100%;
+    }
+
+    // Target the last four cards in the 'Services' section
+    > :nth-last-child(-n+4) {
+
+        @include breakpoint(narrow-to-medium) {
+            // Become a grid of 4
+            max-width: calc(50% - #{$gap} / 2);
+        }
+
+        @include breakpoint(wide-to-extra-wide) {
+            // Become a row of 4
+            max-width: calc(24% - #{$gap} / 2);
+        }
+    }
+    
+    // Target the first three cards in the 'Services' section
+    > :nth-child(-n+3) {
+
+        @include breakpoint(medium-to-wide) {
+            // Become a row of 3
+            max-width: calc(32% - #{$gap} / 3); // Percent value is slightly less than 33.333% because Maths doesn't work in real life, apparently. 
+        }
     }
 }

@@ -117,3 +117,20 @@
         margin-right: auto;
     }
 }
+
+// Used on headings in 'Services' and 'News' sections
+@mixin hide-on-medium-viewport-and-above() {
+
+    @include breakpoint(narrow-to-medium) {
+        display: none;
+    }
+}
+
+@mixin show-on-medium-viewport-and-above() {
+
+    display: none;
+
+    @include breakpoint(narrow-to-medium) {
+        display: block;
+    }
+}

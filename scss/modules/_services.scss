@@ -1,21 +1,25 @@
 .services__heading {
 
+    margin: 0;
     color: $dark-grey;
-
     font-size: 2.75rem;
 }
 
 .services__view-case-studies-link {
 
     color: $dark-grey;
-
     font-size: 1.625rem;
     font-weight: 600;
+
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .services__card {
 
     display: block;
+    // width: 100%;
     position: relative;
     top: 0;
     transition: 0.5s ease;
@@ -23,7 +27,7 @@
     padding: 1.875rem;
     border: 1px solid $mid-grey-02;
     border-radius: 1rem;
-    margin-top: 2rem;
+    // margin-top: 2rem;
 
     box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
 
@@ -44,7 +48,7 @@
 }
 
 .services__card-heading {
-    
+
     color: $dark-grey;
 
     font-size: 1.3rem;
@@ -98,4 +102,20 @@
 .services__card-read-more-button--developer-training {
 
     @include background-with-darken-on-hover(map-get($services-colours, 'developer training'));
+}
+
+// Modifiers
+
+.services__view-case-studies-link--wide-viewport {
+
+    @include show-on-medium-viewport-and-above;
+}
+
+.services__view-case-studies-link--narrow-viewport {
+
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+
+    @include hide-on-medium-viewport-and-above;
 }

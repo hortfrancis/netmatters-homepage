@@ -7,7 +7,7 @@
 
     display: flex; 
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: $gap;
 }
 
 .footer__flex-item-container {
@@ -42,10 +42,10 @@
 .footer__flex-item-container--nav-list {
 
     @include breakpoint(narrow-to-medium) {
-        width: 45%;
+        width: calc(50% - #{$gap});
     }
 
     @include breakpoint(medium-to-wide) {
-        width: 20%;
+        width: calc(25% - #{$gap});
     }
 }

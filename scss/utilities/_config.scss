@@ -56,3 +56,6 @@ $breakpoints: (
 	medium-to-wide: 992px, 
 	wide-to-extra-wide: 1260px
 );
+
+// Consistent gap measurement for flexbox layouts across the site
+$gap: 2rem;
