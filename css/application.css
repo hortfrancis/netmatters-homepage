@@ -356,7 +356,7 @@ a:hover {
   text-decoration: underline;
 }
 
-.newsletter-form__button, .clients__link--web-design, .clients__link--digital-marketing, .clients__link--it-support, .clients__link--bespoke-software, .news__card-read-more-button, .welcome__button-link, .services__card-read-more-button, .banner__button, .header__contact-button, .header__support-button {
+.newsletter-form__button, .clients__pop-up-link--web-design, .clients__pop-up-link--digital-marketing, .clients__pop-up-link--it-support, .clients__pop-up-link--bespoke-software, .news__card-read-more-button, .welcome__button-link, .services__card-read-more-button, .banner__button, .header__contact-button, .header__support-button {
   padding: 0.75em 1em;
   border: none;
   border-radius: 0.25em;
@@ -365,7 +365,7 @@ a:hover {
   text-transform: uppercase;
   text-decoration: none;
 }
-.newsletter-form__button:hover, .clients__link--web-design:hover, .clients__link--digital-marketing:hover, .clients__link--it-support:hover, .clients__link--bespoke-software:hover, .news__card-read-more-button:hover, .welcome__button-link:hover, .services__card-read-more-button:hover, .banner__button:hover, .header__contact-button:hover, .header__support-button:hover {
+.newsletter-form__button:hover, .clients__pop-up-link--web-design:hover, .clients__pop-up-link--digital-marketing:hover, .clients__pop-up-link--it-support:hover, .clients__pop-up-link--bespoke-software:hover, .news__card-read-more-button:hover, .welcome__button-link:hover, .services__card-read-more-button:hover, .banner__button:hover, .header__contact-button:hover, .header__support-button:hover {
   text-decoration: none;
 }
 
@@ -390,6 +390,17 @@ a:hover {
   justify-content: space-between;
   align-items: baseline;
   margin-bottom: 2rem;
+}
+
+.logo-carousel-horizontal-centering-container {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-carousel-flex-parent-container {
+  display: flex;
+  gap: 6rem;
+  align-items: center;
 }
 
 *,
@@ -533,18 +544,6 @@ main {
   margin-bottom: 4rem;
 }
 
-.partners__horizontal-centering-container {
-  display: flex;
-  justify-content: center;
-  overflow-x: hidden;
-}
-
-.partners__flex-parent-container {
-  display: flex;
-  gap: 6rem;
-  align-items: center;
-}
-
 .welcome {
   padding-top: 3rem;
   padding-bottom: 2rem;
@@ -601,6 +600,11 @@ main {
   .news__flex-parent-container > :nth-child(-n+2) {
     max-width: calc(32% - 2rem / 3);
   }
+}
+
+.clients {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .newsletter-form {
@@ -1451,50 +1455,92 @@ main {
   }
 }
 
-.clients__info-box {
+.clients__section-for-each-client {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+.clients__section-for-each-client img {
+  max-height: 4.5rem;
+  filter: grayscale(1);
+}
+.clients__section-for-each-client img:hover {
+  filter: grayscale(0);
+}
+
+.clients__pop-up-hover-container {
+  position: absolute;
+  display: none;
+  width: 20rem;
+  bottom: 100%;
+}
+
+.clients__section-for-each-client:hover .clients__pop-up-hover-container {
+  display: block;
+}
+
+.clients__pop-up-box {
   background-color: #323544;
   color: #fff;
+  padding: 1.25rem;
+  width: 17.5rem;
+  bottom: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
 }
 
-.clients__heading {
+.clients__pop-up-box::after {
+  content: "";
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 50%;
+  width: 0;
+  height: 0;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  border-top: 2rem solid #323544;
+}
+
+.clients__pop-up-heading {
+  margin: 0;
   font-size: 1.125rem;
+  font-weight: 400;
 }
 
-.clients__description {
+.clients__pop-up-description {
   font-size: 0.8125rem;
 }
 
-.clients__link {
-  padding: 5px 15px;
-  color: #fff;
-  text-transform: uppercase;
-}
-
-.clients__link--bespoke-software {
+.clients__pop-up-link--bespoke-software {
   background-color: #67809F;
 }
-.clients__link--bespoke-software:hover {
+.clients__pop-up-link--bespoke-software:hover {
   background-color: #485b72;
 }
 
-.clients__link--it-support {
+.clients__pop-up-link--it-support {
   background-color: #4183D7;
 }
-.clients__link--it-support:hover {
+.clients__pop-up-link--it-support:hover {
   background-color: #235ea8;
 }
 
-.clients__link--digital-marketing {
+.clients__pop-up-link--digital-marketing {
   background-color: #2ECC71;
 }
-.clients__link--digital-marketing:hover {
+.clients__pop-up-link--digital-marketing:hover {
   background-color: #208e4e;
 }
 
-.clients__link--web-design {
+.clients__pop-up-link--web-design {
   background-color: #926FB1;
 }
-.clients__link--web-design:hover {
+.clients__pop-up-link--web-design:hover {
   background-color: #6c4a89;
 }
 

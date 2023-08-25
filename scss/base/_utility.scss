@@ -25,3 +25,16 @@
     align-items: baseline;
     margin-bottom: 2rem;
 }
+
+// Used in the 'Partners' and 'Clients' sections
+.logo-carousel-horizontal-centering-container {
+    display: flex;
+    justify-content: center;
+}
+
+// Used in the 'Partners' and 'Clients' sections
+.logo-carousel-flex-parent-container {
+    display: flex; 
+    gap: $gap * 3;
+    align-items: center;
+}

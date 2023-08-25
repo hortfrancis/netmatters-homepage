@@ -1,44 +1,91 @@
-.clients__info-box {
+.clients__section-for-each-client {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    text-align: center;
+
+    img {
+        max-height: 4.5rem;
+
+        // Greyscale by default
+        filter: grayscale(1);
+        &:hover {
+            // Coloured on hover
+            filter: grayscale(0);
+        }
+    }
+}
+
+.clients__pop-up-hover-container {
+    position: absolute;
+    display: none;
+    width: 20rem;
+    bottom: 100%;
+}
+
+.clients__section-for-each-client:hover .clients__pop-up-hover-container {
+    display: block;
+}
+
+.clients__pop-up-box {
+
     background-color: $dark-grey;
     color: $white;
+    padding: 1.25rem;
+
+    width: 17.5rem;
+    bottom: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
 }
 
-.clients__heading {
+.clients__pop-up-box::after {
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    right: 50%;
+    width: 0;
+    height: 0;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-top: 2rem solid $dark-grey;
+}
+
+.clients__pop-up-heading {
+
+    margin: 0;
+
     font-size: 1.125rem;
+    font-weight: 400;
 }
 
-.clients__description {
+.clients__pop-up-description {
     font-size: 0.8125rem;
-}
-
-.clients__link {
-    padding: 5px 15px;
-
-    color: $white;
-
-    text-transform: uppercase;
 }
 
 // Modifier classes for each category of service Netmatters offers
 
-.clients__link--bespoke-software {
+.clients__pop-up-link--bespoke-software {
     @extend %button;
     @include background-with-darken-on-hover(map-get($services-colours, 'bespoke software'));
 }
 
-.clients__link--it-support {
+.clients__pop-up-link--it-support {
     @extend %button;
     @include background-with-darken-on-hover(map-get($services-colours, 'it support'));
 }
 
-.clients__link--digital-marketing {
+.clients__pop-up-link--digital-marketing {
     @extend %button;
-    @include background-with-darken-on-hover(map-get($services-colours, 'digital marketing')); 
+    @include background-with-darken-on-hover(map-get($services-colours, 'digital marketing'));
 }
 
-.clients__link--web-design {
+.clients__pop-up-link--web-design {
     @extend %button;
     @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
 }
-
-
