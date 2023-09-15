@@ -460,7 +460,13 @@ main {
 }
 
 .header {
-  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 992px) {
+  .header {
+    margin-bottom: 0;
+  }
 }
 
 .primary-nav {
@@ -471,6 +477,7 @@ main {
 @media (min-width: 992px) {
   .primary-nav {
     display: block;
+    margin-top: 1rem;
   }
 }
 .primary-nav a {
@@ -770,41 +777,46 @@ main {
 
 .header__search-input {
   display: inline-block;
-  width: 100%;
-  padding: 0.75rem 2.4rem 0.75rem 1rem;
+  width: 15rem;
+  padding: 0.75rem 1rem;
   background-color: rgba(0, 0, 0, 0.1);
   color: #666;
-  border: 2px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #ccc;
   font-size: 0.875rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .header__search-input::placeholder {
   color: #999AA1;
 }
-.header__search-input:hover, .header__search-input:focus {
+.header__search-input:focus {
   border-color: #5bc0de;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(91, 192, 222, 0.6);
+  outline: none;
 }
 
 .header__search-button {
-  position: absolute;
   top: 0.5rem;
-  right: 0rem;
+  right: 0.2rem;
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
 
 .header__search-icon {
-  width: 1.75rem;
+  width: 1.6rem;
 }
 
 .header__search-form--narrow-viewport {
   display: block;
+  margin-top: 1.2rem;
 }
 @media (min-width: 768px) {
   .header__search-form--narrow-viewport {
     display: none;
   }
+}
+.header__search-form--narrow-viewport button.header__search-button {
+  position: absolute;
 }
 
 .header__search-form--wide-viewport {
@@ -813,14 +825,24 @@ main {
 }
 @media (min-width: 768px) {
   .header__search-form--wide-viewport {
-    display: block;
+    display: flex;
   }
+}
+
+.header__search-input--narrow-viewport {
+  width: 100%;
+  border-width: 2px;
+  border-radius: 2px;
 }
 
 .header__search-input--wide-viewport {
   height: 3.5rem;
-  padding-right: 4.5rem;
   background-color: #fff;
+}
+@media (min-width: 768px) {
+  .header__search-input--wide-viewport {
+    width: 10.875rem;
+  }
 }
 @media (min-width: 992px) {
   .header__search-input--wide-viewport {
@@ -830,6 +852,7 @@ main {
 @media (min-width: 1260px) {
   .header__search-input--wide-viewport {
     display: inline-block;
+    width: 15rem;
   }
 }
 
@@ -852,7 +875,7 @@ main {
 }
 @media (min-width: 1260px) {
   .header__search-button--wide-viewport {
-    position: absolute;
+    border-radius: 0 0.25rem 0.25rem 0;
   }
 }
 

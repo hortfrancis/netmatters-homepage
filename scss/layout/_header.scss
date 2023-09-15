@@ -1,3 +1,8 @@
 .header {
-    margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    margin-bottom: 1.25rem;
+
+    @include breakpoint(medium-to-wide) {
+        margin-bottom: 0;
+    }
 }

@@ -119,31 +119,31 @@
 .header__search-input {
 
     display: inline-block;
-    width: 100%;
-    padding: 0.75rem 2.4rem 0.75rem 1rem;
+    width: 15rem;
+    padding: 0.75rem 1rem;
 
     background-color: rgba(0, 0, 0, .1);
     color: $mid-grey-03;
-    border: 2px solid rgba(0, 0, 0, .1);
-
+    border: 1px solid $mid-grey-02;
     font-size: 0.875rem;
+
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
     &::placeholder {
         color: $mid-grey-04;
     }
 
-    &:hover,
     &:focus {
         border-color: $focus-blue;
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(91, 192, 222, .6);
+        outline: none;
     }
 }
 
 .header__search-button {
 
-    position: absolute;
     top: 0.5rem;
-    right: 0rem;
+    right: 0.2rem;
 
     background-color: transparent;
     border: none;
@@ -152,16 +152,21 @@
 }
 
 .header__search-icon {
-    width: 1.75rem;
+    width: 1.6rem;
 }
 
 // Modifiers
 
 .header__search-form--narrow-viewport {
     display: block;
+    margin-top: 1.2rem;
 
     @include breakpoint(narrow-to-medium) {
         display: none;
+    }
+
+    button.header__search-button {
+        position: absolute;
     }
 }
 
@@ -170,21 +175,31 @@
     margin-right: 1rem;
 
     @include breakpoint(narrow-to-medium) {
-        display: block;
+        display: flex;
     }
+}
+
+.header__search-input--narrow-viewport {
+    width: 100%;
+    border-width: 2px;
+    border-radius: 2px;
 }
 
 .header__search-input--wide-viewport {
     height: 3.5rem;
-    padding-right: 4.5rem;
     background-color: $white;
+
+    @include breakpoint(narrow-to-medium) {
+        width: 10.875rem;
+    }
 
     @include breakpoint(medium-to-wide) {
         display: none;
     }
 
     @include breakpoint(wide-to-extra-wide) {
-        display: inline-block
+        display: inline-block;
+        width: 15rem;
     }
 }
 
@@ -208,7 +223,7 @@
     }
 
     @include breakpoint(wide-to-extra-wide) {
-        position: absolute;
+        border-radius: 0 0.25rem 0.25rem 0;
     }
 }
 

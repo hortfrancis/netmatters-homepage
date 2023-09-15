@@ -6,6 +6,7 @@
 
     @include breakpoint(medium-to-wide) {
         display: block; // Show primary nav for medium and larger devices
+        margin-top: 1rem;
     }
 
     a {
