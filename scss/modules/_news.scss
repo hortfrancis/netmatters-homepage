@@ -8,7 +8,6 @@
 .news__view-all-link {
 
     color: $dark-grey;
-
     font-size: 1.625rem;
     font-weight: 600;
 
@@ -18,11 +17,10 @@
 }
 
 .news__card {
+
     position: relative;
     top: 0;
     transition: .5s ease;
-
-    box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
 
     &:hover {
         top: -10px;
@@ -36,11 +34,10 @@
 }
 
 .news__card-category-label {
+
     position: absolute;
     top: 0.5rem;
     right: 0;
-
-    // padding: 0.5rem 1rem;
     padding: 0.25em 1em;
 
     color: $white;
@@ -57,21 +54,22 @@
 }
 
 .news__card-text-container {
+
     padding: 1.875rem;
     border: 1px solid $mid-grey-02;
     border-top: none;
     border-radius: 3px;
+    box-shadow: 0 3px 35px rgba(0, 0, 0, .1);
 }
 
 .news__card-title {
     display: inline;
-
     font-size: 1rem;
 }
 
 .news__card-read-length {
-    color: $mid-grey-04;
 
+    color: $mid-grey-04;
     font-size: 0.85rem;
     text-transform: uppercase;
 
@@ -82,10 +80,9 @@
 }
 
 .news__card-summary {
+
     margin-bottom: 2rem;
-
     color: $mid-grey-03;
-
     font-size: 0.8125rem;
 }
 
@@ -94,24 +91,37 @@
 }
 
 .news__card-author-container {
-    padding: 30px;
+
+    display: flex;
+    align-items: center;
+    padding-top: 1.875rem;
     border-top: 1px solid $mid-grey-02;
-    margin-top: 50px;
+    margin-top: 1.875rem;
 }
 
 .news__card-avatar {
-    
+
+    max-width: 3.125rem;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.news__card-author-text-container {
+
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    font-size: 0.875rem;
 }
 
 .news__card-posted-by {
     color: $dark-grey;
-
     font-weight: 600;
 }
 
 .news__card-posted-date {
     display: block;
-    color: $dark-grey;
+    color: $mid-grey-03;
 }
 
 // Modifiers

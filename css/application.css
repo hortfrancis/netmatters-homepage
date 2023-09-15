@@ -1344,7 +1344,6 @@ main {
   position: relative;
   top: 0;
   transition: 0.5s ease;
-  box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
 }
 .news__card:hover {
   top: -10px;
@@ -1376,6 +1375,7 @@ main {
   border: 1px solid #ccc;
   border-top: none;
   border-radius: 3px;
+  box-shadow: 0 3px 35px rgba(0, 0, 0, 0.1);
 }
 
 .news__card-title {
@@ -1400,9 +1400,24 @@ main {
 }
 
 .news__card-author-container {
-  padding: 30px;
+  display: flex;
+  align-items: center;
+  padding-top: 1.875rem;
   border-top: 1px solid #ccc;
-  margin-top: 50px;
+  margin-top: 1.875rem;
+}
+
+.news__card-avatar {
+  max-width: 3.125rem;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.news__card-author-text-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  font-size: 0.875rem;
 }
 
 .news__card-posted-by {
@@ -1412,7 +1427,7 @@ main {
 
 .news__card-posted-date {
   display: block;
-  color: #323544;
+  color: #666;
 }
 
 .news__card-title--careers {
