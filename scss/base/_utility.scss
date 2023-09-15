@@ -30,6 +30,9 @@
 .logo-carousel-horizontal-centering-container {
     display: flex;
     justify-content: center;
+
+    // Stops the rightward width of the carousel increasing the page width unwantedly
+    overflow-x: clip;
 }
 
 // Used in the 'Partners' and 'Clients' sections
