@@ -1,29 +1,68 @@
 .newsletter-form__heading {
-    font-weight: 400;
 
+    margin: 0 0 1rem;
+    font-size: 2rem;
+    font-weight: 400;
     color: $dark-grey;
 }
 
+.newsletter-form__flex-container {
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(medium-to-wide) {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.newsletter-form__input-container {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
 .newsletter-form__label {
+
+    display: inline-block;
     font-weight: 600;
     line-height: 2;
 
     color: $dark-grey;
 
-    &:after {
-        content: '*';
-        color: $required-red;
-        padding-left: 0.2em;
+    a {
+        text-decoration: underline;
+
+        &:hover,
+        &:visited {
+            color: $darker-grey;
+        }
     }
 }
 
-.newsletter-form__input--text {
-    height: 3rem;
+.newsletter-form__button {
+    @extend %button;
+    @include background-with-darken-on-hover($dark-grey);
 
+    margin-top: 0.6875em;
+    background-color: $dark-grey;
+}
+
+.newsletter-form__checkbox-flex-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form__input--text {
+
+    display: block;
+    width: 100%;
+    height: 3rem;
     padding: 5px 15px;
     border: 1px solid $mid-grey-02;
 
-    font-size: .875rem;
+    font-size: 0.875rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 
     &:focus {
         border-color: #5bc0de;
@@ -38,14 +77,9 @@
 
 }
 
-.newsletter-form__button {
-    @extend %button;
-    @include background-with-darken-on-hover($dark-grey);
+.newsletter-form__input-container--required label::after {
 
-    margin-top: 0.6875em;
-
-    background-color: $dark-grey;
-
-    font-size: 1.063rem; // Do we need this? 
+    content: '*';
+    color: $required-red;
+    padding-left: 0.2em;
 }
-
