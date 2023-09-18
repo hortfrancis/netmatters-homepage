@@ -78,6 +78,37 @@
     }
 }
 
+// Used in the 'Services' section to handle the icon & icon's background colour in the cards, 
+// and these switching on hover 
+@mixin icon-colour-and-hover-reverse($service-name) {
+
+    $service-colour: map-get($services-colours, $service-name);
+
+    $service-modifier-name: str-replace($service-name, ' ', '-');
+
+    &.services__card--#{ $service-modifier-name } {
+
+        .services__card-icon-background {
+            background-color: $service-colour;
+        }
+
+        .icon {
+            fill: $white;
+        }
+
+        &:hover {
+
+            .services__card-icon-background {
+                background-color: $white;
+            }
+
+            .icon {
+                fill: $service-colour;
+            }
+        }
+    }
+}
+
 // Used to set the colour of the social media icons in the footer
 @mixin social-media-link-background-colour-on-hover($social-media-name) {
 

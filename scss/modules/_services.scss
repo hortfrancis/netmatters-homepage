@@ -18,7 +18,9 @@
 
 .services__card {
 
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     // width: 100%;
     position: relative;
     top: 0;
@@ -45,6 +47,29 @@
     @include reverse-card-colours-on-hover('web design');
     @include reverse-card-colours-on-hover('cyber security');
     @include reverse-card-colours-on-hover('developer training');
+
+    // Handle the icon & icon's background colour, and these switching on hover 
+    @include icon-colour-and-hover-reverse('bespoke software');
+    @include icon-colour-and-hover-reverse('it support');
+    @include icon-colour-and-hover-reverse('digital marketing');
+    @include icon-colour-and-hover-reverse('telecoms services');
+    @include icon-colour-and-hover-reverse('web design');
+    @include icon-colour-and-hover-reverse('cyber security');
+    @include icon-colour-and-hover-reverse('developer training');
+}
+
+.services__card-icon-background {
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 50%;
+
+    .icon {
+        width: 2rem;
+        height: 2rem;
+    }
 }
 
 .services__card-heading {
@@ -65,46 +90,40 @@
 .services__card-read-more-button {
 
     @extend %button;
+    margin-top: auto;
 }
+
+// Modifiers
 
 // Apply colour to buttons per each category of service
 
 .services__card-read-more-button--bespoke-software {
-
     @include background-with-darken-on-hover(map-get($services-colours, 'bespoke software'));
 }
 
 .services__card-read-more-button--it-support {
-
     @include background-with-darken-on-hover(map-get($services-colours, 'it support'));
 }
 
 .services__card-read-more-button--digital-marketing {
-
     @include background-with-darken-on-hover(map-get($services-colours, 'digital marketing'));
 }
 
 .services__card-read-more-button--telecoms-services {
-
     @include background-with-darken-on-hover(map-get($services-colours, 'telecoms services'));
 }
 
 .services__card-read-more-button--web-design {
-
     @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
 }
 
 .services__card-read-more-button--cyber-security {
-
     @include background-with-darken-on-hover(map-get($services-colours, 'cyber security'));
 }
 
 .services__card-read-more-button--developer-training {
-
     @include background-with-darken-on-hover(map-get($services-colours, 'developer training'));
 }
-
-// Modifiers
 
 .services__view-case-studies-link--wide-viewport {
 
