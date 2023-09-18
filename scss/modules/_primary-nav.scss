@@ -4,19 +4,46 @@
 
 .primary-nav__item {
 
-    flex-grow: 1;
+    // Menu items have an equal width
+    flex: 1;
 
     &:hover .primary-nav__submenu {
         // Display submenu when hovering over a nav item
         display: block;
     }
+
+    &:hover .primary-nav__item-link::after {
+
+        // Downwards-pointing arrow beneath each of the primary-nav items
+        content: '';
+        position: absolute;
+        bottom: -2.25rem;  
+        left: 50%;      
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 2.25rem 67px 0px 67px;   
+        // Colour of the arrow for each category of service is set in a mixin (below):
+        // `@include service-color-for-arrow-on-hover()`
+        border-color: transparent transparent transparent; 
+        transform: translateX(-50%); 
+        z-index: 100;
+
+        @include breakpoint(wide-to-extra-wide) {
+            // Increase the width of the arrows when the menu items also increase in width
+            border-width: 2.25rem 83px 0px 83px;   
+        }
+
+    }
+
 }
 
 .primary-nav__item-link {
+
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    // justify-content: space-between;
     padding: 1.2rem 0;
 
     &:hover {
@@ -109,3 +136,11 @@
 @include service-icon-colour('web design');
 @include service-icon-colour('cyber security');
 @include service-icon-colour('developer training');
+
+@include service-color-for-arrow-on-hover('bespoke software');
+@include service-color-for-arrow-on-hover('it support');
+@include service-color-for-arrow-on-hover('digital marketing');
+@include service-color-for-arrow-on-hover('telecoms services');
+@include service-color-for-arrow-on-hover('web design');
+@include service-color-for-arrow-on-hover('cyber security');
+@include service-color-for-arrow-on-hover('developer training');

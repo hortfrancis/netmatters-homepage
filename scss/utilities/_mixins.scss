@@ -21,6 +21,19 @@
     }
 }
 
+// Used to set the colour of the downwards-pointing arrow below each of the primary-nav items on hover
+@mixin service-color-for-arrow-on-hover($service-name) {
+
+    $service-colour: map-get($services-colours, $service-name);
+    $service-modifier-name: str-replace($service-name, ' ', '-');
+
+    .primary-nav__item--#{ $service-modifier-name } {
+        &:hover .primary-nav__item-link::after {
+            border-top-color: $service-colour;
+        }
+    }
+}
+
 // Used to set the background colour of the submenu in the primary navigation
 @mixin service-background-colour-for-submenu($service-name) {
 
