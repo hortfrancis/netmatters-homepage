@@ -12,10 +12,15 @@
         Netmatters
     </title>
     <link rel="shortcut icon" href="images/favicon.ico">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap"
         rel="stylesheet">
+
+    <!-- Icons -->
+    <script src="https://kit.fontawesome.com/a48990909f.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -220,8 +225,18 @@
                         <img src="images/netmatters-logo-darkgrey.png" alt="Netmatters logo" class="header__logo-image">
                     </a>
 
-                    <a href="#" class="header__support-button">Support</a>
-                    <a href="#" class="header__contact-button">Contact</a>
+                    <a href="#" class="header__support-button">
+                        <svg class="icon icon-mouse">
+                            <use href="icons/symbol-defs.svg#icon-mouse"></use>
+                        </svg>
+                        Support
+                    </a>
+                    <a href="#" class="header__contact-button">
+                        <svg class="icon icon-paperplane">
+                            <use href="icons/symbol-defs.svg#icon-paperplane"></use>
+                        </svg>
+                        Contact
+                    </a>
 
                     <!-- Search bar for medium & large viewport width -->
                     <form action="#" class="header__search-form header__search-form--wide-viewport">
@@ -331,6 +346,9 @@
 
                         <li class="primary-nav__item primary-nav__item--it-support">
                             <a href="#" class="primary-nav__item-link">
+                                <svg class="icon">
+                                    <use href="icons/symbol-defs.svg#icon-display"></use>
+                                </svg>
                                 <span class="primary-nav__item-text primary-nav__item-text--small">IT</span>
                                 <span class="primary-nav__item-text primary-nav__item-text--large">Support</span>
                             </a>
@@ -352,6 +370,9 @@
 
                         <li class="primary-nav__item primary-nav__item--digital-marketing">
                             <a href="#" class="primary-nav__item-link ">
+                                <svg class="icon">
+                                    <use href="icons/symbol-defs.svg#icon-bar-graph"></use>
+                                </svg>
                                 <span class="primary-nav__item-text primary-nav__item-text--small">Digital</span>
                                 <span class="primary-nav__item-text primary-nav__item-text--large">Marketing</span>
                             </a>
@@ -373,6 +394,9 @@
 
                         <li class="primary-nav__item primary-nav__item--telecoms-services">
                             <a href="#" class="primary-nav__item-link ">
+                                <svg class="icon">
+                                    <use href="icons/symbol-defs.svg#icon-phone-in-talk"></use>
+                                </svg>
                                 <span class="primary-nav__item-text primary-nav__item-text--small">Telecoms</span>
                                 <span class="primary-nav__item-text primary-nav__item-text--large">Services</span>
                             </a>
@@ -395,6 +419,9 @@
 
                         <li class="primary-nav__item primary-nav__item--web-design">
                             <a href="#" class="primary-nav__item-link ">
+                                <svg class="icon">
+                                    <use href="icons/symbol-defs.svg#icon-code"></use>
+                                </svg>
                                 <span class="primary-nav__item-text primary-nav__item-text--small">Web</span>
                                 <span class="primary-nav__item-text primary-nav__item-text--large">Design</span>
                             </a>
@@ -417,6 +444,9 @@
 
                         <li class="primary-nav__item primary-nav__item--cyber-security">
                             <a href="#" class="primary-nav__item-link ">
+                                <svg class="icon">
+                                    <use href="icons/symbol-defs.svg#icon-security"></use>
+                                </svg>
                                 <span class="primary-nav__item-text primary-nav__item-text--small">Cyber</span>
                                 <span class="primary-nav__item-text primary-nav__item-text--large">Security</span>
                             </a>
@@ -439,6 +469,9 @@
 
                         <li class="primary-nav__item primary-nav__item--developer-training">
                             <a href="#" class="primary-nav__item-link ">
+                                <svg class="icon">
+                                    <use href="icons/symbol-defs.svg#icon-school"></use>
+                                </svg>
                                 <span class="primary-nav__item-text primary-nav__item-text--small">Developer</span>
                                 <span class="primary-nav__item-text primary-nav__item-text--large">Course</span>
                             </a>
@@ -1001,10 +1034,11 @@
                 <div class="newsletter-form__checkbox-flex-container">
                     <input type="checkbox" id="newsletter-form-preferences" name="preferences"
                         class="newsletter-form__input--checkbox">
-                    <label for="newsletter-form-preferences" class="newsletter-form__label"><span>Please tick this box if you
-                        wish to receive marketing information from us. Please see our <a href="#"
-                            target="_blank">Privacy Policy</a> for more information on how we keep your data
-                        safe.</span></label>
+                    <label for="newsletter-form-preferences" class="newsletter-form__label"><span>Please tick this box
+                            if you
+                            wish to receive marketing information from us. Please see our <a href="#"
+                                target="_blank">Privacy Policy</a> for more information on how we keep your data
+                            safe.</span></label>
                 </div>
 
                 <button type="submit" class="newsletter-form__button">Subscribe</button>
@@ -1190,7 +1224,6 @@
 
         </footer>
     </main>
-
 
 </body>
 

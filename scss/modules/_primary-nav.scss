@@ -13,8 +13,11 @@
 }
 
 .primary-nav__item-link {
-    display: block;
-    padding: 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: space-between;
+    padding: 1.2rem 0;
 
     &:hover {
         text-decoration: none;
@@ -46,7 +49,7 @@
 .primary-nav__item-text {
     display: block;
     text-transform: uppercase;
-    text-align: center;
+    // text-align: center;
 }
 
 .primary-nav__submenu-heading {
@@ -86,3 +89,11 @@
 @include service-background-colour-for-submenu('web design');
 @include service-background-colour-for-submenu('cyber security');
 @include service-background-colour-for-submenu('developer training');
+
+@include service-icon-colour('bespoke software');
+@include service-icon-colour('it support');
+@include service-icon-colour('digital marketing');
+@include service-icon-colour('telecoms services');
+@include service-icon-colour('web design');
+@include service-icon-colour('cyber security');
+@include service-icon-colour('developer training');

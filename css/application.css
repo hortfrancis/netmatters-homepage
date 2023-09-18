@@ -358,11 +358,13 @@ a:hover {
 }
 
 .newsletter-form__button, .clients__pop-up-link--web-design, .clients__pop-up-link--digital-marketing, .clients__pop-up-link--it-support, .clients__pop-up-link--bespoke-software, .news__card-read-more-button, .welcome__button-link, .services__card-read-more-button, .banner__button, .header__contact-button, .header__support-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
   padding: 0.75em 1em;
   border: none;
   border-radius: 0.25em;
   color: #fff;
-  display: inline-block;
   text-transform: uppercase;
   text-decoration: none;
 }
@@ -418,6 +420,14 @@ body {
   font-size: 1rem;
   letter-spacing: 0.025em;
   line-height: 1.42857143;
+}
+
+.icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke-width: 0;
+  fill: #323544;
 }
 
 .responsive-container {
@@ -746,12 +756,15 @@ main {
 }
 @media (min-width: 992px) {
   .header__support-button {
-    display: inline-block;
+    display: inline-flex;
     background-color: #4183D7;
   }
   .header__support-button:hover {
     background-color: #235ea8;
   }
+}
+.header__support-button .icon {
+  fill: #fff;
 }
 
 .header__contact-button {
@@ -764,12 +777,15 @@ main {
 }
 @media (min-width: 992px) {
   .header__contact-button {
-    display: inline-block;
+    display: inline-flex;
     background-color: #999AA1;
   }
   .header__contact-button:hover {
     background-color: #72737c;
   }
+}
+.header__contact-button .icon {
+  fill: #fff;
 }
 
 .header__search-form {
@@ -902,8 +918,10 @@ main {
 }
 
 .primary-nav__item-link {
-  display: block;
-  padding: 1.25rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.2rem 0;
 }
 .primary-nav__item-link:hover {
   text-decoration: none;
@@ -931,7 +949,6 @@ main {
 .primary-nav__item-text {
   display: block;
   text-transform: uppercase;
-  text-align: center;
 }
 
 .primary-nav__submenu-heading {
@@ -1006,6 +1023,62 @@ main {
 
 .primary-nav__item--developer-training .primary-nav__submenu {
   background-color: #a3331d;
+}
+
+.primary-nav__item--bespoke-software .icon {
+  fill: #67809F;
+  margin-bottom: 0.5rem;
+}
+.primary-nav__item--bespoke-software:hover .icon {
+  fill: #fff;
+}
+
+.primary-nav__item--it-support .icon {
+  fill: #4183D7;
+  margin-bottom: 0.5rem;
+}
+.primary-nav__item--it-support:hover .icon {
+  fill: #fff;
+}
+
+.primary-nav__item--digital-marketing .icon {
+  fill: #2ECC71;
+  margin-bottom: 0.5rem;
+}
+.primary-nav__item--digital-marketing:hover .icon {
+  fill: #fff;
+}
+
+.primary-nav__item--telecoms-services .icon {
+  fill: #D64541;
+  margin-bottom: 0.5rem;
+}
+.primary-nav__item--telecoms-services:hover .icon {
+  fill: #fff;
+}
+
+.primary-nav__item--web-design .icon {
+  fill: #926FB1;
+  margin-bottom: 0.5rem;
+}
+.primary-nav__item--web-design:hover .icon {
+  fill: #fff;
+}
+
+.primary-nav__item--cyber-security .icon {
+  fill: #F62459;
+  margin-bottom: 0.5rem;
+}
+.primary-nav__item--cyber-security:hover .icon {
+  fill: #fff;
+}
+
+.primary-nav__item--developer-training .icon {
+  fill: #CE4125;
+  margin-bottom: 0.5rem;
+}
+.primary-nav__item--developer-training:hover .icon {
+  fill: #fff;
 }
 
 .banner__heading {

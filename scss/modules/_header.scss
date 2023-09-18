@@ -86,8 +86,12 @@
 
     @include breakpoint(medium-to-wide) {
 
-        display: inline-block;
+        display: inline-flex;
         @include background-with-darken-on-hover(map-get($services-colours, 'it support'));
+    }
+
+    .icon {
+        fill: $white;
     }
 }
 
@@ -106,8 +110,12 @@
 
     @include breakpoint(medium-to-wide) {
 
-        display: inline-block;
+        display: inline-flex;
         @include background-with-darken-on-hover($mid-grey-04);
+    }
+
+    .icon {
+        fill: $white;
     }
 }
 

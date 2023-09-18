@@ -12,10 +12,9 @@
 @mixin service-background-colour-on-hover($service-name) {
 
     $service-colour: map-get($services-colours, $service-name);
-
     $service-modifier-name: str-replace($service-name, ' ', '-');
 
-    .primary-nav__item--#{ $service-modifier-name }  {
+    .primary-nav__item--#{ $service-modifier-name } {
         &:hover .primary-nav__item-link {
             background-color: $service-colour;
         }
@@ -26,13 +25,29 @@
 @mixin service-background-colour-for-submenu($service-name) {
 
     $service-colour: map-get($services-colours, $service-name);
-    @debug $service-colour;
-
     $service-modifier-name: str-replace($service-name, ' ', '-');
-    // @debug $service-modifier-name; 
 
     .primary-nav__item--#{ $service-modifier-name } .primary-nav__submenu {
         background-color: darken($service-colour, 10%);
+    }
+}
+
+// Used in the primary-nav to set the colour of each icon in the first level of the menu
+@mixin service-icon-colour($service-name) {
+
+    $service-colour: map-get($services-colours, $service-name);
+    $service-modifier-name: str-replace($service-name, ' ', '-');
+
+    .primary-nav__item--#{ $service-modifier-name } {
+
+        .icon {
+            fill: $service-colour;
+            margin-bottom: 0.5rem;
+        }
+
+        &:hover .icon {
+            fill: $white;
+        }
     }
 }
 
