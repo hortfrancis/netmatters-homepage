@@ -351,6 +351,7 @@ ul {
 }
 
 a {
+  color: #323544;
   text-decoration: none;
 }
 a:hover {
@@ -964,6 +965,7 @@ main {
 .primary-nav__submenu-list {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
 }
 .primary-nav__submenu-list li {
   width: 33%;
@@ -1984,16 +1986,21 @@ main {
   padding-bottom: 1rem;
   margin-top: 2rem;
   background-color: #212330;
+  color: #fff;
 }
 
 .footer__legal-text {
   display: block;
   font-size: 0.8rem;
-  color: #fff;
 }
 @media (min-width: 768px) {
   .footer__legal-text {
     display: inline;
+  }
+}
+@media (min-width: 768px) {
+  .footer__legal-text + .footer__legal-text::after {
+    content: " - ";
   }
 }
 
@@ -2005,10 +2012,6 @@ main {
   .footer__nav-link--sitemap {
     display: inline;
     margin-left: 0.2rem;
-  }
-  .footer__nav-link--sitemap:before {
-    content: " - ";
-    margin-right: 0.2rem;
   }
 }
 
