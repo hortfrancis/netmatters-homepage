@@ -26,11 +26,16 @@
 
 <body>
 
-    <aside class="sidebar">
-        <!-- Secondary navigation as sidebar accessed via hamburger button in <header> -->
+    <aside class="secondary-nav">
+        <!-- Secondary navigation as sidebar accessed via `.header__nav-menu-button` button in <header> -->
 
         <nav>
             <ul>
+                <li>
+                    <a href="#">
+                        Contact Us
+                    </a>
+                </li>
                 <li>
                     <a href="#">
                         <span>Bespoke</span>
@@ -273,7 +278,7 @@
                         </svg>
                     </a>
 
-                    <button aria-label="Toggle navigation" class="header__hamburger-button">
+                    <button aria-label="Toggle navigation" class="header__nav-menu-button">
                         <span></span>
                         <span></span>
                         <span></span>
@@ -1485,7 +1490,8 @@
         <div class="cookies-popup__text-container">
             <p>Our website uses cookies. This helps us provide you with a good experience on our website. To see what
                 cookies we use and what they do, and to opt-in on non-essential cookies click "change settings". For a
-                detailed explanation, click on "<a href="#">Privacy Policy</a>" otherwise click "Accept Cookies" to enter.</p>
+                detailed explanation, click on "<a href="#">Privacy Policy</a>" otherwise click "Accept Cookies" to
+                enter.</p>
         </div>
         <button type="button" class="cookies-popup__change-settings-button">Change Settings</button>
         <button type="button" class="cookies-popup__accept-button">Accept Cookies</button>
@@ -1493,6 +1499,7 @@
     </div>
 
     <script src="js/cookiesPopUp.js"></script>
+    <script src="js/secondaryNav.js"></script>
 </body>
 
 </html>

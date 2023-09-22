@@ -1,3 +1,10 @@
 main {
-    background-color: $white;  // 'Hide' sidebar behind main content with an opaque background
+    // 'Hide' sidebar behind main content with an opaque background
+    background-color: $white;  
+}
+
+// Entire page shifts to the left when the sidebar is active
+// The sidebar is behind
+.main--secondary-nav-active {
+    transform: translateX(-17.5rem);
 }
