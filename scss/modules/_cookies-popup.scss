@@ -1,0 +1,20 @@
+.cookies-popup__text-container {
+    
+    border-top: 1px solid $mid-grey;
+    border-bottom: 1px solid $mid-grey;
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+
+    p {
+        margin: 0;
+    }
+}
+
+button.cookies-popup__accept-button {
+
+    background-color: map-get($services-colours, 'web design');
+    
+    &:hover {
+        background-color: darken(map-get($services-colours, 'web design'), 10%);
+    }
+}
