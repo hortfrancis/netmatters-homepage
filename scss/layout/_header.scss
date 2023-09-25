@@ -4,9 +4,9 @@
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 20; // 20 is arbitrary but needs to be higher than <main>
+    z-index: 15; 
     background-color: $white;
-    transition: all 300ms ease-in-out;
+    transition: transform $transition-duration-01 ease-in-out;
 
     padding-top: 1.25rem;
     padding-bottom: 1rem;
@@ -21,4 +21,18 @@
 .header--hide-upwards {
     /* Hide the header, triggered when the page scrolls down */
     transform: translateY(-100%);
+}
+
+// Entire page shifts to the left when the sidebar is active 
+// The header is outside the <main>,
+// to avoid a bug caused by fixed positioning and a new stacking context, 
+// so need to apply the same transform as <main> to the header separately.
+.header--secondary-nav-active {
+    transform: translateX(-17.5rem);
+
+    // The secondary-nav is slightly wider when the viewport is wider, 
+    // so the header must shift a bit further to the left
+    @include breakpoint(medium-to-wide) {
+        transform: translateX(-22rem);
+    }
 }

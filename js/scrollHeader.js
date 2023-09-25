@@ -1,9 +1,13 @@
-const header = body.querySelector(".header");
+/* 
+    Make the header appear on scroll up and disappear on scroll down, 
+    when the page is past the normal location of the header at the top of the page.
+*/
 
 // Initialise a variable to hold the most recent scroll position on the Y axis.
 let prevScroll = 0;
 
 // Determine the height (in 'display pixels') of the header element
+// `header` is defined in `secondaryNav.js`
 const headerHeight = header.offsetHeight;
 
 // Add an event listener when the page moves up or down

@@ -1,11 +1,10 @@
 // Default state (on page load)
 .secondary-nav {
 
-    display: none;
     position: fixed;
     top: 0;
     right: 0;
-    z-index: -10;  // Move sidebar 'behind' main content
+    z-index: 5;  
     width: 17.5rem;
     overflow: auto;
 
@@ -28,8 +27,6 @@
 // When made visible
 .secondary-nav--active {
 
-    display: block;
+    // Allow vertical scrolling 
     height: 100%; 
-    // Sidebar must be 'above' <body> & <html> for scrolling and clicking to work
-    z-index: 10;  
 }

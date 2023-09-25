@@ -45,11 +45,37 @@
 // Used to darken the rest of the page to indicate it is not currently available. 
 // Used when the pop-up cookies modal or secondary-nav is in view. 
 // Also prevents the rest of the page from being interacted with by mouse or finger.
-.dark-overlay--active {
-    position: fixed;
+.dark-overlay {
+
+    position: fixed;    
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: black;
+
+    opacity: 0%;
+    z-index: 20; 
+
+    // Although the `<div>` stays on top of the rest of the page when inactive,
+    // it doesn't prevent the rest of the page from being interacted with by mouse or finger.
+    pointer-events: none;
+
+    transition: transform $transition-duration-01 ease-in-out, opacity $transition-duration-01 ease-in-out;
+}
+
+.dark-overlay--active {
+    
+    width: 100%;
+    height: 100%;
     opacity: 75%;
+    transform: translateX(-17.5rem);
+    pointer-events: auto;  // Make clickable for event listener to close the secondary-nav
+
+    // The secondary-nav is slightly wider when the viewport is wider, 
+    // so the main content must shift a bit further to the left
+    @include breakpoint(medium-to-wide) {
+        transform: translateX(-22rem);
+    }
+
 }

@@ -3,8 +3,24 @@ main {
     background-color: $white;
 
     // Animation for when the secondary-nav appears
-    transition: transform 1s;
-    // margin-top: 13.5rem;
+    transition: transform $transition-duration-01 ease-in-out;
+
+    // Fill the empty space where the header would be, 
+    // but isn't because of `position: fixed`
+    margin-top: 10.1875rem;
+
+    // So that the <main> appears 'on top' of the secondary-nav
+    position: relative;
+    z-index: 10;
+
+    // The height of the header varies on viewport width
+    @include breakpoint(narrow-to-medium) {
+        margin-top: 6.75rem;
+    }
+
+    @include breakpoint(medium-to-wide) {
+        margin-top: 13.5rem;
+    }
 }
 
 // Entire page shifts to the left when the sidebar is active 
@@ -16,22 +32,4 @@ main {
     @include breakpoint(medium-to-wide) {
         transform: translateX(-22rem);
     }
-}
-
-// Separate <div> to contain the page content and allow it to scroll independently of the header
-.main__page-content {
-
-    // Fill the empty space where the header would be, 
-    // but isn't because of `position: fixed`
-    margin-top: 10.1875rem;
-
-    // The height of the header varies on viewport width
-    @include breakpoint(narrow-to-medium) {
-        margin-top: 6.75rem;
-    }
-
-    @include breakpoint(medium-to-wide) {
-        margin-top: 13.5rem;
-    }
-
 }

@@ -59,3 +59,7 @@ $breakpoints: (
 
 // Consistent gap measurement for flexbox layouts across the site
 $gap: 2rem;
+
+// Used for secondary-nav transition: <main>, .header, .dark-overlay
+// Also used for scroll-appear/disappear functionalty on .header
+$transition-duration-01: 0.4s;
