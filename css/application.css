@@ -436,6 +436,7 @@ body {
   font-size: 1rem;
   letter-spacing: 0.025em;
   line-height: 1.42857143;
+  overscroll-behavior: none;
 }
 
 .icon {
@@ -447,15 +448,31 @@ body {
 }
 
 .secondary-nav {
+  display: none;
   position: fixed;
   top: 0;
   right: 0;
   z-index: -10;
   width: 17.5rem;
   overflow: auto;
+  background-color: #323544;
+  color: #fff;
+}
+.secondary-nav a {
+  color: #fff;
+  text-transform: uppercase;
+}
+.secondary-nav a:hover {
+  text-decoration: none;
+}
+@media (min-width: 992px) {
+  .secondary-nav {
+    width: 22rem;
+  }
 }
 
 .secondary-nav--active {
+  display: block;
   height: 100%;
   z-index: 10;
 }
@@ -490,10 +507,16 @@ body {
 
 main {
   background-color: #fff;
+  transition: transform 1s;
 }
 
 .main--secondary-nav-active {
   transform: translateX(-17.5rem);
+}
+@media (min-width: 992px) {
+  .main--secondary-nav-active {
+    transform: translateX(-22rem);
+  }
 }
 
 .header {
@@ -737,6 +760,131 @@ main {
 
 .cookies-popup--hidden {
   display: none;
+}
+
+.secondary-nav__card-link {
+  padding: 1rem;
+  margin: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid hsla(0, 0%, 100%, 0.1);
+  outline: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 3px;
+  font-size: 1.125rem;
+}
+.secondary-nav__card-link:hover {
+  background-color: hsla(0, 0%, 100%, 0.05);
+}
+
+@media (min-width: 992px) {
+  .secondary-nav__card-link--contact-us {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .secondary-nav__services-list--narrow-viewport {
+    display: none;
+  }
+}
+
+.secondary-nav__submenu li {
+  background-color: #212330;
+  border-top: 1px solid rgba(0, 0, 0, 0.45);
+}
+.secondary-nav__submenu li a {
+  display: block;
+  padding: 1rem;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.05);
+  font-size: 0.875rem;
+}
+.secondary-nav__submenu li a::before {
+  content: "»";
+  padding-right: 1rem;
+}
+
+.secondary-nav__services-list--narrow-viewport .secondary-nav__submenu {
+  border-radius: 3px;
+  margin: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.secondary-nav__services-list--narrow-viewport .secondary-nav__submenu li {
+  text-align: center;
+}
+.secondary-nav__services-list--narrow-viewport .secondary-nav__submenu a {
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+.secondary-nav__services-list--narrow-viewport .secondary-nav__submenu a::before {
+  content: none;
+}
+
+.secondary-nav__submenu--wide-viewport {
+  background-color: red;
+  display: none;
+}
+@media (min-width: 992px) {
+  .secondary-nav__submenu--wide-viewport {
+    display: block;
+  }
+}
+
+.secondary-nav__submenu-heading {
+  display: block;
+  padding: 1rem;
+  border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+}
+
+.secondary-nav__submenu-heading--services {
+  display: none;
+}
+@media (min-width: 992px) {
+  .secondary-nav__submenu-heading--services {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  .secondary-nav__submenu-heading--support {
+    display: none;
+  }
+}
+
+.secondary-nav__card-link--it-support .icon {
+  fill: #4183D7;
+  margin-bottom: 1rem;
+}
+
+.secondary-nav__card-link--bespoke-software .icon {
+  fill: #67809F;
+  margin-bottom: 1rem;
+}
+
+.secondary-nav__card-link--digital-marketing .icon {
+  fill: #2ECC71;
+  margin-bottom: 1rem;
+}
+
+.secondary-nav__card-link--telecoms-services .icon {
+  fill: #D64541;
+  margin-bottom: 1rem;
+}
+
+.secondary-nav__card-link--web-design .icon {
+  fill: #926FB1;
+  margin-bottom: 1rem;
+}
+
+.secondary-nav__card-link--cyber-security .icon {
+  fill: #F62459;
+  margin-bottom: 1rem;
+}
+
+.secondary-nav__card-link--developer-training .icon {
+  fill: #CE4125;
+  margin-bottom: 1rem;
 }
 
 .header__top-row-container {

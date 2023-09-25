@@ -130,14 +130,21 @@
 @include service-background-colour-for-submenu('cyber security');
 @include service-background-colour-for-submenu('developer training');
 
-@include service-icon-colour('bespoke software');
-@include service-icon-colour('it support');
-@include service-icon-colour('digital marketing');
-@include service-icon-colour('telecoms services');
-@include service-icon-colour('web design');
-@include service-icon-colour('cyber security');
-@include service-icon-colour('developer training');
+// Setting the colour of the icons in the primary navigation, 
+// per category of service Netmatters offers
 
+// This variable is only used here -- although it is globally scoped.
+$primary-nav: 'primary-nav';
+@include service-icon-colour('bespoke software', $primary-nav);
+@include service-icon-colour('it support', $primary-nav);
+@include service-icon-colour('digital marketing', $primary-nav);
+@include service-icon-colour('telecoms services', $primary-nav);
+@include service-icon-colour('web design', $primary-nav);
+@include service-icon-colour('cyber security', $primary-nav);
+@include service-icon-colour('developer training', $primary-nav);
+
+// Setting the colour of the downwards-pointing arrow below each of the primary-nav items on hover, 
+// per category of service Netmatters offers
 @include service-color-for-arrow-on-hover('bespoke software');
 @include service-color-for-arrow-on-hover('it support');
 @include service-color-for-arrow-on-hover('digital marketing');

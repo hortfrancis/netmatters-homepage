@@ -45,151 +45,165 @@
     }
 }
 
-// Used in the primary-nav to set the colour of each icon in the first level of the menu
-@mixin service-icon-colour($service-name) {
+// Used in the primary-nav & secondary-nav to set the colour of each icon in the first level of the menu
+// One mixin does the same job in two places: `scss/modules/_primary-nav.scss` and `scss/modules/_secondary-nav.scss`
+// $nav-menu is a string that can be either 'primary-nav' or 'secondary-nav'
+@mixin service-icon-colour($service-name, $nav-menu) {
 
     $service-colour: map-get($services-colours, $service-name);
     $service-modifier-name: str-replace($service-name, ' ', '-');
 
-    .primary-nav__item--#{ $service-modifier-name } {
-
-        .icon {
-            fill: $service-colour;
-            margin-bottom: 0.5rem;
-        }
-
-        &:hover .icon {
-            fill: $white;
-        }
-    }
-}
-
-// Used in the 'Services' section to reverse the background and text colours on hover
-@mixin reverse-card-colours-on-hover($service-name) {
-
-    $service-colour: map-get($services-colours, $service-name);
-
-    $service-modifier-name: str-replace($service-name, ' ', '-');
-
-    &.services__card--#{ $service-modifier-name } {
-        &:hover {
-            background-color: $service-colour;
-
-            .services__card-heading {
-                color: $white;
-            }
-
-            .services__card-description {
-                color: $white;
-            }
-
-            .services__card-read-more-button {
-                background-color: $white;
-                color: $service-colour;
-            }
-        }
-    }
-}
-
-// Used in the 'Services' section to handle the icon & icon's background colour in the cards, 
-// and these switching on hover 
-@mixin icon-colour-and-hover-reverse($service-name) {
-
-    $service-colour: map-get($services-colours, $service-name);
-
-    $service-modifier-name: str-replace($service-name, ' ', '-');
-
-    &.services__card--#{ $service-modifier-name } {
-
-        .services__card-icon-background {
-            background-color: $service-colour;
-        }
-
-        .icon {
-            fill: $white;
-        }
-
-        &:hover {
-
-            .services__card-icon-background {
-                background-color: $white;
-            }
+    @if $nav-menu =='primary-nav' {
+        .primary-nav__item--#{ $service-modifier-name } {
 
             .icon {
                 fill: $service-colour;
+                margin-bottom: 0.5rem;
+            }
+
+            &:hover .icon {
+                fill: $white;
+            }
+        }
+    }
+
+    @else if $nav-menu =='secondary-nav' {
+        .secondary-nav__card-link--#{ $service-modifier-name } {
+
+            .icon {
+                fill: $service-colour;
+                margin-bottom: 1rem;
             }
         }
     }
 }
 
-// Used to set the colour of the social media icons in the footer
-@mixin social-media-link-background-colour-on-hover($social-media-name) {
+    // Used in the 'Services' section to reverse the background and text colours on hover
+    @mixin reverse-card-colours-on-hover($service-name) {
 
-    $social-media-colour: map-get($social-media-colours, $social-media-name);
+        $service-colour: map-get($services-colours, $service-name);
 
-    .footer__social-media-link--#{ $social-media-name } {
-        &:hover {
-            background-color: $social-media-colour;
+        $service-modifier-name: str-replace($service-name, ' ', '-');
+
+        &.services__card--#{ $service-modifier-name } {
+            &:hover {
+                background-color: $service-colour;
+
+                .services__card-heading {
+                    color: $white;
+                }
+
+                .services__card-description {
+                    color: $white;
+                }
+
+                .services__card-read-more-button {
+                    background-color: $white;
+                    color: $service-colour;
+                }
+            }
         }
     }
-}
 
-// For handling media query syntax 
-@mixin breakpoint($name) {
-    @if map-has-key($breakpoints, $name) {
-        @media (min-width: map-get($breakpoints, $name)) {
-            @content;
+    // Used in the 'Services' section to handle the icon & icon's background colour in the cards, 
+    // and these switching on hover 
+    @mixin icon-colour-and-hover-reverse($service-name) {
+
+        $service-colour: map-get($services-colours, $service-name);
+
+        $service-modifier-name: str-replace($service-name, ' ', '-');
+
+        &.services__card--#{ $service-modifier-name } {
+
+            .services__card-icon-background {
+                background-color: $service-colour;
+            }
+
+            .icon {
+                fill: $white;
+            }
+
+            &:hover {
+
+                .services__card-icon-background {
+                    background-color: $white;
+                }
+
+                .icon {
+                    fill: $service-colour;
+                }
+            }
         }
     }
 
-    @else {
-        @warn "Unknown breakpoint: #{$name}.";
-    }
-}
+    // Used to set the colour of the social media icons in the footer
+    @mixin social-media-link-background-colour-on-hover($social-media-name) {
 
-// Set appropriate container width for each breakpoint with one mixin
-@mixin set-container-width-for-breakpoints() {
+        $social-media-colour: map-get($social-media-colours, $social-media-name);
 
-    // Default margin from vieport edge for narrow screens
-    margin-left: 1rem;
-    margin-right: 1rem;
-
-    // Keep container edges away from the viewport edges near breakpoints
-    padding-left: 1rem;
-    padding-right: 1rem;
-
-    @media (min-width: map-get($breakpoints, narrow-to-medium)) {
-        width: map-get($container-width, small);
-        margin-left: auto;
-        margin-right: auto;
+        .footer__social-media-link--#{ $social-media-name } {
+            &:hover {
+                background-color: $social-media-colour;
+            }
+        }
     }
 
-    @media (min-width: map-get($breakpoints, medium-to-wide)) {
-        width: map-get($container-width, medium);
-        margin-left: auto;
-        margin-right: auto;
+    // For handling media query syntax 
+    @mixin breakpoint($name) {
+        @if map-has-key($breakpoints, $name) {
+            @media (min-width: map-get($breakpoints, $name)) {
+                @content;
+            }
+        }
+
+        @else {
+            @warn "Unknown breakpoint: #{$name}.";
+        }
     }
 
-    @media (min-width: map-get($breakpoints, wide-to-extra-wide)) {
-        width: map-get($container-width, large);
-        margin-left: auto;
-        margin-right: auto;
+    // Set appropriate container width for each breakpoint with one mixin
+    @mixin set-container-width-for-breakpoints() {
+
+        // Default margin from vieport edge for narrow screens
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        // Keep container edges away from the viewport edges near breakpoints
+        padding-left: 1rem;
+        padding-right: 1rem;
+
+        @media (min-width: map-get($breakpoints, narrow-to-medium)) {
+            width: map-get($container-width, small);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: map-get($breakpoints, medium-to-wide)) {
+            width: map-get($container-width, medium);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: map-get($breakpoints, wide-to-extra-wide)) {
+            width: map-get($container-width, large);
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
-}
 
-// Used on headings in 'Services' and 'News' sections
-@mixin hide-on-medium-viewport-and-above() {
+    // Used on headings in 'Services' and 'News' sections
+    @mixin hide-on-medium-viewport-and-above() {
 
-    @include breakpoint(narrow-to-medium) {
+        @include breakpoint(narrow-to-medium) {
+            display: none;
+        }
+    }
+
+    @mixin show-on-medium-viewport-and-above() {
+
         display: none;
+
+        @include breakpoint(narrow-to-medium) {
+            display: block;
+        }
     }
-}
-
-@mixin show-on-medium-viewport-and-above() {
-
-    display: none;
-
-    @include breakpoint(narrow-to-medium) {
-        display: block;
-    }
-}

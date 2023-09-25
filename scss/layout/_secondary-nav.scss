@@ -1,16 +1,34 @@
 // Default state (on page load)
 .secondary-nav {
 
+    display: none;
     position: fixed;
     top: 0;
     right: 0;
     z-index: -10;  // Move sidebar 'behind' main content
     width: 17.5rem;
     overflow: auto;
+
+    background-color: $dark-grey;
+    color: $white;
+
+    a {
+        color: $white;
+        text-transform: uppercase;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    @include breakpoint(medium-to-wide) {
+        width: 22rem;
+    }
 }
 
+// When made visible
 .secondary-nav--active {
 
+    display: block;
     height: 100%; 
     // Sidebar must be 'above' <body> & <html> for scrolling and clicking to work
     z-index: 10;  

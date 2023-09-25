@@ -1,0 +1,122 @@
+.secondary-nav__card-link {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 1rem;
+    margin: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid hsla(0, 0%, 100%, .1);
+    outline: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 3px;
+
+    font-size: 1.125rem;
+
+    &:hover {
+        background-color: hsla(0, 0%, 100%, .05);
+    }
+}
+
+.secondary-nav__card-link--contact-us {
+
+    // Hide the contact us card at wide viewports
+    @include breakpoint(medium-to-wide) {
+        display: none;
+    }
+}
+
+.secondary-nav__services-list--narrow-viewport {
+
+    // Hide the more detailed list of services at wide viewports
+    @include breakpoint(medium-to-wide) {
+        display: none;
+    }
+}
+
+.secondary-nav__submenu li {
+
+    background-color: $darker-grey;
+    border-top: 1px solid rgba(0,0,0,.45);
+
+    a {
+        display: block;
+        padding: 1rem;
+        border-top: 1px solid hsla(0,0%,100%,.05);
+
+        font-size: 0.875rem;
+
+        &::before  {
+            content: '»';
+            padding-right: 1rem;
+        }
+    }
+}
+
+.secondary-nav__services-list--narrow-viewport .secondary-nav__submenu {
+
+    border-radius: 3px;
+    margin: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    a {
+        padding: 0.75rem;
+        font-size: 1rem;
+
+        &::before {
+            // Remove double right-pointing arrow icon
+            content: none;
+        }
+    }
+}
+
+.secondary-nav__submenu--wide-viewport {
+
+    background-color: red;
+
+    // Hidden by default
+    display: none;
+
+    @include breakpoint(medium-to-wide) {
+        display: block;
+    }
+}
+
+.secondary-nav__submenu-heading {
+
+    display: block;
+    padding: 1rem;
+    border-top: 1px solid hsla(0,0%,100%,.1);
+
+}
+
+.secondary-nav__submenu-heading--services {
+
+    display: none;
+
+    // Show at wide viewports
+    @include breakpoint(medium-to-wide) {
+        display: block;
+    }
+}
+
+.secondary-nav__submenu-heading--support {
+
+    // Hide at wide viewports
+    @include breakpoint(medium-to-wide) {
+        display: none;
+    }
+}
+
+// Setting the colour of the icons in the secondary navigation, 
+// per category of service Netmatters offers
+
+// This variable is only used here -- although it is globally scoped.
+$secondary-nav: 'secondary-nav';
+@include service-icon-colour('it support', $secondary-nav);
+@include service-icon-colour('bespoke software', $secondary-nav);
+@include service-icon-colour('digital marketing', $secondary-nav);
+@include service-icon-colour('telecoms services', $secondary-nav);
+@include service-icon-colour('web design', $secondary-nav);
+@include service-icon-colour('cyber security', $secondary-nav);
+@include service-icon-colour('developer training', $secondary-nav);

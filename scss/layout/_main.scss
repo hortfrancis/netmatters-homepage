@@ -1,10 +1,18 @@
 main {
     // 'Hide' sidebar behind main content with an opaque background
     background-color: $white;  
+
+    // Animation for when the secondary-nav appears
+    transition: transform 1s;
 }
 
-// Entire page shifts to the left when the sidebar is active
-// The sidebar is behind
+// Entire page shifts to the left when the sidebar is active 
 .main--secondary-nav-active {
     transform: translateX(-17.5rem);
+
+    // The secondary-nav is slightly wider when the viewport is wider, 
+    // so the main content must shift a bit further to the left
+    @include breakpoint(medium-to-wide) {
+        transform: translateX(-22rem);
+    }
 }
