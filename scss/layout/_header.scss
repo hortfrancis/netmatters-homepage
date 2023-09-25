@@ -1,8 +1,24 @@
 .header {
+
+    // Allow the header to appear on scroll up / disappear on scroll down
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 20; // 20 is arbitrary but needs to be higher than <main>
+    background-color: $white;
+    transition: all 300ms ease-in-out;
+
     padding-top: 1.25rem;
+    padding-bottom: 1rem;
     margin-bottom: 1.25rem;
 
     @include breakpoint(medium-to-wide) {
+        padding-bottom: 0;
         margin-bottom: 0;
     }
+}
+
+.header--hide-upwards {
+    /* Hide the header, triggered when the page scrolls down */
+    transform: translateY(-100%);
 }
