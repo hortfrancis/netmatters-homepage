@@ -36,3 +36,66 @@ button.cookies-popup__accept-button {
         background-color: darken(map-get($services-colours, 'web design'), 10%);
     }
 }
+
+.cookies-popup__preferences-menu {
+
+    // Hidden by default 
+    display: none;
+
+    // Appear as a full-screen menu
+    position: fixed;
+    top: 0;
+    height: 100%;
+    overflow-y: auto;
+    z-index: 35;
+    background-color: $white;
+
+    padding: 1rem;
+
+    p {
+        font-size: 0.875rem;  
+        line-height: 1.5;      
+    }
+
+    strong {
+        font-size: 1rem;
+        font-weight: 700;
+        color: $black;
+    }
+
+    ul {
+        padding-left: 2rem;
+        list-style-type: disc;
+        color: $dark-grey;
+        margin-bottom: 1rem;
+    }
+
+    button {
+        display: inline-block;
+    }
+
+    .cookies-popup__button-group {
+        // Will probably need to set a margin-left on this at wider viewport widths 
+
+    }
+
+    .cookies-popup__button--active {
+        // The cookies pop-up buttons use the same purple colour that is normally associated with web design services.
+        @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
+    }
+
+    .cookies-popup__button--inactive {
+
+        background-color: $white;
+        color: $mid-grey-04;
+        border: 1px solid lighten($mid-grey-04, 25%);
+
+        &:hover {
+            background-color: $white;
+        }
+    }
+
+    .cookies-popup__show-more-button {
+        margin-bottom: 1rem;
+    }
+}

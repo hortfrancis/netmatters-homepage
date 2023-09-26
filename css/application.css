@@ -2404,4 +2404,50 @@ button.cookies-popup__accept-button:hover {
   background-color: #79539a;
 }
 
+.cookies-popup__preferences-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 35;
+  background-color: #fff;
+  padding: 1rem;
+}
+.cookies-popup__preferences-menu p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+.cookies-popup__preferences-menu strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+}
+.cookies-popup__preferences-menu ul {
+  padding-left: 2rem;
+  list-style-type: disc;
+  color: #323544;
+  margin-bottom: 1rem;
+}
+.cookies-popup__preferences-menu button {
+  display: inline-block;
+}
+.cookies-popup__preferences-menu .cookies-popup__button--active {
+  background-color: #926FB1;
+}
+.cookies-popup__preferences-menu .cookies-popup__button--active:hover {
+  background-color: #6c4a89;
+}
+.cookies-popup__preferences-menu .cookies-popup__button--inactive {
+  background-color: #fff;
+  color: #999AA1;
+  border: 1px solid #dbdcde;
+}
+.cookies-popup__preferences-menu .cookies-popup__button--inactive:hover {
+  background-color: #fff;
+}
+.cookies-popup__preferences-menu .cookies-popup__show-more-button {
+  margin-bottom: 1rem;
+}
+
 /*# sourceMappingURL=application.css.map */
