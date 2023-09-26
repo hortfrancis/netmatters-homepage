@@ -43,7 +43,7 @@
 }
 
 // Used to darken the rest of the page to indicate it is not currently available. 
-// Used when the pop-up cookies modal or secondary-nav is in view. 
+// Used when the secondary-nav is in view. 
 // Also prevents the rest of the page from being interacted with by mouse or finger.
 .dark-overlay {
 
@@ -57,7 +57,7 @@
     opacity: 0%;
     z-index: 20; 
 
-    // Although the `<div>` stays on top of the rest of the page when inactive,
+    // Although when inactive the `<div>` stays on top of the rest of the page,
     // it doesn't prevent the rest of the page from being interacted with by mouse or finger.
     pointer-events: none;
 

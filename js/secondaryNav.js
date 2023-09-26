@@ -6,6 +6,7 @@ const navMenuButton = document.querySelector(".header__nav-menu-button");
 const secondaryNav = document.querySelector(".secondary-nav");
 const main = document.querySelector("main");
 const header = document.querySelector(".header");
+const darkOverlay = document.querySelector('.dark-overlay');
 
 // When the burger button in the header is clicked:
 navMenuButton.addEventListener("click", event => {
@@ -18,7 +19,6 @@ navMenuButton.addEventListener("click", event => {
     // The header must also be shifted to the left, separately but equally
     header.classList.add("header--secondary-nav-active");
 
-    // (`darkOverlay` is defined in `cookiesPopUp.js`)
     darkOverlay.classList.add('dark-overlay--active');
 
     // Prevent scrolling down the rest of the site
