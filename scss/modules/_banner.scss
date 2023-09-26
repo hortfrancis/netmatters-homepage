@@ -9,6 +9,43 @@
     }
 }
 
+// Contains the carousel
+.banner__carousel-container {
+
+    overflow: hidden;
+    width: 100%;
+}
+
+// This element moves on the X axis,to implement the carousel functionality.
+// It contains the individual carousel slides.
+// `bannerCarousel.js` handles the carousel functionality.
+.banner__carousel-items-wrapper {
+
+    // Put all the items in a row
+    display: flex;
+
+    // Prevent text from being highlighted when dragging the carousel
+    user-select: none;  
+}
+
+// Modifier class that provides a smoother animation between carousel slides
+// This class is switched on & off by `bannerCarousel.js`, 
+// so that drag-and-drop movment is immediate, but other movements are smoothed. 
+.banner__carousel-items-wrapper--transition {
+    transition: transform 0.3s ease-out; 
+}
+
+.banner__carousel-item {
+
+    // The banner extends to each side of the viewport width
+    min-width: 100vw;
+
+    // Style each full-size image as a background
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
 .banner__tagline {
 
     max-width: 750px;
@@ -25,10 +62,92 @@
 .banner__button {
 
     @extend %button;
-    @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
 
     margin-top: 2rem;
     font-size: 1.25rem;
 
     @extend %arrow-icon-in-button;
+}
+
+
+// Variable only used here, although it is declared globally
+$banner-gradient: linear-gradient(270deg, transparent 25%, #000);
+
+// Assign each image to the corresponding carousel item and set the appropriate button colour 
+
+.banner__carousel-item--headline {
+
+    background-image:
+        $banner-gradient,
+        url("../images/banner-carousel/netmatters-office-banner.png");
+
+    .banner__button {
+        @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
+    }
+}
+
+.banner__carousel-item--bespoke-software {
+
+    background-image:
+        $banner-gradient,
+        url("../images/banner-carousel/bespoke-software-banner.jpg");
+
+    .banner__button {
+        @include background-with-darken-on-hover(map-get($services-colours, 'bespoke software'));
+    }
+}
+
+.banner__carousel-item--it-support {
+
+    background-image:
+        $banner-gradient,
+        url("../images/banner-carousel/it-support-banner.png");
+
+    .banner__button {
+        @include background-with-darken-on-hover(map-get($services-colours, 'it support'));
+    }
+}
+
+.banner__carousel-item--digital-marketing {
+
+    background-image:
+        $banner-gradient,
+        url("../images/banner-carousel/digital-marketing-banner.png");
+
+    .banner__button {
+        @include background-with-darken-on-hover(map-get($services-colours, 'digital marketing'));
+    }
+}
+
+.banner__carousel-item--telecoms-services {
+
+    background-image:
+        $banner-gradient,
+        url("../images/banner-carousel/telecoms-services-banner.png");
+
+    .banner__button {
+        @include background-with-darken-on-hover(map-get($services-colours, 'telecoms services'));
+    }
+}
+
+.banner__carousel-item--web-design {
+
+    background-image:
+        $banner-gradient,
+        url("../images/banner-carousel/web-design-banner.jpg");
+
+    .banner__button {
+        @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
+    }
+}
+
+.banner__carousel-item--cyber-security {
+
+    background-image:
+        $banner-gradient,
+        url("../images/banner-carousel/cyber-security-banner.png");
+
+    .banner__button {
+        @include background-with-darken-on-hover(map-get($services-colours, 'cyber security'));
+    }
 }
