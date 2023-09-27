@@ -7,6 +7,11 @@ const carouselContainer = document.querySelector(".banner__carousel-container");
 // Carousel items wrapper will actually be moved on the X axis to move the carousel.
 const carouselWrapper = document.querySelector(".banner__carousel-items-wrapper");
 
+// Get the navigation buttons container -- for a 'click' event listener
+const carouselNav = document.querySelector(".banner__carousel-nav");
+// Get the circular navigation buttons at the bottom of the carousel 
+const carouselNavButtons = document.querySelectorAll(".banner__carousel-nav button");
+
 // Initialise with the first slide
 let currentSlideIndex = 0;  
 const totalSlides = 7;  // (There are 7 slide items in the banner carousel)
@@ -34,6 +39,9 @@ function moveCarouselForward() {
 
     // Apply the offset to the wrapper to move the carousel
     carouselWrapper.style.transform = `translateX(${offset}vw)`;
+
+    // Update the navigation menu to the new carousel position
+    updateNavMenu();
 }
 
 // Make the carousel move forwards automatically
@@ -126,12 +134,17 @@ function setSliderPosition() {
 }
 
 function setPositionByIndex() {
+
     currentTranslate = -currentSlideIndex * window.innerWidth;
     prevTranslate = currentTranslate;
     setSliderPosition();
+    
+    // Update the navigation menu to the new carousel position
+    updateNavMenu();
 }
 
-// Set all of the event listeners for the carousel
+
+/*  Set all of the event listeners for the carousel  */
 
 // Stop and restart the auto-move timer if the user hovers over the carousel
 carouselContainer.addEventListener("mouseover", stopAutoMove);
@@ -147,5 +160,34 @@ carouselContainer.addEventListener("touchmove", onDrag);
 carouselContainer.addEventListener("touchend", endDrag);
 
 
-// Being the automatic sliding through the carousel on page load.
+/*  Handle the navigation menu for the carousel, 
+    displayed as circular buttons at the bottom.  */
+
+function updateNavMenu() {
+
+    // Remove any '--active' class on the buttons 
+    carouselNavButtons.forEach(button => button.classList.remove('banner__carousel-nav-button--active'));
+    // Add a highlight around the button corresponding to the current slide
+    carouselNavButtons[currentSlideIndex].classList.add('banner__carousel-nav-button--active');
+}
+
+carouselNav.addEventListener("click", event => {
+
+    // Check a <button> was pressed
+    if (event.target.tagName === 'BUTTON') {
+
+        // Minus one, because `data-slide-index` starts at 1 in the HTML
+        currentSlideIndex = parseInt(event.target.dataset.slideIndex, 10) - 1; 
+
+        // Move the carousel to the slide corresponding to the button pressed
+        setPositionByIndex();
+
+        // Stop and then restart the auto-move behaviour
+        stopAutoMove();
+        startAutoMove();
+    }
+});
+
+
+/*  Begin automatically sliding through the carousel on page load.  */
 startAutoMove();

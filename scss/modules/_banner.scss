@@ -12,6 +12,7 @@
 // Contains the carousel
 .banner__carousel-container {
 
+    position: relative; // So the nav buttons can be positioned absolutely
     overflow: hidden;
     width: 100%;
 }
@@ -25,14 +26,14 @@
     display: flex;
 
     // Prevent text from being highlighted when dragging the carousel
-    user-select: none;  
+    user-select: none;
 }
 
 // Modifier class that provides a smoother animation between carousel slides
 // This class is switched on & off by `bannerCarousel.js`, 
 // so that drag-and-drop movment is immediate, but other movements are smoothed. 
 .banner__carousel-items-wrapper--transition {
-    transition: transform 0.3s ease-out; 
+    transition: transform 0.3s ease-out;
 }
 
 .banner__carousel-item {
@@ -67,6 +68,56 @@
     font-size: 1.25rem;
 
     @extend %arrow-icon-in-button;
+}
+
+// Styling for the navigation buttons that appear as white dots at the bottom of the carousel
+.banner__carousel-nav {
+
+    position: absolute;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 1rem;
+
+    button {
+        position: relative;
+        width: 0.75rem;
+        height: 0.75rem;
+
+        padding: 0;
+        border: none;
+        border-radius: 50%;
+        outline: none;
+
+        background-color: $white;
+        opacity: 50%;
+        cursor: pointer;
+
+        // Very subtle transition animation between 'active' and 'inactive' states 
+        transition: 
+            opacity 0.2s ease, 
+            border 0.2s ease;
+    }
+
+    .banner__carousel-nav-button--active {
+
+        opacity: 100%;
+
+        &::after {
+            // Add the ring around the nav button, 
+            // which corresponds to the carousel item currently in view 
+            content: '';
+            position: absolute;
+            width: 1.75rem;
+            height: 1.75rem;
+            border: 0.2rem solid $white;
+            border-radius: 50%;
+            bottom: -0.5rem;
+            left: -0.5rem;
+        }
+    }
 }
 
 

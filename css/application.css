@@ -1410,6 +1410,7 @@ main {
 }
 
 .banner__carousel-container {
+  position: relative;
   overflow: hidden;
   width: 100%;
 }
@@ -1445,6 +1446,41 @@ main {
 .banner__button {
   margin-top: 2rem;
   font-size: 1.25rem;
+}
+
+.banner__carousel-nav {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+}
+.banner__carousel-nav button {
+  position: relative;
+  width: 0.75rem;
+  height: 0.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+  background-color: #fff;
+  opacity: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s ease, border 0.2s ease;
+}
+.banner__carousel-nav .banner__carousel-nav-button--active {
+  opacity: 100%;
+}
+.banner__carousel-nav .banner__carousel-nav-button--active::after {
+  content: "";
+  position: absolute;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 0.2rem solid #fff;
+  border-radius: 50%;
+  bottom: -0.5rem;
+  left: -0.5rem;
 }
 
 .banner__carousel-item--headline {
