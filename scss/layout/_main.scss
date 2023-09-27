@@ -6,8 +6,10 @@ main {
     transition: transform $transition-duration-01 ease-in-out;
 
     // Fill the empty space where the header would be, 
-    // but isn't because of `position: fixed`
-    margin-top: 10.1875rem;
+    // but isn't because of `position: fixed`. 
+    // Padding not margin so the white background still covers the secondary-nav
+    // when the header slides up and down on page scroll. 
+    padding-top: 10.1875rem;
 
     // So that the <main> appears 'on top' of the secondary-nav
     position: relative;
@@ -15,11 +17,11 @@ main {
 
     // The height of the header varies on viewport width
     @include breakpoint(narrow-to-medium) {
-        margin-top: 6.75rem;
+        padding-top: 6.75rem;
     }
 
     @include breakpoint(medium-to-wide) {
-        margin-top: 13.5rem;
+        padding-top: 13.5rem;
     }
 }
 
