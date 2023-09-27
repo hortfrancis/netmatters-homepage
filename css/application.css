@@ -1398,17 +1398,6 @@ main {
   border-top-color: #CE4125;
 }
 
-.banner__heading {
-  margin: 0;
-  color: #fff;
-  font-size: 2.5rem;
-}
-@media (min-width: 992px) {
-  .banner__heading {
-    font-size: 4rem;
-  }
-}
-
 .banner__carousel-container {
   position: relative;
   overflow: hidden;
@@ -1431,11 +1420,23 @@ main {
   background-repeat: no-repeat;
 }
 
+.banner__heading {
+  margin: 0;
+  color: #fff;
+  font-size: 2.5rem;
+}
+@media (min-width: 992px) {
+  .banner__heading {
+    font-size: 4rem;
+  }
+}
+
 .banner__tagline {
-  max-width: 750px;
+  max-width: 35ch;
   color: #fff;
   font-size: 1.25rem;
   font-weight: 600;
+  hyphens: none;
 }
 @media (min-width: 992px) {
   .banner__tagline {
@@ -1444,8 +1445,9 @@ main {
 }
 
 .banner__button {
-  margin-top: 2rem;
+  margin-top: 1rem;
   font-size: 1.25rem;
+  text-wrap: nowrap;
 }
 
 .banner__carousel-nav {
@@ -1484,7 +1486,12 @@ main {
 }
 
 .banner__carousel-item--headline {
-  background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/netmatters-office-banner.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner-carousel/netmatters-office-banner.png");
+}
+@media (min-width: 992px) {
+  .banner__carousel-item--headline {
+    background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/netmatters-office-banner.png");
+  }
 }
 .banner__carousel-item--headline .banner__button {
   background-color: #926FB1;
@@ -1494,7 +1501,12 @@ main {
 }
 
 .banner__carousel-item--bespoke-software {
-  background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/bespoke-software-banner.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner-carousel/bespoke-software-banner.jpg");
+}
+@media (min-width: 992px) {
+  .banner__carousel-item--bespoke-software {
+    background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/bespoke-software-banner.jpg");
+  }
 }
 .banner__carousel-item--bespoke-software .banner__button {
   background-color: #67809F;
@@ -1504,7 +1516,12 @@ main {
 }
 
 .banner__carousel-item--it-support {
-  background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/it-support-banner.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner-carousel/it-support-banner.png");
+}
+@media (min-width: 992px) {
+  .banner__carousel-item--it-support {
+    background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/it-support-banner.png");
+  }
 }
 .banner__carousel-item--it-support .banner__button {
   background-color: #4183D7;
@@ -1514,7 +1531,12 @@ main {
 }
 
 .banner__carousel-item--digital-marketing {
-  background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/digital-marketing-banner.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner-carousel/digital-marketing-banner.png");
+}
+@media (min-width: 992px) {
+  .banner__carousel-item--digital-marketing {
+    background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/digital-marketing-banner.png");
+  }
 }
 .banner__carousel-item--digital-marketing .banner__button {
   background-color: #2ECC71;
@@ -1524,7 +1546,12 @@ main {
 }
 
 .banner__carousel-item--telecoms-services {
-  background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/telecoms-services-banner.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner-carousel/telecoms-services-banner.png");
+}
+@media (min-width: 992px) {
+  .banner__carousel-item--telecoms-services {
+    background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/telecoms-services-banner.png");
+  }
 }
 .banner__carousel-item--telecoms-services .banner__button {
   background-color: #D64541;
@@ -1534,7 +1561,12 @@ main {
 }
 
 .banner__carousel-item--web-design {
-  background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/web-design-banner.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner-carousel/web-design-banner.jpg");
+}
+@media (min-width: 992px) {
+  .banner__carousel-item--web-design {
+    background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/web-design-banner.jpg");
+  }
 }
 .banner__carousel-item--web-design .banner__button {
   background-color: #926FB1;
@@ -1544,13 +1576,46 @@ main {
 }
 
 .banner__carousel-item--cyber-security {
-  background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/cyber-security-banner.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/banner-carousel/cyber-security-banner.png");
+}
+@media (min-width: 992px) {
+  .banner__carousel-item--cyber-security {
+    background-image: linear-gradient(270deg, transparent 25%, #000), url("../images/banner-carousel/cyber-security-banner.png");
+  }
 }
 .banner__carousel-item--cyber-security .banner__button {
   background-color: #F62459;
 }
 .banner__carousel-item--cyber-security .banner__button:hover {
   background-color: #c50838;
+}
+
+.banner__carousel-item--headline .banner__heading {
+  font-size: 1.75rem;
+}
+@media screen and (min-width: 500px) {
+  .banner__carousel-item--headline .banner__heading {
+    font-size: 2.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .banner__carousel-item--headline .banner__heading {
+    font-size: 3.5rem;
+  }
+}
+.banner__carousel-item--headline .banner__tagline {
+  font-size: 1rem;
+  max-width: 40ch;
+}
+@media screen and (min-width: 500px) {
+  .banner__carousel-item--headline .banner__tagline {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .banner__carousel-item--headline .banner__tagline {
+    font-size: 1.625rem;
+  }
 }
 
 .services__heading {

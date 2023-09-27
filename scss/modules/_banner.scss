@@ -1,14 +1,3 @@
-.banner__heading {
-
-    margin: 0;
-    color: $white;
-    font-size: 2.5rem;
-
-    @include breakpoint(medium-to-wide) {
-        font-size: 4rem;
-    }
-}
-
 // Contains the carousel
 .banner__carousel-container {
 
@@ -47,13 +36,25 @@
     background-repeat: no-repeat;
 }
 
+.banner__heading {
+
+    margin: 0;
+    color: $white;
+    font-size: 2.5rem;
+
+    @include breakpoint(medium-to-wide) {
+        font-size: 4rem;
+    }
+}
+
 .banner__tagline {
 
-    max-width: 750px;
+    max-width: 35ch;
     color: $white;
 
     font-size: 1.25rem;
     font-weight: 600;
+    hyphens: none;
 
     @include breakpoint(medium-to-wide) {
         font-size: 1.625rem;
@@ -64,10 +65,13 @@
 
     @extend %button;
 
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 1.25rem;
 
     @extend %arrow-icon-in-button;
+
+    // Keep the text on one line even when the viewport is narrow
+    text-wrap: nowrap;
 }
 
 // Styling for the navigation buttons that appear as white dots at the bottom of the carousel
@@ -96,8 +100,8 @@
         cursor: pointer;
 
         // Very subtle transition animation between 'active' and 'inactive' states 
-        transition: 
-            opacity 0.2s ease, 
+        transition:
+            opacity 0.2s ease,
             border 0.2s ease;
     }
 
@@ -121,84 +125,71 @@
 }
 
 
-// Variable only used here, although it is declared globally
-$banner-gradient: linear-gradient(270deg, transparent 25%, #000);
-
 // Assign each image to the corresponding carousel item and set the appropriate button colour 
 
 .banner__carousel-item--headline {
-
-    background-image:
-        $banner-gradient,
-        url("../images/banner-carousel/netmatters-office-banner.png");
-
-    .banner__button {
-        @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
-    }
+    // 'web design' is the default colour for some key buttons like this one
+    @include banner-carousel-item("../images/banner-carousel/netmatters-office-banner.png", 'web design');
 }
 
 .banner__carousel-item--bespoke-software {
-
-    background-image:
-        $banner-gradient,
-        url("../images/banner-carousel/bespoke-software-banner.jpg");
-
-    .banner__button {
-        @include background-with-darken-on-hover(map-get($services-colours, 'bespoke software'));
-    }
+    @include banner-carousel-item("../images/banner-carousel/bespoke-software-banner.jpg", 'bespoke software');
 }
 
 .banner__carousel-item--it-support {
-
-    background-image:
-        $banner-gradient,
-        url("../images/banner-carousel/it-support-banner.png");
-
-    .banner__button {
-        @include background-with-darken-on-hover(map-get($services-colours, 'it support'));
-    }
+    @include banner-carousel-item("../images/banner-carousel/it-support-banner.png", 'it support');
 }
 
 .banner__carousel-item--digital-marketing {
-
-    background-image:
-        $banner-gradient,
-        url("../images/banner-carousel/digital-marketing-banner.png");
-
-    .banner__button {
-        @include background-with-darken-on-hover(map-get($services-colours, 'digital marketing'));
-    }
+    @include banner-carousel-item("../images/banner-carousel/digital-marketing-banner.png", 'digital marketing');
 }
 
 .banner__carousel-item--telecoms-services {
-
-    background-image:
-        $banner-gradient,
-        url("../images/banner-carousel/telecoms-services-banner.png");
-
-    .banner__button {
-        @include background-with-darken-on-hover(map-get($services-colours, 'telecoms services'));
-    }
+    @include banner-carousel-item("../images/banner-carousel/telecoms-services-banner.png", 'telecoms services');
 }
 
 .banner__carousel-item--web-design {
-
-    background-image:
-        $banner-gradient,
-        url("../images/banner-carousel/web-design-banner.jpg");
-
-    .banner__button {
-        @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
-    }
+    @include banner-carousel-item("../images/banner-carousel/web-design-banner.jpg", 'web design');
 }
 
 .banner__carousel-item--cyber-security {
+    @include banner-carousel-item("../images/banner-carousel/cyber-security-banner.png", 'cyber security');
+}
 
-    background-image:
-        $banner-gradient,
-        url("../images/banner-carousel/cyber-security-banner.png");
 
-    .banner__button {
-        @include background-with-darken-on-hover(map-get($services-colours, 'cyber security'));
+.banner__carousel-item--headline {
+
+    .banner__heading {
+        // Reduce the size of this heading at narrow viewport widths, 
+        // because this text is longer than the same headings for the other carousel items
+        font-size: 1.75rem;
+
+        @media screen and (min-width: 500px) {
+            // Increase the font-size as more space becomes available
+            font-size: 2.25rem;
+        }
+
+        @include breakpoint(medium-to-wide) {
+            // Still slightly smaller than the other carousel headings
+            font-size: 3.5rem;
+        }
+    }
+
+    .banner__tagline {
+        // Tagline font-size also needs to be reduced slightly, 
+        // to go with the header
+        font-size: 1rem;
+        max-width: 40ch;
+
+        @media screen and (min-width: 500px) {
+            // Increase the font-size with the header 
+            font-size: 1.25rem;
+        }
+
+        // Need to add the normal breakpoint rule back in,
+        // due to specifity
+        @include breakpoint(medium-to-wide) {
+            font-size: 1.625rem;
+        }
     }
 }

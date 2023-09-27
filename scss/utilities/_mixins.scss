@@ -78,132 +78,154 @@
     }
 }
 
-    // Used in the 'Services' section to reverse the background and text colours on hover
-    @mixin reverse-card-colours-on-hover($service-name) {
+// Used in the Banner carousel to set the background image and button colour for each carousel item
+@mixin banner-carousel-item($image-path, $service-color-name) {
 
-        $service-colour: map-get($services-colours, $service-name);
+    // For the white text to show up,
+    // the image behind must be darkened slightly.
+    background-image:
+        $banner-semi-transparent-black-fill,
+        url($image-path);
 
-        $service-modifier-name: str-replace($service-name, ' ', '-');
+    @include breakpoint(medium-to-wide) {
+        // When the viewport is wide the text is left-aligned,
+        // so the right half of the image is not darkened.
+        background-image:
+            $banner-semi-transparent-black-gradient,
+            url($image-path);
+    }
 
-        &.services__card--#{ $service-modifier-name } {
-            &:hover {
-                background-color: $service-colour;
+    .banner__button {
+        @include background-with-darken-on-hover(map-get($services-colours, $service-color-name));
+    }
+}
 
-                .services__card-heading {
-                    color: $white;
-                }
+// Used in the 'Services' section to reverse the background and text colours on hover
+@mixin reverse-card-colours-on-hover($service-name) {
 
-                .services__card-description {
-                    color: $white;
-                }
+    $service-colour: map-get($services-colours, $service-name);
 
-                .services__card-read-more-button {
-                    background-color: $white;
-                    color: $service-colour;
-                }
+    $service-modifier-name: str-replace($service-name, ' ', '-');
+
+    &.services__card--#{ $service-modifier-name } {
+        &:hover {
+            background-color: $service-colour;
+
+            .services__card-heading {
+                color: $white;
+            }
+
+            .services__card-description {
+                color: $white;
+            }
+
+            .services__card-read-more-button {
+                background-color: $white;
+                color: $service-colour;
             }
         }
     }
+}
 
-    // Used in the 'Services' section to handle the icon & icon's background colour in the cards, 
-    // and these switching on hover 
-    @mixin icon-colour-and-hover-reverse($service-name) {
+// Used in the 'Services' section to handle the icon & icon's background colour in the cards, 
+// and these switching on hover 
+@mixin icon-colour-and-hover-reverse($service-name) {
 
-        $service-colour: map-get($services-colours, $service-name);
+    $service-colour: map-get($services-colours, $service-name);
 
-        $service-modifier-name: str-replace($service-name, ' ', '-');
+    $service-modifier-name: str-replace($service-name, ' ', '-');
 
-        &.services__card--#{ $service-modifier-name } {
+    &.services__card--#{ $service-modifier-name } {
+
+        .services__card-icon-background {
+            background-color: $service-colour;
+        }
+
+        .icon {
+            fill: $white;
+        }
+
+        &:hover {
 
             .services__card-icon-background {
-                background-color: $service-colour;
+                background-color: $white;
             }
 
             .icon {
-                fill: $white;
-            }
-
-            &:hover {
-
-                .services__card-icon-background {
-                    background-color: $white;
-                }
-
-                .icon {
-                    fill: $service-colour;
-                }
+                fill: $service-colour;
             }
         }
     }
+}
 
-    // Used to set the colour of the social media icons in the footer
-    @mixin social-media-link-background-colour-on-hover($social-media-name) {
+// Used to set the colour of the social media icons in the footer
+@mixin social-media-link-background-colour-on-hover($social-media-name) {
 
-        $social-media-colour: map-get($social-media-colours, $social-media-name);
+    $social-media-colour: map-get($social-media-colours, $social-media-name);
 
-        .footer__social-media-link--#{ $social-media-name } {
-            &:hover {
-                background-color: $social-media-colour;
-            }
+    .footer__social-media-link--#{ $social-media-name } {
+        &:hover {
+            background-color: $social-media-colour;
+        }
+    }
+}
+
+// For handling media query syntax 
+@mixin breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @media (min-width: map-get($breakpoints, $name)) {
+            @content;
         }
     }
 
-    // For handling media query syntax 
-    @mixin breakpoint($name) {
-        @if map-has-key($breakpoints, $name) {
-            @media (min-width: map-get($breakpoints, $name)) {
-                @content;
-            }
-        }
+    @else {
+        @warn "Unknown breakpoint: #{$name}.";
+    }
+}
 
-        @else {
-            @warn "Unknown breakpoint: #{$name}.";
-        }
+// Set appropriate container width for each breakpoint with one mixin
+@mixin set-container-width-for-breakpoints() {
+
+    // Default margin from vieport edge for narrow screens
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    // Keep container edges away from the viewport edges near breakpoints
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    @media (min-width: map-get($breakpoints, narrow-to-medium)) {
+        width: map-get($container-width, small);
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    // Set appropriate container width for each breakpoint with one mixin
-    @mixin set-container-width-for-breakpoints() {
-
-        // Default margin from vieport edge for narrow screens
-        margin-left: 1rem;
-        margin-right: 1rem;
-
-        // Keep container edges away from the viewport edges near breakpoints
-        padding-left: 1rem;
-        padding-right: 1rem;
-
-        @media (min-width: map-get($breakpoints, narrow-to-medium)) {
-            width: map-get($container-width, small);
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (min-width: map-get($breakpoints, medium-to-wide)) {
-            width: map-get($container-width, medium);
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        @media (min-width: map-get($breakpoints, wide-to-extra-wide)) {
-            width: map-get($container-width, large);
-            margin-left: auto;
-            margin-right: auto;
-        }
+    @media (min-width: map-get($breakpoints, medium-to-wide)) {
+        width: map-get($container-width, medium);
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    // Used on headings in 'Services' and 'News' sections
-    @mixin hide-on-medium-viewport-and-above() {
-
-        @include breakpoint(narrow-to-medium) {
-            display: none;
-        }
+    @media (min-width: map-get($breakpoints, wide-to-extra-wide)) {
+        width: map-get($container-width, large);
+        margin-left: auto;
+        margin-right: auto;
     }
+}
 
-    @mixin show-on-medium-viewport-and-above() {
+// Used on headings in 'Services' and 'News' sections
+@mixin hide-on-medium-viewport-and-above() {
 
+    @include breakpoint(narrow-to-medium) {
         display: none;
-
-        @include breakpoint(narrow-to-medium) {
-            display: block;
-        }
     }
+}
+
+@mixin show-on-medium-viewport-and-above() {
+
+    display: none;
+
+    @include breakpoint(narrow-to-medium) {
+        display: block;
+    }
+}
