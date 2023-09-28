@@ -828,7 +828,8 @@ main {
   border-radius: 3px;
   font-size: 1.125rem;
 }
-.secondary-nav__card-link:hover {
+
+.secondary-nav li:hover > .secondary-nav__card-link {
   background-color: hsla(0, 0%, 100%, 0.05);
 }
 
@@ -859,6 +860,10 @@ main {
   padding-right: 1rem;
 }
 
+.secondary-nav__services-list--narrow-viewport {
+  text-align: center;
+}
+
 .secondary-nav__services-list--narrow-viewport .secondary-nav__submenu {
   border-radius: 3px;
   margin: 1.5rem;
@@ -873,7 +878,6 @@ main {
 }
 
 .secondary-nav__submenu--wide-viewport {
-  background-color: red;
   display: none;
 }
 @media (min-width: 992px) {
@@ -882,10 +886,16 @@ main {
   }
 }
 
-.secondary-nav__submenu-heading {
+.secondary-nav__submenu-heading > a {
   display: block;
-  padding: 1rem;
+  padding: 1.25rem;
   border-top: 1px solid hsla(0, 0%, 100%, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.45);
+}
+
+.secondary-nav li:hover .secondary-nav__submenu-heading > a,
+.secondary-nav__submenu-heading > a:hover {
+  background-color: hsla(0, 0%, 100%, 0.05);
 }
 
 .secondary-nav__submenu-heading--services {

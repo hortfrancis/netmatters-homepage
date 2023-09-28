@@ -12,10 +12,11 @@
     border-radius: 3px;
 
     font-size: 1.125rem;
+}
 
-    &:hover {
-        background-color: hsla(0, 0%, 100%, .05);
-    }
+.secondary-nav li:hover>.secondary-nav__card-link {
+
+    background-color: hsla(0, 0%, 100%, .05);
 }
 
 .secondary-nav__card-link--contact-us {
@@ -37,20 +38,24 @@
 .secondary-nav__submenu li {
 
     background-color: $darker-grey;
-    border-top: 1px solid rgba(0,0,0,.45);
+    border-top: 1px solid rgba(0, 0, 0, .45);
 
     a {
         display: block;
         padding: 1rem;
-        border-top: 1px solid hsla(0,0%,100%,.05);
+        border-top: 1px solid hsla(0, 0%, 100%, .05);
 
         font-size: 0.875rem;
 
-        &::before  {
+        &::before {
             content: '»';
             padding-right: 1rem;
         }
     }
+}
+
+.secondary-nav__services-list--narrow-viewport {
+    text-align: center;
 }
 
 .secondary-nav__services-list--narrow-viewport .secondary-nav__submenu {
@@ -72,8 +77,6 @@
 
 .secondary-nav__submenu--wide-viewport {
 
-    background-color: red;
-
     // Hidden by default
     display: none;
 
@@ -82,12 +85,18 @@
     }
 }
 
-.secondary-nav__submenu-heading {
+.secondary-nav__submenu-heading>a {
 
     display: block;
-    padding: 1rem;
-    border-top: 1px solid hsla(0,0%,100%,.1);
+    padding: 1.25rem;
+    border-top: 1px solid hsla(0, 0%, 100%, .1);
+    border-bottom: 1px solid rgba(0,0,0,.45);
+}
 
+.secondary-nav li:hover .secondary-nav__submenu-heading>a, 
+.secondary-nav__submenu-heading>a:hover {
+
+    background-color: hsla(0, 0%, 100%, .05);
 }
 
 .secondary-nav__submenu-heading--services {
