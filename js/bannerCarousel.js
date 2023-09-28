@@ -102,20 +102,40 @@ function endDrag() {
     // Add `transition: transform 0.3s ease-out` in CSS
     carouselWrapper.classList.add("banner__carousel-items-wrapper--transition");
     // Reset the cursor back to a normal arrow
-    carouselWrapper.style.cursor = "auto";  
+    carouselWrapper.style.cursor = "auto";
 
-    // Logic to snap to the closest slide
+    // Logic to snap to the closest carousel item
+
     const movedBy = currentTranslate - prevTranslate;
-    let slideToSnapTo = Math.round(movedBy / window.innerWidth);
-    slideToSnapTo = Math.min(Math.max(slideToSnapTo, -1), 1); 
+    // Distance required to move the carousel in either direction = 10vw
+    const movedPercentage = (movedBy / window.innerWidth) * 100;
+    const direction = movedBy > 0 ? "right" : "left";
+    let slideToSnapTo = 0;
+
+    if (Math.abs(movedPercentage) <= 10) {
+
+        // Snap back to the current carousel item
+        slideToSnapTo = 0;
+
+    } else if (direction === "right" && Math.abs(movedPercentage) > 10) {
+
+        // Go to the next carousel item
+        slideToSnapTo = 1;
+
+    } else if (direction === "left" && Math.abs(movedPercentage) > 10) {
+
+        // Go to the previous carousel item
+        slideToSnapTo = -1;
+    }
+    
     currentSlideIndex -= slideToSnapTo;
-    currentSlideIndex = Math.min(Math.max(currentSlideIndex, 0), totalSlides - 1); 
+    currentSlideIndex = Math.min(Math.max(currentSlideIndex, 0), totalSlides - 1);
     setPositionByIndex();
 
     prevTranslate = currentTranslate;
 
     // Resume auto-move behaviour again after the user interaction
-    startAutoMove(); 
+    startAutoMove();
 }
 
 // Helper utility functions for drag-and-drop functionality
