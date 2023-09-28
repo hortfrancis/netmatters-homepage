@@ -1,3 +1,27 @@
+.cookies-popup__manage-consent-button {
+
+    position: fixed; 
+    bottom: 0;
+    left: 0;
+    z-index: 24;  // Just beneath `.cookies-pop-up`
+
+    border: none;
+    border-top-right-radius: 0.625rem;
+
+    padding: 0.25rem 0.75rem;
+    background-color: $mid-grey-03;
+    color: $white;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    
+    &:hover {
+        background-color: $mid-grey-04;
+    } 
+}
+
 .cookies-popup__modal-container {
 
     display: flex;

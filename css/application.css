@@ -2482,6 +2482,24 @@ main {
   background-color: #e4405f;
 }
 
+.cookies-popup__manage-consent-button {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 24;
+  border: none;
+  border-top-right-radius: 0.625rem;
+  padding: 0.25rem 0.75rem;
+  background-color: #666;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cookies-popup__manage-consent-button:hover {
+  background-color: #999AA1;
+}
+
 .cookies-popup__modal-container {
   display: flex;
   flex-direction: column;

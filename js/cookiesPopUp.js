@@ -6,6 +6,7 @@
 const cookiesPopUp = document.querySelector('.cookies-popup');
 const body = document.querySelector('body');
 const cookiesPrefsMenu = document.querySelector('.cookies-popup__preferences-menu');
+const manageConsentButton = document.querySelector('.cookies-popup__manage-consent-button');
 
 // On page load, check if the user has accepted cookies before
 if (!localStorage.getItem('cookiesAccepted')) {
@@ -25,6 +26,8 @@ function acceptCookies() {
     localStorage.setItem('cookiesAccepted', true);
     // Hide the pop-up modal
     cookiesPopUp.classList.add('cookies-popup--hidden');
+    // And make sure the 'Cookies Preferences' menu will stay hidden
+    cookiesPrefsMenu.style.display = 'none';
     // Allow scrolling down the rest of the site
     body.style.overflow = 'auto';
 }
@@ -32,7 +35,7 @@ function acceptCookies() {
 // Click event listeners for when user accepts cookies
 
 cookiesPopUp.querySelector('.cookies-popup__accept-button').addEventListener('click', event => {
-    
+
     acceptCookies();
 });
 
@@ -57,8 +60,8 @@ cookiesPrefsMenu.querySelectorAll('.cookies-popup__switch-button-group').forEach
             button.classList.add('cookies-popup__button--active');
             button.classList.remove('cookies-popup__button--inactive');
             return;
-        } 
-        
+        }
+
         if (state === 'inactive') {
             button.classList.remove('cookies-popup__button--active');
             button.classList.add('cookies-popup__button--inactive');
@@ -75,7 +78,7 @@ cookiesPrefsMenu.querySelectorAll('.cookies-popup__switch-button-group').forEach
         if (event.target.tagName === 'BUTTON') {
 
             const clickedButton = event.target;
-            let otherButton;  
+            let otherButton;
 
             // Evaluate which button wasn't clicked based on the one that was
             if (clickedButton.classList.contains('cookies-popup__enable-button')) {
@@ -94,4 +97,13 @@ cookiesPrefsMenu.querySelectorAll('.cookies-popup__switch-button-group').forEach
 cookiesPrefsMenu.querySelector('.cookies-popup__cancel-button').addEventListener('click', event => {
 
     cookiesPrefsMenu.style.display = 'none';
+});
+
+// Wire up the 'Manage Consent' button in the bottom-left corner of the page 
+manageConsentButton.addEventListener('click', event => {
+
+    // Show the cookies preferences menu
+    cookiesPopUp.classList.remove('cookies-popup--hidden');
+    // Prevent scrolling down the rest of the site
+    body.style.overflow = 'hidden';
 });
