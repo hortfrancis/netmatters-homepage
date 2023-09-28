@@ -801,6 +801,9 @@ main {
 .cookies-popup button:hover {
   background-color: #7e8089;
 }
+.cookies-popup button:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
 .cookies-popup::before {
   content: "";
   position: fixed;
@@ -2503,9 +2506,9 @@ main {
 .cookies-popup__modal-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   z-index: 30;
-  padding: 1.5rem;
+  padding: 1.5rem 0;
   margin: 2rem;
   border-radius: 0.25rem;
   background-color: #fff;
@@ -2515,15 +2518,32 @@ main {
     width: 600px;
   }
 }
-
-.cookies-popup__text-container {
+.cookies-popup__modal-container h2 {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.cookies-popup__modal-container .cookies-popup__text-container {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   padding-top: 1.5rem;
-  padding-bottom: 2rem;
+  padding-bottom: 1.5rem;
 }
-.cookies-popup__text-container p {
-  margin: 0;
+.cookies-popup__modal-container .cookies-popup__text-container p {
+  margin: 0 1.5rem;
+}
+.cookies-popup__modal-container .cookies-popup__modal-button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0 1.5rem;
+}
+@media (min-width: 768px) {
+  .cookies-popup__modal-container .cookies-popup__modal-button-group {
+    flex-direction: row;
+  }
+}
+.cookies-popup__modal-container .cookies-popup__modal-button-group button {
+  width: 100%;
 }
 
 button.cookies-popup__accept-button {
@@ -2541,7 +2561,12 @@ button.cookies-popup__accept-button:hover {
   overflow-y: auto;
   z-index: 35;
   background-color: #fff;
-  padding: 1rem;
+  padding: 2rem;
+  width: 100%;
+}
+.cookies-popup__preferences-menu .cookies-popup__preferences-menu-max-width-container {
+  max-width: 65ch;
+  margin: 0 auto;
 }
 .cookies-popup__preferences-menu p {
   font-size: 0.875rem;
@@ -2560,6 +2585,17 @@ button.cookies-popup__accept-button:hover {
 }
 .cookies-popup__preferences-menu button {
   display: inline-block;
+}
+.cookies-popup__preferences-menu .cookies-popup__switch-button-group,
+.cookies-popup__preferences-menu .cookies-popup__accept-button-group {
+  display: flex;
+  gap: 0.5rem;
+}
+@media (min-width: 992px) {
+  .cookies-popup__preferences-menu .cookies-popup__switch-button-group button:first-child,
+  .cookies-popup__preferences-menu .cookies-popup__accept-button-group button:first-child {
+    margin-left: auto;
+  }
 }
 .cookies-popup__preferences-menu .cookies-popup__button--active {
   background-color: #926FB1;

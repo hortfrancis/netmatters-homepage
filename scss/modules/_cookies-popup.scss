@@ -1,9 +1,9 @@
 .cookies-popup__manage-consent-button {
 
-    position: fixed; 
+    position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 24;  // Just beneath `.cookies-pop-up`
+    z-index: 24; // Just beneath `.cookies-pop-up`
 
     border: none;
     border-top-right-radius: 0.625rem;
@@ -16,20 +16,20 @@
     font-weight: 600;
 
     cursor: pointer;
-    
+
     &:hover {
         background-color: $mid-grey-04;
-    } 
+    }
 }
 
 .cookies-popup__modal-container {
 
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 
     z-index: 30;
-    padding: 1.5rem;
+    padding: 1.5rem 0;
     margin: 2rem;
 
     border-radius: 0.25rem;
@@ -38,24 +38,50 @@
     @include breakpoint(narrow-to-medium) {
         width: 600px;
     }
-}
 
-.cookies-popup__text-container {
-    
-    border-top: 1px solid $mid-grey;
-    border-bottom: 1px solid $mid-grey;
-    padding-top: 1.5rem;
-    padding-bottom: 2rem;
+    // Set a 1.5rem margin on the left and right for each elements inside the modal container, 
+    // because the horizontal line wants to go across the whole of the modal container.
 
-    p {
-        margin: 0;
+    h2 {
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+
+    .cookies-popup__text-container {
+
+        border-top: 1px solid $mid-grey;
+        border-bottom: 1px solid $mid-grey;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+
+        p {
+            margin: 0 1.5rem;
+        }
+    }
+
+    .cookies-popup__modal-button-group {
+
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 0 1.5rem;
+
+        // Become a row at from 768px viewport width
+        @include breakpoint(narrow-to-medium) {
+
+            flex-direction: row;
+        }
+
+        button {
+            width: 100%;
+        }
     }
 }
 
 button.cookies-popup__accept-button {
 
     background-color: map-get($services-colours, 'web design');
-    
+
     &:hover {
         background-color: darken(map-get($services-colours, 'web design'), 10%);
     }
@@ -74,11 +100,18 @@ button.cookies-popup__accept-button {
     z-index: 35;
     background-color: $white;
 
-    padding: 1rem;
+    padding: 2rem;
+    width: 100%;
+
+    .cookies-popup__preferences-menu-max-width-container {
+        // Need to set a reasonable line length, for text readability
+        max-width: 65ch;
+        margin: 0 auto;
+    }
 
     p {
-        font-size: 0.875rem;  
-        line-height: 1.5;      
+        font-size: 0.875rem;
+        line-height: 1.5;
     }
 
     strong {
@@ -98,9 +131,19 @@ button.cookies-popup__accept-button {
         display: inline-block;
     }
 
-    .cookies-popup__button-group {
-        // Will probably need to set a margin-left on this at wider viewport widths 
+    .cookies-popup__switch-button-group, 
+    .cookies-popup__accept-button-group {
 
+        display: flex;
+        gap: 0.5rem;
+
+        @include breakpoint(medium-to-wide) {
+
+            button:first-child {
+                // Shunt these buttons to the right of the page above 992px viewport width 
+                margin-left: auto;
+            }
+        }
     }
 
     .cookies-popup__button--active {
