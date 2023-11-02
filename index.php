@@ -16,8 +16,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap" rel="stylesheet">
 
     <!-- Icons -->
     <script src="https://kit.fontawesome.com/a48990909f.js" crossorigin="anonymous"></script>
@@ -28,8 +27,8 @@
 
     <?php
     // (Includes secondary-nav & primary-nav) 
-    include_once 'templates/header.php'; 
-    ?> 
+    include_once 'templates/header.php';
+    ?>
 
     <main>
 
@@ -163,8 +162,7 @@
 
                 <div class="flex-container-for-heading-and-view-more-link">
                     <h2 class="services__heading">Our Services</h2>
-                    <a href="#"
-                        class="services__view-case-studies-link services__view-case-studies-link--wide-viewport">View
+                    <a href="#" class="services__view-case-studies-link services__view-case-studies-link--wide-viewport">View
                         Our Work
                         <svg class="icon">
                             <use href="icons/symbol-defs.svg#icon-arrow-right"></use>
@@ -185,8 +183,7 @@
                             needs
                             including
                             integrations and reporting.</p>
-                        <span
-                            class="services__card-read-more-button services__card-read-more-button--bespoke-software">Read
+                        <span class="services__card-read-more-button services__card-read-more-button--bespoke-software">Read
                             more</span>
                     </a>
 
@@ -217,8 +214,7 @@
                             digital
                             marketing
                             campaigns.</p>
-                        <span
-                            class="services__card-read-more-button services__card-read-more-button--digital-marketing">Read
+                        <span class="services__card-read-more-button services__card-read-more-button--digital-marketing">Read
                             more</span>
                     </a>
 
@@ -232,8 +228,7 @@
                         <p class="services__card-description">Business telephony solutions including mobile &
                             connectivity
                             solutions.</p>
-                        <span
-                            class="services__card-read-more-button services__card-read-more-button--telecoms-services">Read
+                        <span class="services__card-read-more-button services__card-read-more-button--telecoms-services">Read
                             more</span>
                     </a>
 
@@ -264,8 +259,7 @@
                             management
                             services.
                         </p>
-                        <span
-                            class="services__card-read-more-button services__card-read-more-button--cyber-security">Read
+                        <span class="services__card-read-more-button services__card-read-more-button--cyber-security">Read
                             more</span>
                     </a>
 
@@ -281,15 +275,13 @@
                             a
                             job in
                             tech.</p>
-                        <span
-                            class="services__card-read-more-button services__card-read-more-button--developer-training">Read
+                        <span class="services__card-read-more-button services__card-read-more-button--developer-training">Read
                             more</span>
                     </a>
 
                 </div>
 
-                <a href="#"
-                    class="services__view-case-studies-link services__view-case-studies-link--narrow-viewport">View Our
+                <a href="#" class="services__view-case-studies-link services__view-case-studies-link--narrow-viewport">View Our
                     Work
                     <svg class="icon">
                         <use href="icons/symbol-defs.svg#icon-arrow-right"></use>
@@ -305,8 +297,7 @@
             <div class="logo-carousel-horizontal-centering-container">
                 <div class="logo-carousel-flex-parent-container">
 
-                    <img src="images/partners/investing-in-future-growth-colour.jpg"
-                        alt="Investing In Future Growth logo">
+                    <img src="images/partners/investing-in-future-growth-colour.jpg" alt="Investing In Future Growth logo">
                     <img src="images/partners/norfolk-carbon-charter-colour.jpg" alt="Norfolk Carbon Charter logo">
                     <img src="images/partners/prompt-payment-code-colour.jpg" alt="Prompt Payment Code logo">
                     <img src="images/partners/princess-royal-training-colour.jpg" alt="Princess Royal Training logo">
@@ -329,12 +320,10 @@
                     <div class="welcome__flex-item-container">
 
                         <h2 class="welcome__heading">Welcome to Netmatters</h2>
-                        <p class="welcome__paragraph welcome__paragraph--first">Netmatters is a leading <a
-                                href="#">Bespoke
+                        <p class="welcome__paragraph welcome__paragraph--first">Netmatters is a leading <a href="#">Bespoke
                                 Software</a>, <a href="#">IT
                                 Support</a>, and <a href="#">Digital Marketing</a> company based in the East of
-                            England with offices in <a href="#">London</a>, <a href="#">Cambridge</a>, <a
-                                href="#">Wymondham</a>,
+                            England with offices in <a href="#">London</a>, <a href="#">Cambridge</a>, <a href="#">Wymondham</a>,
                             and <a href="#">Great Yarmouth</a>.</p>
                         <p class="welcome__paragraph">We aren't tied into contracts with third-party providers,
                             so
@@ -373,30 +362,20 @@
 
                         <h2 class="welcome__heading">What Our Clients Think</h2>
 
-                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px"
-                            viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path
-                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                         </svg>
-                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px"
-                            viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path
-                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                         </svg>
-                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px"
-                            viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path
-                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                         </svg>
-                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px"
-                            viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path
-                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                         </svg>
-                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px"
-                            viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path
-                                d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
+                        <svg class="welcome__star" xmlns="http://www.w3.org/2000/svg" height="50px" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z" />
                         </svg>
 
                         <blockquote class="welcome__testimonial">
@@ -412,8 +391,7 @@
                             <footer class="welcome__testimonial-author">
                                 <span class="welcome__testimonial-author-name"><cite>Eleanor Bishop</cite>, Head
                                     of
-                                    Marketing</span><span class="welcome__testimonial-author-organisation"><a
-                                        href="#">Ashcroft
+                                    Marketing</span><span class="welcome__testimonial-author-organisation"><a href="#">Ashcroft
                                         Partnership LLP</a></span>
                             </footer>
                         </blockquote>
@@ -436,135 +414,10 @@
             </div>
         </section>
 
-        <section class="news"> <!-- Latest articles -->
-            <div class="responsive-container">
-
-                <div class="flex-container-for-heading-and-view-more-link">
-                    <h2 class="news__header">Latest News</h2>
-                    <a href="#" class="news__view-all-link news__view-all-link--wide-viewport">View All
-                        <svg class="icon">
-                            <use href="icons/symbol-defs.svg#icon-arrow-right"></use>
-                        </svg>
-                    </a>
-                </div>
-
-                <div class="news__flex-parent-container">
-
-                    <section class="news__card"> <!-- Article summary card -->
-                        <a href="#">
-                            <img src="images/articles/spicerhaart-upskilling.png"
-                                alt="Promotional graphic for Spicerhaart staff upskilling case study"
-                                class="news__card-image">
-
-                            <div class="news__card-text-container">
-                                <h3 class="news__card-title news__card-title--bespoke-software">Spicerhaart -
-                                    Upskilling
-                                    Staff
-                                    Through the
-                                    Sk...</h3>
-                                <span class="news__card-read-length">4 minute read</span>
-                                <p class="news__card-summary">The Client Spicerhaart is an independent
-                                    residential
-                                    sales
-                                    and
-                                    lettings
-                                    organisation, recognised
-                                    as...</p>
-                                <span
-                                    class="news__card-read-more-button news__card-read-more-button--bespoke-software">Read
-                                    More</span>
-                                <div class="news__card-author-container"> <!-- Author -->
-                                    <img src="images/netmatters-avatar.png" alt="" class="news__card-avatar">
-                                    <div class="news__card-author-text-container">
-                                        <span class="news__card-posted-by">Posted by Netmatters Ltd</span>
-                                        <time datetime="2023-08-09" class="news__card-posted-date">9th August
-                                            2023</time>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="news__card-category-label news__card-category-label--bespoke-software">Case
-                            Studies</a>
-                    </section>
-
-                    <section class="news__card"> <!-- Article summary card -->
-                        <a href="#">
-                            <img src="images/articles/busseys-new-website.png"
-                                alt="Promotional graphic for Busseys new website build case study"
-                                class="news__card-image">
-                            <div class="news__card-text-container">
-                                <h3 class="news__card-title news__card-title--web-design">Busseys - Web Case
-                                    Study
-                                </h3>
-                                <span class="news__card-read-length">5 minute read</span>
-                                <p class="news__card-summary">The Client Busseys, a renowned, family-owned
-                                    automotive
-                                    dealership
-                                    in
-                                    Norfolk, has a rich
-                                    heritage
-                                    a...</p>
-                                <span class="news__card-read-more-button news__card-read-more-button--web-design">Read
-                                    More</span>
-                                <div class="news__card-author-container"> <!-- Author -->
-                                    <img src="images/netmatters-avatar.png" alt="" class="news__card-avatar">
-                                    <div class="news__card-author-text-container">
-                                        <span class="news__card-posted-by">Posted by Netmatters Ltd</span>
-                                        <time datetime="2023-08-02" class="news__card-posted-date">2nd August
-                                            2023</time>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="news__card-category-label news__card-category-label--web-design">Case
-                            Studies</a>
-                    </section>
-
-                    <section class="news__card"> <!-- Article summary card -->
-                        <a href="#">
-                            <img src="images/articles/fairfax-favor-cyber-security.png"
-                                alt="Promotional graphic for Fairfax & Favor cyber security case study"
-                                class="news__card-image">
-                            <div class="news__card-text-container">
-                                <h3 class="news__card-title news__card-title--it-support">Revolutionising Cyber
-                                    Security
-                                    -
-                                    Fairfax & Fa...
-                                </h3>
-                                <span class="news__card-read-length">5 minute read</span>
-                                <p class="news__card-summary">The Client Fairfax & Favor are a leading designer
-                                    of
-                                    luxury,
-                                    rural
-                                    vogue
-                                    clothing and
-                                    accessorie...</p>
-                                <span class="news__card-read-more-button news__card-read-more-button--it-support">Read
-                                    More</span>
-                                <div class="news__card-author-container"> <!-- Author -->
-                                    <img src="images/netmatters-avatar.png" alt="" class="news__card-avatar">
-                                    <div class="news__card-author-text-container">
-                                        <span class="news__card-posted-by">Posted by Netmatters Ltd</span>
-                                        <time datetime="2023-07-28" class="news__card-posted-date">28th July
-                                            2023</time>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="#" class="news__card-category-label news__card-category-label--it-support">Case
-                            Studies</a>
-                    </section>
-
-                </div>
-
-                <a href="#" class="news__view-all-link news__view-all-link--narrow-viewport">View All
-                    <svg class="icon">
-                        <use href="icons/symbol-defs.svg#icon-arrow-right"></use>
-                    </svg>
-                </a>
-
-            </div>
-        </section>
+        <?php
+        // Get most recent news article data from database and display 3 cards 
+        include_once 'templates/index/latest-news.php';
+        ?>
 
         <section class="clients"> <!-- Clients -->
 
@@ -779,17 +632,17 @@
             </div>
         </section>
 
-    <?php
-    // Includes email newsletter sign up form 
-    include_once 'templates/footer.php'; 
-    ?> 
+        <?php
+        // Includes email newsletter sign up form 
+        include_once 'templates/footer.php';
+        ?>
 
     </main>
     <div class="dark-overlay"></div>
 
     <?php
     // Includes 'Manage Consent' button 
-    include_once 'templates/cookies-popup.php'; 
+    include_once 'templates/cookies-popup.php';
     ?>
 
     <script src="js/cookiesPopUp.js"></script>
