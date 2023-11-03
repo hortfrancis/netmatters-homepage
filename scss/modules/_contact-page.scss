@@ -1,18 +1,35 @@
 .contact-page__breadcrumbs {
+
     // Hide at narrow viewport width
     display: none;
+    padding: 1rem 2rem;
+
+    a {
+        font-weight: 600;
+    }
+
+    @include breakpoint(narrow-to-medium) {
+
+        display: block;
+        border-top: 1px solid $dark-grey;
+        box-shadow: 0 5px 35px rgba(0, 0, 0, .1);
+    }
 }
 
 .contact-page__heading-container {
 
-    padding: 1rem;
     background-color: $dark-grey;
     color: $white;
+    padding: 0.5rem 0;
 
     h1 {
-        margin: 0;
         font-size: 2.25rem;
         font-weight: 400;
+    }
+
+    @include breakpoint(medium-to-wide) {
+        background-color: transparent;
+        color: $dark-grey;
     }
 }
 
@@ -23,6 +40,13 @@
 
     margin-top: 5rem;
     margin-bottom: 3rem;
+
+    @include breakpoint(medium-to-wide) {
+
+        // Become a grid of two
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 3rem;
+    }
 }
 
 .contact-page__office-card {
@@ -32,6 +56,7 @@
     img {
         display: block;
         max-width: 100%;
+        height: auto;
     }
 }
 
@@ -92,9 +117,13 @@
     a {
         display: block;
         margin-bottom: 1.5rem;
-        font-size: 1.625rem;
         font-weight: 600;
         color: map-get($services-colours, 'web design');
+
+        // Increase email address text size when there is enough width
+        @media screen and (min-width: 450px) {
+            font-size: 1.625rem;
+        }
     }
 
     p {
@@ -123,6 +152,11 @@
     @include breakpoint(medium-to-wide) {
         flex-direction: row;
         gap: 2rem;
+
+        &>div {
+            // Persuade the separating `div`s to fill the available space
+            flex: 1;
+        }
     }
 }
 
@@ -179,8 +213,11 @@
 
     min-height: 6.25rem;
     padding: 1rem;
-    line-height: 1.5;
+    line-height: 2;
     letter-spacing: 0.05em;
+
+    // To prevent page layout bugs, the <textarea> input does not resize horizontally
+    resize: vertical;
 }
 
 .contact-page__contact-form-input--checkbox {
@@ -191,6 +228,7 @@
 }
 
 .contact-page__contact-form-label[for="contact-form-marketing"] {
+
     // Align the checkbox against the label
     display: flex;
     align-items: center;
@@ -225,9 +263,27 @@
 .contact-page__contact-form-helper-text-flex-group {
 
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
+    gap: 0.5rem;
+
     margin-top: 2rem;
+
+    button {
+        // Button underneath 'helper text'
+        order: 2;
+    }
+
+    @media screen and (min-width: 400px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            // Button to the left of 'helper text'
+            order: 0;
+        }
+    }
 }
 
 .contact-page__contact-form-submit-button {
@@ -235,6 +291,7 @@
     @extend %button;
     @include background-with-darken-on-hover($dark-grey);
     background-color: $dark-grey;
+    width: fit-content;
 }
 
 .contact-page__contact-form-helper-text {

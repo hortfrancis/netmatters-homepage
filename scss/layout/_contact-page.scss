@@ -1,5 +1,20 @@
-.contact-page {
+.contact-page__flex-ordering-container {
 
-    
+    margin-bottom: 2rem;
+
+    @include breakpoint(wide-to-extra-wide) {
+
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+
+        // The 'general info' section
+        section {
+            // About a third of the width of the container
+            flex: 1 0 33.3333%;
+
+            // Push to the right of the contact form
+            order: 2;
+        }
+    }
 }
-

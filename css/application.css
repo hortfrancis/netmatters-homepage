@@ -721,6 +721,21 @@ main {
   margin-bottom: 4rem;
 }
 
+.contact-page__flex-ordering-container {
+  margin-bottom: 2rem;
+}
+@media (min-width: 1260px) {
+  .contact-page__flex-ordering-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .contact-page__flex-ordering-container section {
+    flex: 1 0 33.3333%;
+    order: 2;
+  }
+}
+
 .newsletter-form {
   background-color: #ddd;
   padding: 3.125rem 0;
@@ -2286,17 +2301,33 @@ main {
 
 .contact-page__breadcrumbs {
   display: none;
+  padding: 1rem 2rem;
+}
+.contact-page__breadcrumbs a {
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .contact-page__breadcrumbs {
+    display: block;
+    border-top: 1px solid #323544;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.1);
+  }
 }
 
 .contact-page__heading-container {
-  padding: 1rem;
   background-color: #323544;
   color: #fff;
+  padding: 0.5rem 0;
 }
 .contact-page__heading-container h1 {
-  margin: 0;
   font-size: 2.25rem;
   font-weight: 400;
+}
+@media (min-width: 992px) {
+  .contact-page__heading-container {
+    background-color: transparent;
+    color: #323544;
+  }
 }
 
 .contact-page__office-cards-container {
@@ -2305,6 +2336,12 @@ main {
   margin-top: 5rem;
   margin-bottom: 3rem;
 }
+@media (min-width: 992px) {
+  .contact-page__office-cards-container {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 3rem;
+  }
+}
 
 .contact-page__office-card {
   border-radius: 1.25rem;
@@ -2312,6 +2349,7 @@ main {
 .contact-page__office-card img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 .contact-page__office-card-info-box {
@@ -2366,9 +2404,13 @@ main {
 .contact-page__general-contact-info a {
   display: block;
   margin-bottom: 1.5rem;
-  font-size: 1.625rem;
   font-weight: 600;
   color: #926FB1;
+}
+@media screen and (min-width: 450px) {
+  .contact-page__general-contact-info a {
+    font-size: 1.625rem;
+  }
 }
 .contact-page__general-contact-info p {
   margin-bottom: 1.5rem;
@@ -2393,6 +2435,9 @@ main {
   .contact-page__contact-form-flex-container {
     flex-direction: row;
     gap: 2rem;
+  }
+  .contact-page__contact-form-flex-container > div {
+    flex: 1;
   }
 }
 
@@ -2439,8 +2484,9 @@ main {
 .contact-page__contact-form-input--textarea {
   min-height: 6.25rem;
   padding: 1rem;
-  line-height: 1.5;
+  line-height: 2;
   letter-spacing: 0.05em;
+  resize: vertical;
 }
 
 .contact-page__contact-form-input--checkbox {
@@ -2477,14 +2523,29 @@ main {
 
 .contact-page__contact-form-helper-text-flex-group {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
   margin-top: 2rem;
+}
+.contact-page__contact-form-helper-text-flex-group button {
+  order: 2;
+}
+@media screen and (min-width: 400px) {
+  .contact-page__contact-form-helper-text-flex-group {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact-page__contact-form-helper-text-flex-group button {
+    order: 0;
+  }
 }
 
 .contact-page__contact-form-submit-button {
   background-color: #323544;
   background-color: #323544;
+  width: fit-content;
 }
 .contact-page__contact-form-submit-button:hover {
   background-color: #121318;

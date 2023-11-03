@@ -12,11 +12,15 @@ require_once 'templates/meta.php';
     <main>
 
         <div class="contact-page__breadcrumbs">
-            <a href="index.php">Home</a> / Our Offices
+            <div class="responsive-container">
+                <a href="index.php">Home</a> / Our Offices
+            </div>
         </div>
 
         <div class="contact-page__heading-container">
-            <h1>Our Offices</h1>
+            <div class="responsive-container">
+                <h1>Our Offices</h1>
+            </div>
         </div>
 
         <div class="responsive-container">
@@ -130,7 +134,9 @@ require_once 'templates/meta.php';
                         <img src="images/contact/google-maps/google-maps-great-yarmouth-office.png">
                     </div>
                 </section>
+            </div>
 
+            <div class="contact-page__flex-ordering-container">
                 <section class="contact-page__general-contact-info">
 
                     <h2>Email us on:</h2>
@@ -155,24 +161,27 @@ require_once 'templates/meta.php';
 
                     <div class="contact-page__contact-form-flex-container">
 
-                        <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
-                            <label for="contact-form-name" class="contact-page__contact-form-label">Your Name</label>
-                            <input type="text" id="contact-form-name" required class="contact-page__contact-form-input">
-                        </div>
+                        <div>
+                            <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
+                                <label for="contact-form-name" class="contact-page__contact-form-label">Your Name</label>
+                                <input type="text" id="contact-form-name" required class="contact-page__contact-form-input">
+                            </div>
 
-                        <div class="contact-page__contact-form-input-container">
-                            <label for="contact-form-company" class="contact-page__contact-form-label">Company Name</label>
-                            <input type="text" id="contact-form-company" class="contact-page__contact-form-input">
+                            <div class="contact-page__contact-form-input-container">
+                                <label for="contact-form-company" class="contact-page__contact-form-label">Company Name</label>
+                                <input type="text" id="contact-form-company" class="contact-page__contact-form-input">
+                            </div>
                         </div>
+                        <div>
+                            <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
+                                <label for="contact-form-email" class="contact-page__contact-form-label">Your Email</label>
+                                <input type="email" id="contact-form-email" required class="contact-page__contact-form-input">
+                            </div>
 
-                        <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
-                            <label for="contact-form-email" class="contact-page__contact-form-label">Your Email</label>
-                            <input type="email" id="contact-form-email" required class="contact-page__contact-form-input">
-                        </div>
-
-                        <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
-                            <label for="contact-form-phone" class="contact-page__contact-form-label">Your Telephone Number</label>
-                            <input type="tel" id="contact-form-phone" required class="contact-page__contact-form-input">
+                            <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
+                                <label for="contact-form-phone" class="contact-page__contact-form-label">Your Telephone Number</label>
+                                <input type="tel" id="contact-form-phone" required class="contact-page__contact-form-input">
+                            </div>
                         </div>
                     </div>
 
@@ -189,9 +198,10 @@ require_once 'templates/meta.php';
                         <small aria-hidden="true" class="contact-page__contact-form-helper-text"><span class="contact-page__contact-form-helper-text-asterisk">*</span> Fields Required</small>
                     </div>
                 </form>
-
             </div>
+
         </div>
+
 
         <?php
         include_once 'templates/footer.php';
