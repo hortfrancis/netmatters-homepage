@@ -1,6 +1,59 @@
 <?php
+// Start/resume session to use session variables
+session_start();
+
 $pageTitle = "Contact Us | Netmatters";
 require_once 'templates/meta.php';
+
+// Declare placeholders for success and failure conditions as session variables,
+// as false so they can be evaluated in if statements without throwing an error
+if (!isset($_SESSION['success'])) {
+    $_SESSION['success'] = false;
+}
+if (!isset($_SESSION['errorMessage'])) {
+    $_SESSION['errorMessage'] = '';
+}
+
+// Handle form submission
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // Sanitise input
+    $name = trim(htmlspecialchars($_POST['name']));
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    $company = trim(htmlspecialchars($_POST['company']));
+    $phone = preg_replace('/\D/', '', $_POST['phone']);
+    $message = trim(htmlspecialchars($_POST['message']));
+    $marketing = ($_POST['marketing'] === 'yes') ? true : false;
+
+    // Validate input for required fields
+    if (empty($name) || empty($email) || empty($phone) || empty($message)) {
+        $errorMessage = "Please fill in all the required fields";
+    } else {
+        // Send contact data to the database 
+
+        include_once 'lib/add-message-to-database.php';
+
+        // Pass the message data as an associative array, 
+        // and evaluate if this was successful 
+        if (addMessageToDatabase([
+            'name' => $name,
+            'email' => $email,
+            'company' => $company,
+            'phone' => $phone,
+            'message' => $message,
+            'marketing' => $marketing,
+        ])) {
+            // Evaluate the outcome of the database query for frontend feedback
+            $_SESSION['success'] = true;
+        } else {
+            // Provide user feedback if unsuccessful
+            $_SESSION['errorMessage'] = "Sorry, there was a problem sending your message. Please try again later.";
+        }
+        // Follow Post/Redirect/Get pattern to avoid resubmitting the form on refresh
+        header('Location: contact.php#contact-form');
+        exit();
+    }
+}
 ?>
 
 <body>
@@ -157,46 +210,54 @@ require_once 'templates/meta.php';
 
                 </section>
 
-                <form class="contact-page__contact-form">
+                <form action="contact.php#contact-form" method="post" id="contact-form" class="contact-page__contact-form">
+
+                    <?= $_SESSION['errorMessage'] ?>
+
+                    <!-- <div class="contact-page__contact-form-flex-container"> -->
 
                     <div class="contact-page__contact-form-flex-container">
-
-                        <div>
-                            <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
-                                <label for="contact-form-name" class="contact-page__contact-form-label">Your Name</label>
-                                <input type="text" id="contact-form-name" required class="contact-page__contact-form-input">
-                            </div>
-
-                            <div class="contact-page__contact-form-input-container">
-                                <label for="contact-form-company" class="contact-page__contact-form-label">Company Name</label>
-                                <input type="text" id="contact-form-company" class="contact-page__contact-form-input">
-                            </div>
+                        <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
+                            <label for="contact-form-name" class="contact-page__contact-form-label">Your Name</label>
+                            <input type="text" id="contact-form-name" name="name" required class="contact-page__contact-form-input">
                         </div>
-                        <div>
-                            <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
-                                <label for="contact-form-email" class="contact-page__contact-form-label">Your Email</label>
-                                <input type="email" id="contact-form-email" required class="contact-page__contact-form-input">
-                            </div>
 
-                            <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
-                                <label for="contact-form-phone" class="contact-page__contact-form-label">Your Telephone Number</label>
-                                <input type="tel" id="contact-form-phone" required class="contact-page__contact-form-input">
-                            </div>
+                        <div class="contact-page__contact-form-input-container">
+                            <label for="contact-form-company" class="contact-page__contact-form-label">Company Name</label>
+                            <input type="text" id="contact-form-company" name="company" class="contact-page__contact-form-input">
                         </div>
                     </div>
+                    <div class="contact-page__contact-form-flex-container">
+                        <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
+                            <label for="contact-form-email" class="contact-page__contact-form-label">Your Email</label>
+                            <input type="email" id="contact-form-email" name="email" required class="contact-page__contact-form-input">
+                        </div>
+
+                        <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
+                            <label for="contact-form-phone" class="contact-page__contact-form-label">Your Telephone Number</label>
+                            <input type="tel" id="contact-form-phone" name="phone" required class="contact-page__contact-form-input">
+                        </div>
+                    </div>
+                    <!-- </div> -->
 
                     <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
                         <label for="contact-form-message" class="contact-page__contact-form-label">Message</label>
-                        <textarea id="contact-form-message" required class="contact-page__contact-form-input contact-page__contact-form-input--textarea">Hi, I am interested in discussing an 'Our Offices' solution, could you please give me a call or send an email?</textarea>
+                        <textarea id="contact-form-message" name="message" required class="contact-page__contact-form-input contact-page__contact-form-input--textarea">Hi, I am interested in discussing an 'Our Offices' solution, could you please give me a call or send an email?</textarea>
                     </div>
 
-                    <input type="checkbox" id="contact-form-marketing" class="contact-page__contact-form-input--checkbox">
+                    <input type="checkbox" id="contact-form-marketing" name="marketing" value="yes" class="contact-page__contact-form-input--checkbox">
                     <label for="contact-form-marketing" class="contact-page__contact-form-label"><span>Please tick this box if you wish to receive marketing information from us. Please see our <a href="#">Privacy Policy</a> for more information on how we keep your data safe.</span></label>
 
                     <div class="contact-page__contact-form-helper-text-flex-group">
                         <button type="submit" class="contact-page__contact-form-submit-button">Send enquiry</button>
                         <small aria-hidden="true" class="contact-page__contact-form-helper-text"><span class="contact-page__contact-form-helper-text-asterisk">*</span> Fields Required</small>
                     </div>
+
+                    <?php
+                    if ($_SESSION['success']) {
+                        echo "<p class='contact-page__contact-form-success-message'>Thank you for your enquiry. A member of our team will be in touch with you shortly.</p>";
+                    }
+                    ?>
                 </form>
             </div>
 

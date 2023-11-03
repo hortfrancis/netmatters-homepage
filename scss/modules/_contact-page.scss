@@ -146,15 +146,13 @@
 
 .contact-page__contact-form-flex-container {
 
-    display: flex;
-    flex-direction: column;
-
     @include breakpoint(medium-to-wide) {
-        flex-direction: row;
+
+        display: flex;
         gap: 2rem;
 
         &>div {
-            // Persuade the separating `div`s to fill the available space
+            // Each <input> takes up half the width
             flex: 1;
         }
     }
