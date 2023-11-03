@@ -92,6 +92,7 @@
     // Align the checkbox against the label
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 
 .newsletter-form__label[for="newsletter-form-preferences"]::before {

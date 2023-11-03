@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="css/application.css">
-    <title>
-        Full Service Digital Agency |
-        Cambridgeshire &amp; Norfolk |
-        Netmatters
-    </title>
-    <link rel="shortcut icon" href="images/favicon.ico">
+$pageTitle = "Full Service Digital Agency | 
+    Cambridgeshire &amp; Norfolk | 
+    Netmatters";
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;1,600&display=swap" rel="stylesheet">
+require_once 'templates/meta.php';
 
-    <!-- Icons -->
-    <script src="https://kit.fontawesome.com/a48990909f.js" crossorigin="anonymous"></script>
-
-</head>
+?>
 
 <body>
 
@@ -638,6 +623,8 @@
         ?>
 
     </main>
+
+
     <div class="dark-overlay"></div>
 
     <?php
@@ -649,6 +636,8 @@
     <script src="js/secondaryNav.js"></script>
     <script src="js/scrollHeader.js"></script>
     <script src="js/bannerCarousel.js"></script>
+
+
 </body>
 
 </html>

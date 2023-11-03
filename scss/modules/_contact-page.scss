@@ -1,0 +1,249 @@
+.contact-page__breadcrumbs {
+    // Hide at narrow viewport width
+    display: none;
+}
+
+.contact-page__heading-container {
+
+    padding: 1rem;
+    background-color: $dark-grey;
+    color: $white;
+
+    h1 {
+        margin: 0;
+        font-size: 2.25rem;
+        font-weight: 400;
+    }
+}
+
+.contact-page__office-cards-container {
+
+    display: grid;
+    gap: 2rem;
+
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+}
+
+.contact-page__office-card {
+
+    border-radius: 1.25rem;
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+}
+
+.contact-page__office-card-info-box {
+
+    border: 1px solid $mid-grey-02;
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+}
+
+.contact-page__office-card-building-image {
+    border-top-left-radius: 1.25rem;
+    border-top-right-radius: 1.25rem;
+}
+
+.contact-page__office-card-text-container {
+
+    margin: 2rem;
+
+    h2 {
+        font-size: 1.25rem;
+        font-weight: 400;
+    }
+
+    address {
+        font-style: normal;
+        font-size: 0.8125rem;
+        line-height: 1.375rem;
+        color: $mid-grey-03;
+    }
+}
+
+.contact-page__office-card-phone-number {
+
+    display: block;
+    margin: 1rem 0;
+    color: map-get($services-colours, 'web design');
+    font-size: 1.625rem;
+    font-weight: 700;
+}
+
+.contact-page__office-card-view-more-button {
+    @extend %button;
+    @include background-with-darken-on-hover(map-get($services-colours, 'web design'));
+    padding: 0.75rem 2rem;
+}
+
+.contact-page__general-contact-info {
+
+    letter-spacing: 0.05em;
+
+    h2 {
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    a {
+        display: block;
+        margin-bottom: 1.5rem;
+        font-size: 1.625rem;
+        font-weight: 600;
+        color: map-get($services-colours, 'web design');
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        color: $mid-grey-03;
+
+        strong {
+            font-weight: 600;
+            color: $dark-grey;
+        }
+    }
+}
+
+.contact-page__contact-form {
+
+    padding: 2rem;
+    border-radius: 0.625rem;
+    background-color: $mid-grey;
+}
+
+.contact-page__contact-form-flex-container {
+
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(medium-to-wide) {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.contact-page__contact-form-input-container {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.contact-page__contact-form-input-container--required label::after {
+
+    content: '*';
+    color: $required-red;
+    padding-left: 0.2em;
+}
+
+.contact-page__contact-form-label {
+
+    display: inline-block;
+    font-weight: 600;
+    line-height: 2;
+
+    color: $dark-grey;
+
+    a {
+        text-decoration: underline;
+
+        &:hover,
+        &:visited {
+            color: $darker-grey;
+        }
+    }
+}
+
+.contact-page__contact-form-input {
+
+    display: block;
+    width: 100%;
+    height: 3rem;
+    padding: 5px 15px;
+    border: 1px solid $mid-grey-02;
+
+    color: $mid-grey-03;
+    font-size: 0.875rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+    &:focus {
+        border-color: #5bc0de;
+        outline: 0;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(91, 192, 222, .6);
+    }
+}
+
+.contact-page__contact-form-input--textarea {
+
+    min-height: 6.25rem;
+    padding: 1rem;
+    line-height: 1.5;
+    letter-spacing: 0.05em;
+}
+
+.contact-page__contact-form-input--checkbox {
+
+    // Hide the browser-native checkbox, while keeping it in the accessibility tree
+    opacity: 0;
+    position: absolute;
+}
+
+.contact-page__contact-form-label[for="contact-form-marketing"] {
+    // Align the checkbox against the label
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.contact-page__contact-form-label[for="contact-form-marketing"]::before {
+
+    // Create a custom checkbox
+    content: '';
+    display: inline-block;
+    align-self: start;
+    min-width: 2rem;
+    height: 2rem;
+    margin-right: 1.5rem;
+    border: 0.1875rem solid $dark-grey;
+    border-radius: 0.1875rem;
+    font-size: 1.25rem;
+}
+
+.contact-page__contact-form-input--checkbox:checked+.contact-page__contact-form-label::before {
+
+    // Styling for when the custom checkbox is checked
+    content: '✓';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $dark-grey;
+    color: $white;
+}
+
+.contact-page__contact-form-helper-text-flex-group {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.contact-page__contact-form-submit-button {
+
+    @extend %button;
+    @include background-with-darken-on-hover($dark-grey);
+    background-color: $dark-grey;
+}
+
+.contact-page__contact-form-helper-text {
+
+    display: inline-block;
+    font-size: 0.85rem;
+    text-align: right;
+}
+
+.contact-page__contact-form-helper-text-asterisk {
+    color: $required-red;
+}
