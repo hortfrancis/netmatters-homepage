@@ -1453,6 +1453,7 @@ main {
   margin: 0;
   color: #fff;
   font-size: 2.5rem;
+  font-weight: 600;
 }
 @media (min-width: 992px) {
   .banner__heading {
@@ -1651,6 +1652,7 @@ main {
   margin: 0;
   color: #323544;
   font-size: 2.75rem;
+  font-weight: 600;
 }
 
 .services__view-case-studies-link {
@@ -1960,6 +1962,7 @@ main {
 .welcome__heading {
   margin-top: 0;
   font-size: 2.25rem;
+  font-weight: 600;
 }
 
 .welcome__paragraph {
@@ -2040,6 +2043,7 @@ main {
   margin: 0;
   color: #323544;
   font-size: 2.25rem;
+  font-weight: 600;
 }
 
 .news__view-all-link {

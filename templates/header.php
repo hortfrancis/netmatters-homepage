@@ -6,7 +6,7 @@
         <div class="header__top-row-container">
 
             <!-- Nematters logo -->
-            <a href="#" class="header__logo">
+            <a href="index.php" class="header__logo">
                 <img src="images/netmatters-logo-darkgrey.png" alt="Netmatters logo" class="header__logo-image">
             </a>
 

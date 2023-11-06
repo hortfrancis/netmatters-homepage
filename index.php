@@ -39,7 +39,7 @@ require_once 'templates/meta.php';
                     <section class="banner__carousel-item banner__carousel-item--bespoke-software">
                         <div class="responsive-container">
                             <div class="banner__flex-parent-container">
-                                <h1 class="banner__heading">Bespoke Software</h1>
+                                <h2 class="banner__heading">Bespoke Software</h2>
                                 <p class="banner__tagline">Delivering expert bespoke software solutions across a range
                                     of industries.</p>
                                 <a href="#" class="banner__button">Find out more
@@ -54,7 +54,7 @@ require_once 'templates/meta.php';
                     <section class="banner__carousel-item banner__carousel-item--it-support">
                         <div class="responsive-container">
                             <div class="banner__flex-parent-container">
-                                <h1 class="banner__heading">IT Support</h1>
+                                <h2 class="banner__heading">IT Support</h2>
                                 <p class="banner__tagline">Fast and cost-effective IT support services for your
                                     business.</p>
                                 <a href="#" class="banner__button">Find out more
@@ -69,7 +69,7 @@ require_once 'templates/meta.php';
                     <section class="banner__carousel-item banner__carousel-item--digital-marketing">
                         <div class="responsive-container">
                             <div class="banner__flex-parent-container">
-                                <h1 class="banner__heading">Digital Marketing</h1>
+                                <h2 class="banner__heading">Digital Marketing</h2>
                                 <p class="banner__tagline">Generating your new business through results-driven marketing
                                     activites.</p>
                                 <a href="#" class="banner__button">Find out more
@@ -84,7 +84,7 @@ require_once 'templates/meta.php';
                     <section class="banner__carousel-item banner__carousel-item--telecoms-services">
                         <div class="responsive-container">
                             <div class="banner__flex-parent-container">
-                                <h1 class="banner__heading">Telecoms Services</h1>
+                                <h2 class="banner__heading">Telecoms Services</h2>
                                 <p class="banner__tagline">A new approach to connectivity, see how we can help your
                                     business.</p>
                                 <a href="#" class="banner__button">Find out more
@@ -99,7 +99,7 @@ require_once 'templates/meta.php';
                     <section class="banner__carousel-item banner__carousel-item--web-design">
                         <div class="responsive-container">
                             <div class="banner__flex-parent-container">
-                                <h1 class="banner__heading">Web Design</h1>
+                                <h2 class="banner__heading">Web Design</h2>
                                 <p class="banner__tagline">For businesses looking to make a strong and effective first
                                     impression.</p>
                                 <a href="#" class="banner__button">Find out more
@@ -114,7 +114,7 @@ require_once 'templates/meta.php';
                     <section class="banner__carousel-item banner__carousel-item--cyber-security">
                         <div class="responsive-container">
                             <div class="banner__flex-parent-container">
-                                <h1 class="banner__heading">Cyber Security</h1>
+                                <h2 class="banner__heading">Cyber Security</h2>
                                 <p class="banner__tagline">Keeping businesses' and their customers' sensitive
                                     information
                                     protected.</p>
