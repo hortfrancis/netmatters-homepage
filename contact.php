@@ -23,11 +23,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $company = trim(htmlspecialchars($_POST['company']));
     $phone = preg_replace('/\D/', '', $_POST['phone']);
     $message = trim(htmlspecialchars($_POST['message']));
-    $marketing = ($_POST['marketing'] === 'yes') ? true : false;
+    $marketing = (isset($_POST['marketing']) && $_POST['marketing'] === 'yes') ? true : false;
 
     // Validate input for required fields
-    if (empty($name) || empty($email) || empty($phone) || empty($message)) {
-        $errorMessage = "Please fill in all the required fields";
+    $phoneValidationPattern = '/^\+?(?:\d\s?){6,14}\d$/';
+    if (
+        empty($name)
+        || empty($email)
+        || preg_match($phoneValidationPattern, $phone) !== 1
+        || empty($message)
+    ) {
+        // Generate an error message
+
+        $missingFields = [];
+
+        if (empty($name)) {
+            $missingFields[] = "Name";
+        }
+        if (empty($email)) {
+            $missingFields[] = "Email";
+        }
+        if (preg_match($phoneValidationPattern, $phone) !== 1) {
+            $missingFields[] = "Phone";
+        }
+        if (empty($message)) {
+            $missingFields[] = "Message";
+        }
+
+        if (!empty($missingFields)) {
+            $_SESSION['errorMessage'] = "Please fill in all the required fields: " . implode(', ', $missingFields);
+        }
     } else {
         // Send contact data to the database 
 
@@ -45,6 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         ])) {
             // Evaluate the outcome of the database query for frontend feedback
             $_SESSION['success'] = true;
+            $_SESSION['errorMessage'] = '';
         } else {
             // Provide user feedback if unsuccessful
             $_SESSION['errorMessage'] = "Sorry, there was a problem sending your message. Please try again later.";
@@ -212,37 +238,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <form action="contact.php#contact-form" method="post" id="contact-form" class="contact-page__contact-form">
 
-                    <?= $_SESSION['errorMessage'] ?>
-
-                    <!-- <div class="contact-page__contact-form-flex-container"> -->
+                    <span class="contact-page__contact-form-error-message<?php if ($_SESSION['errorMessage']) echo '--active' ?>">
+                        <?php
+                        echo $_SESSION['errorMessage'];
+                        // Unset the error message session variable so the error message is not always displayed
+                        unset($_SESSION['errorMessage']);
+                        ?>
+                    </span>
 
                     <div class="contact-page__contact-form-flex-container">
                         <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
                             <label for="contact-form-name" class="contact-page__contact-form-label">Your Name</label>
-                            <input type="text" id="contact-form-name" name="name" required class="contact-page__contact-form-input">
+                            <input type="text" id="contact-form-name" name="name" required class="contact-page__contact-form-input" value="<?= $name ?? '' ?>">
                         </div>
 
                         <div class="contact-page__contact-form-input-container">
                             <label for="contact-form-company" class="contact-page__contact-form-label">Company Name</label>
-                            <input type="text" id="contact-form-company" name="company" class="contact-page__contact-form-input">
+                            <input type="text" id="contact-form-company" name="company" class="contact-page__contact-form-input" value="<?= $company ?? '' ?>">
                         </div>
                     </div>
                     <div class="contact-page__contact-form-flex-container">
                         <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
                             <label for="contact-form-email" class="contact-page__contact-form-label">Your Email</label>
-                            <input type="email" id="contact-form-email" name="email" required class="contact-page__contact-form-input">
+                            <input type="email" id="contact-form-email" name="email" required class="contact-page__contact-form-input" value="<?= $email ?? '' ?>">
                         </div>
 
                         <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
                             <label for="contact-form-phone" class="contact-page__contact-form-label">Your Telephone Number</label>
-                            <input type="tel" id="contact-form-phone" name="phone" required class="contact-page__contact-form-input">
+                            <input type="tel" id="contact-form-phone" name="phone" required class="contact-page__contact-form-input" value="<?= $phone ?? '' ?>">
                         </div>
                     </div>
-                    <!-- </div> -->
 
                     <div class="contact-page__contact-form-input-container contact-page__contact-form-input-container--required">
                         <label for="contact-form-message" class="contact-page__contact-form-label">Message</label>
-                        <textarea id="contact-form-message" name="message" required class="contact-page__contact-form-input contact-page__contact-form-input--textarea">Hi, I am interested in discussing an 'Our Offices' solution, could you please give me a call or send an email?</textarea>
+                        <textarea id="contact-form-message" name="message" required class="contact-page__contact-form-input contact-page__contact-form-input--textarea"><?php echo $message ?? "Hi, I am interested in discussing an 'Our Offices' solution, could you please give me a call or send an email?" ?>
+                        </textarea>
                     </div>
 
                     <input type="checkbox" id="contact-form-marketing" name="marketing" value="yes" class="contact-page__contact-form-input--checkbox">
@@ -255,7 +285,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                     <?php
                     if ($_SESSION['success']) {
-                        echo "<p class='contact-page__contact-form-success-message'>Thank you for your enquiry. A member of our team will be in touch with you shortly.</p>";
+                        echo "<span class='contact-page__contact-form-success-message'>Thank you for your enquiry. A member of our team will be in touch with you shortly.</span>";
+                        // Unset the success session variable so the success message is not always displayed 
+                        unset($_SESSION['success']);
                     }
                     ?>
                 </form>

@@ -2427,6 +2427,16 @@ main {
   background-color: #ddd;
 }
 
+.contact-page__contact-form-error-message--active {
+  display: block;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.625rem;
+  color: #d24d57;
+  background-color: #f1c7ca;
+  font-weight: 600;
+}
+
 @media (min-width: 992px) {
   .contact-page__contact-form-flex-container {
     display: flex;
@@ -2536,6 +2546,16 @@ main {
   .contact-page__contact-form-helper-text-flex-group button {
     order: 0;
   }
+}
+
+.contact-page__contact-form-success-message {
+  display: block;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.625rem;
+  font-weight: 600;
+  color: #1f9550;
+  background-color: #aceec7;
 }
 
 .contact-page__contact-form-submit-button {

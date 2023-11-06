@@ -144,6 +144,18 @@
     background-color: $mid-grey;
 }
 
+.contact-page__contact-form-error-message--active {
+    
+    display: block;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.625rem;
+
+    color: $required-red;
+    background-color: lighten($required-red, 30%);
+    font-weight: 600;
+}
+
 .contact-page__contact-form-flex-container {
 
     @include breakpoint(medium-to-wide) {
@@ -282,6 +294,18 @@
             order: 0;
         }
     }
+}
+
+.contact-page__contact-form-success-message {
+    
+        display: block;
+        margin-top: 1rem;
+        padding: 1rem;
+        border-radius: 0.625rem;
+    
+        font-weight: 600;
+        color: $success-green;
+        background-color: lighten($success-green, 45%);
 }
 
 .contact-page__contact-form-submit-button {
